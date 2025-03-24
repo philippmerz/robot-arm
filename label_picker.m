@@ -16,6 +16,10 @@ function [x, y, z] = label_picker(itemType)
             x = -30;
             y = 140;
             z = 99;
+        else
+            x = 0;
+            y = 0;
+            z = 0;
         end
 
 end

@@ -85,7 +85,7 @@ vid.DeviceProperties.GainMode = 'auto';
 
 %% Object detection at set framerate
 stop_detection = str2double(get_param(file_name_simulink...
-    + "/Controller/Stop",'Value'));
+    + "/Controller/Subsystem/Stop",'Value'));
 
 
 while stop_detection ~= 1 %&& strcmp(get_param(file_name_simulink,...
@@ -95,11 +95,11 @@ while stop_detection ~= 1 %&& strcmp(get_param(file_name_simulink,...
     
     % Get values from Simulink
     wanted_object = str2double(get_param(file_name_simulink...
-        + "/Controller/Object",'Value'));
+        + "/Controller/Subsystem/Object",'Value'));
     plot_detection = str2double(get_param(file_name_simulink...
-        + "/Controller/Plot",'Value'));
+        + "/Controller/Subsystem/Plot",'Value'));
     stop_detection = str2double(get_param(file_name_simulink...
-        + "/Controller/Stop",'Value'));
+        + "/Controller/Subsystem/Stop",'Value'));
     
     % Get current time from raspberry pi, 1/15 needs to be added
     % to get perfect tracking. Unclear why exactly
@@ -140,9 +140,9 @@ while stop_detection ~= 1 %&& strcmp(get_param(file_name_simulink,...
 end
 
 vid.release();
-set_param(file_name_simulink + "/Controller/Stop",'Value',"0");
+set_param(file_name_simulink + "/Controller/Subsystem/Stop",'Value',"0");
 set_param(file_name_simulink +...
-    "/Controller/Camera/Object detection matrix",'Value',...
+    "/Controller/Subsystem/Camera/Object detection matrix",'Value',...
     "["+num2str(zeros(4))+";"+num2str(zeros(4))+";"+num2str(zeros(4))+"]")
 
 %% Object detection functions
