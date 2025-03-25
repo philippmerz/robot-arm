@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.40
+ * Model version              : 2.43
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Mar 25 11:30:57 2025
+ * C source code generated on : Tue Mar 25 14:59:26 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -64,11 +64,9 @@ static const char_T * rtDataTypeNames[] = {
 
 /* data type transitions for block I/O structure */
 static DataTypeTransition rtBTransitions[] = {
-  { (char_T *)(&robotarm_student_2021a_Ebox_B.ec_Ebox_o3_p[0]), 0, 0, 8 },
-
   { (char_T *)(&robotarm_student_2021a_Ebox_B.ManualSwitch1[0]), 15, 0, 256 },
 
-  { (char_T *)(&robotarm_student_2021a_Ebox_B.SFunction), 0, 0, 181 },
+  { (char_T *)(&robotarm_student_2021a_Ebox_B.SFunction), 0, 0, 187 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_B.RelationalOperator), 8, 0, 16 },
 
@@ -87,7 +85,7 @@ static DataTypeTransition rtBTransitions[] = {
 
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.Delay_DSTATE[0]), 15, 0, 1 },
 
-  { (char_T *)(&robotarm_student_2021a_Ebox_DW.PrevY), 0, 0, 82 },
+  { (char_T *)(&robotarm_student_2021a_Ebox_DW.PrevY), 0, 0, 95 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.Scope_PWORK.LoggedData[0]), 11, 0,
     6 },
@@ -157,7 +155,7 @@ static DataTypeTransition rtBTransitions[] = {
 
 /* data type transition table for block I/O structure */
 static DataTypeTransitionTable rtBTransTable = {
-  30U,
+  29U,
   rtBTransitions
 };
 

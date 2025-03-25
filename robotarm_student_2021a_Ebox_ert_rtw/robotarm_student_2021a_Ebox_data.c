@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.40
+ * Model version              : 2.43
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Mar 25 11:30:57 2025
+ * C source code generated on : Tue Mar 25 14:59:26 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -198,10 +198,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Expression: [0                    0                    0      1738082935.0803;0  0  0  0;0  0  0  0]
+  /* Expression: [0                    0                    0      1737848201.0033;0  0  0  0;0  0  0  0]
    * Referenced by: '<S166>/Object detection matrix'
    */
-  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.7380829350803E+9, 0.0, 0.0 },
+  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.7378482010033E+9, 0.0, 0.0 },
 
   /* Expression: 1
    * Referenced by: '<S1>/Constant'
@@ -918,10 +918,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Expression: 1.17
+  /* Expression: 1.2974
    * Referenced by: '<S170>/set_robot_calibration_r'
    */
-  1.17,
+  1.2974,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainva_a
    * Referenced by: '<S179>/Discrete-Time Integrator'
@@ -948,10 +948,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   -0.1,
 
-  /* Expression: 0.6542
+  /* Expression: 0.69287
    * Referenced by: '<S170>/set_robot_calibration_x'
    */
-  0.6542,
+  0.69287,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainv_ip
    * Referenced by: '<S180>/Discrete-Time Integrator'
@@ -978,10 +978,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.1,
 
-  /* Expression: -0.3901
+  /* Expression: -0.40164
    * Referenced by: '<S170>/set_robot_calibration_z'
    */
-  -0.3901,
+  -0.40164,
 
   /* Expression: [1,0,0,0,0,0,0,0]
    * Referenced by: '<S169>/Enable//Ventiel'
@@ -1811,7 +1811,7 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   /* Computed Parameter: ManualSwitch_CurrentSetting
    * Referenced by: '<S1>/Manual Switch'
    */
-  1U,
+  0U,
 
   /* Computed Parameter: ManualSwitch_CurrentSetting_c
    * Referenced by: '<S4>/Manual Switch'

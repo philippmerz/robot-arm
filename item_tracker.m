@@ -14,6 +14,6 @@ put_z = height + z_offset ;
 moving_time = (PICKUP_Y - det_y) / v_belt - delay;
 t = moving_time - delay;
 put_y = PICKUP_Y + y_offset ;
-[R , X , Z ] = invkin_simulator(put_x,put_y,put_z);
+[R , X , Z ] = invkin(put_x,put_y,put_z);
 disp(delay)
 end

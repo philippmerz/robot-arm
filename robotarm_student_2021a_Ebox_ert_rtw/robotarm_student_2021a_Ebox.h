@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.40
+ * Model version              : 2.43
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Mar 25 11:30:57 2025
+ * C source code generated on : Tue Mar 25 14:59:26 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -168,7 +168,6 @@ typedef struct {
 typedef struct {
   char_T rtb_StringConcatenate_m[256];
   char_T HomingRunningSwitch_c[256];   /* '<S177>/Homing Running Switch' */
-  real_T ec_Ebox_o3_p[8];              /* '<S172>/ec_Ebox' */
   uint8_T MatrixConcatenate1[32];      /* '<S185>/Matrix Concatenate1' */
   uint8_T MatrixConcatenate[32];       /* '<S186>/Matrix Concatenate' */
   char_T cv[31];
@@ -179,6 +178,7 @@ typedef struct {
   real_T ec_Ebox_o3[8];                /* '<S171>/ec_Ebox' */
   real_T ec_Ebox_o1_h[2];              /* '<S172>/ec_Ebox' */
   real_T ec_Ebox_o2_o[2];              /* '<S172>/ec_Ebox' */
+  real_T ec_Ebox_o3_p[8];              /* '<S172>/ec_Ebox' */
   real_T ec_Ebox_o1_o[2];              /* '<S173>/ec_Ebox' */
   real_T ec_Ebox_o2_p[2];              /* '<S173>/ec_Ebox' */
   real_T ec_Ebox_o3_j[8];              /* '<S173>/ec_Ebox' */
@@ -264,11 +264,11 @@ typedef struct {
   real_T y_j;                          /* '<S178>/Angle2Z' */
   real_T SFunctionBuilder;             /* '<S166>/S-Function Builder' */
   real_T Selector2[9];                 /* '<S166>/Selector2' */
+  real_T Selector[3];                  /* '<S166>/Selector' */
   real_T ManualSwitch;                 /* '<S1>/Manual Switch' */
   real_T Selector3;                    /* '<S166>/Selector3' */
   real_T Sum;                          /* '<S166>/Sum' */
   real_T Constant;                     /* '<S1>/Constant' */
-  real_T Selector[3];                  /* '<S166>/Selector' */
   real_T SignalConversion2;            /* '<S1>/Signal Conversion2' */
   real_T Gain1_g;                      /* '<S3>/Gain1' */
   real_T Dctintegrator3_n;             /* '<S3>/Dctintegrator3' */
@@ -307,8 +307,6 @@ typedef struct {
   real_T X;                            /* '<S1>/Stateflow ' */
   real_T Z;                            /* '<S1>/Stateflow ' */
   real_T R;                            /* '<S1>/Stateflow ' */
-  real_T X_in;                         /* '<S1>/Stateflow ' */
-  real_T Y_in;                         /* '<S1>/Stateflow ' */
   real_T d12;
   real_T Sum2_k;                       /* '<S178>/Sum2' */
   real_T Sum4_c;                       /* '<S169>/Sum4' */
@@ -403,6 +401,13 @@ typedef struct {
   real_T x;                            /* '<S1>/Stateflow ' */
   real_T BUFFER_Z;                     /* '<S1>/Stateflow ' */
   real_T objectCoordinate1[3];         /* '<S1>/Stateflow ' */
+  real_T X_in;                         /* '<S1>/Stateflow ' */
+  real_T Y_in;                         /* '<S1>/Stateflow ' */
+  real_T objectCoordinate2[3];         /* '<S1>/Stateflow ' */
+  real_T objectCoordinate3[3];         /* '<S1>/Stateflow ' */
+  real_T area[3];                      /* '<S1>/Stateflow ' */
+  real_T Z_in;                         /* '<S1>/Stateflow ' */
+  real_T Buffer_Z;                     /* '<S1>/Stateflow ' */
   real_T Dctintegrator_RWORK[2];       /* '<S187>/Dctintegrator' */
   real_T Dctleadlag_RWORK[2];          /* '<S187>/Dctleadlag' */
   real_T Dct1lowpass_RWORK[2];         /* '<S187>/Dct1lowpass' */
@@ -464,7 +469,7 @@ typedef struct {
   uint16_T temporalCounter_i1_k;       /* '<S180>/Supervisor' */
   uint16_T temporalCounter_i1_a;       /* '<S179>/Supervisor' */
   uint16_T temporalCounter_i1_p;       /* '<S178>/Supervisor' */
-  uint16_T temporalCounter_i1_g;       /* '<S1>/Stateflow ' */
+  uint16_T temporalCounter_i1_m;       /* '<S1>/Stateflow ' */
   int8_T Subsystem3_SubsysRanBC;       /* '<S182>/Subsystem3' */
   int8_T IfActionSubsystem1_SubsysRanBC;/* '<S184>/If Action Subsystem1' */
   int8_T IfActionSubsystem_SubsysRanBC;/* '<S184>/If Action Subsystem' */
@@ -614,7 +619,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
                                         * Referenced by: '<S1>/Vacuum [V] '
                                         */
   real_T Objectdetectionmatrix_Value[12];
-  /* Expression: [0                    0                    0      1738082935.0803;0  0  0  0;0  0  0  0]
+  /* Expression: [0                    0                    0      1737848201.0033;0  0  0  0;0  0  0  0]
    * Referenced by: '<S166>/Object detection matrix'
    */
   real_T Constant_Value;               /* Expression: 1
@@ -1053,7 +1058,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T UnitDelay_InitialCondition;   /* Expression: 0
                                         * Referenced by: '<S170>/Unit Delay'
                                         */
-  real_T set_robot_calibration_r_Value;/* Expression: 1.17
+  real_T set_robot_calibration_r_Value;/* Expression: 1.2974
                                         * Referenced by: '<S170>/set_robot_calibration_r'
                                         */
   real_T DiscreteTimeIntegrator_gainva_a;
@@ -1073,7 +1078,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Constant_Value_n;             /* Expression: -0.1
                                         * Referenced by: '<S179>/Constant'
                                         */
-  real_T set_robot_calibration_x_Value;/* Expression: 0.6542
+  real_T set_robot_calibration_x_Value;/* Expression: 0.69287
                                         * Referenced by: '<S170>/set_robot_calibration_x'
                                         */
   real_T DiscreteTimeIntegrator_gainv_ip;
@@ -1093,7 +1098,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Constant_Value_p;             /* Expression: 0.1
                                         * Referenced by: '<S180>/Constant'
                                         */
-  real_T set_robot_calibration_z_Value;/* Expression: -0.3901
+  real_T set_robot_calibration_z_Value;/* Expression: -0.40164
                                         * Referenced by: '<S170>/set_robot_calibration_z'
                                         */
   real_T EnableVentiel_Value[8];       /* Expression: [1,0,0,0,0,0,0,0]

@@ -7,7 +7,7 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   20 \
+    NumChartData   27 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
@@ -142,6 +142,58 @@
       Path         "objectCoordinate1"\
       SrcLocation  ""\
       Dimensions   [3]\
+    }\
+    ChartData {\
+      Name         "X_in"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "X_in"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "Y_in"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Y_in"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "objectCoordinate2"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "objectCoordinate2"\
+      SrcLocation  ""\
+      Dimensions   [3]\
+    }\
+    ChartData {\
+      Name         "objectCoordinate3"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "objectCoordinate3"\
+      SrcLocation  ""\
+      Dimensions   [3]\
+    }\
+    ChartData {\
+      Name         "area"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "area"\
+      SrcLocation  ""\
+      Dimensions   [1,3]\
+    }\
+    ChartData {\
+      Name         "Z_in"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Z_in"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "Buffer_Z"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Buffer_Z"\
+      SrcLocation  ""\
     }\
     ChartData {\
       Name         "temporalCounter_i1"\

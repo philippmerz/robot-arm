@@ -2,20 +2,20 @@ function [x, y, z] = label_picker(itemType)
 
         if itemType == 0
             x = 25;         
-            y = 140;
-            z = 30;
+            y = 190;
+            z = 50;
         elseif itemType == 1
             x = 25;
-            y = 180;
-            z = 99;
+            y = 230;
+            z = 50;
         elseif itemType == 2
             x = 65;
-            y = 140;
-            z = 99;
+            y = 190;
+            z = 50;
         elseif itemType == 3
             x = 65;
-            y = 180;
-            z = 30;
+            y = 230;
+            z = 50;
         else
             x = 0;
             y = 125;

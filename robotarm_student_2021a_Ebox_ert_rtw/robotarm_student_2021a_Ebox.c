@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.40
+ * Model version              : 2.43
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Mar 25 11:30:57 2025
+ * C source code generated on : Tue Mar 25 14:59:26 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -119,7 +119,7 @@ static void robotarm_stude_SystemCore_setup(codertarget_raspi_internal_SC_T *obj
 
 /* Forward declaration for local functions */
 static real_T robotarm_student__rt_atan2d_snf(real_T u0, real_T u1);
-static void robotarm_stude_invkin_simulator(real_T x, real_T y, real_T z, real_T
+static void robotarm_student_2021a_E_invkin(real_T x, real_T y, real_T z, real_T
   *Psi, real_T *Phi, real_T *Theta);
 static void c3_robotarm_student_2021a_Ebox(void);
 static void enter_atomic_Start_AboveLabels(void);
@@ -689,15 +689,15 @@ static real_T robotarm_student__rt_atan2d_snf(real_T u0, real_T u1)
 }
 
 /* Function for Chart: '<S1>/Stateflow ' */
-static void robotarm_stude_invkin_simulator(real_T x, real_T y, real_T z, real_T
+static void robotarm_student_2021a_E_invkin(real_T x, real_T y, real_T z, real_T
   *Psi, real_T *Phi, real_T *Theta)
 {
-  robotarm_student_2021a_Ebox_B.Y = y * 0.001 + -0.002;
+  robotarm_student_2021a_Ebox_B.Y = y * 0.001;
   robotarm_student_2021a_Ebox_B.X_p = x * 0.001;
   robotarm_student_2021a_Ebox_B.R_c = sqrt(robotarm_student_2021a_Ebox_B.X_p *
     robotarm_student_2021a_Ebox_B.X_p + robotarm_student_2021a_Ebox_B.Y *
     robotarm_student_2021a_Ebox_B.Y);
-  robotarm_student_2021a_Ebox_B.a = 0.246 - (z * 0.001 + 0.115);
+  robotarm_student_2021a_Ebox_B.a = 0.246 - (z * 0.001 + 0.045);
   robotarm_student_2021a_Ebox_B.L_DB = sqrt(robotarm_student_2021a_Ebox_B.R_c *
     robotarm_student_2021a_Ebox_B.R_c + robotarm_student_2021a_Ebox_B.a *
     robotarm_student_2021a_Ebox_B.a);
@@ -748,30 +748,64 @@ static void c3_robotarm_student_2021a_Ebox(void)
         /* Selector: '<S166>/Selector2' */
         robotarm_student_2021a_Ebox_DW.objectCoordinate1[0] =
           robotarm_student_2021a_Ebox_B.Selector2[0];
+        robotarm_student_2021a_Ebox_DW.objectCoordinate2[0] =
+          robotarm_student_2021a_Ebox_B.Selector2[3];
+        robotarm_student_2021a_Ebox_DW.objectCoordinate3[0] =
+          robotarm_student_2021a_Ebox_B.Selector2[6];
+        if (robotarm_student_2021a_Ebox_B.Sum > 1.0) {
+          robotarm_student_2021a_Ebox_DW.area[0] = 0.0;
+          robotarm_student_2021a_Ebox_DW.area[1] = 0.0;
+        } else {
+          /* Selector: '<S166>/Selector' */
+          robotarm_student_2021a_Ebox_DW.area[0] =
+            robotarm_student_2021a_Ebox_B.Selector[0];
+          robotarm_student_2021a_Ebox_DW.area[1] =
+            robotarm_student_2021a_Ebox_B.Selector[1];
+        }
+
+        /* Selector: '<S166>/Selector2' */
         robotarm_student_2021a_Ebox_DW.objectCoordinate1[1] =
           robotarm_student_2021a_Ebox_B.Selector2[1];
+        robotarm_student_2021a_Ebox_DW.objectCoordinate2[1] =
+          robotarm_student_2021a_Ebox_B.Selector2[4];
+        robotarm_student_2021a_Ebox_DW.objectCoordinate3[1] =
+          robotarm_student_2021a_Ebox_B.Selector2[7];
         robotarm_student_2021a_Ebox_DW.objectCoordinate1[2] =
           robotarm_student_2021a_Ebox_B.Selector2[2];
-        robotarm_student_2021a_Ebox_B.X_in =
+        robotarm_student_2021a_Ebox_DW.objectCoordinate2[2] =
+          robotarm_student_2021a_Ebox_B.Selector2[5];
+        robotarm_student_2021a_Ebox_DW.objectCoordinate3[2] =
+          robotarm_student_2021a_Ebox_B.Selector2[8];
+        if (robotarm_student_2021a_Ebox_B.Sum > 1.0) {
+          robotarm_student_2021a_Ebox_DW.area[2] = 0.0;
+        } else {
+          /* Selector: '<S166>/Selector' */
+          robotarm_student_2021a_Ebox_DW.area[2] =
+            robotarm_student_2021a_Ebox_B.Selector[2];
+        }
+
+        robotarm_student_2021a_Ebox_DW.X_in =
           robotarm_student_2021a_Ebox_DW.objectCoordinate1[0];
-        robotarm_student_2021a_Ebox_B.Y_in =
+        robotarm_student_2021a_Ebox_DW.Y_in =
           robotarm_student_2021a_Ebox_DW.objectCoordinate1[1];
+        robotarm_student_2021a_Ebox_DW.Z_in =
+          robotarm_student_2021a_Ebox_DW.objectCoordinate1[2];
         if (robotarm_student_2021a_Ebox_B.Constant == 0.0) {
           d_previousEvent = 25;
-          y = 140;
-          z = 30;
+          y = 190;
+          z = 50;
         } else if (robotarm_student_2021a_Ebox_B.Constant == 1.0) {
           d_previousEvent = 25;
-          y = 180;
-          z = 99;
+          y = 230;
+          z = 50;
         } else if (robotarm_student_2021a_Ebox_B.Constant == 2.0) {
           d_previousEvent = 65;
-          y = 140;
-          z = 99;
+          y = 190;
+          z = 50;
         } else if (robotarm_student_2021a_Ebox_B.Constant == 3.0) {
           d_previousEvent = 65;
-          y = 180;
-          z = 30;
+          y = 230;
+          z = 50;
         } else {
           d_previousEvent = 0;
           y = 125;
@@ -835,7 +869,7 @@ static void c3_robotarm_student_2021a_Ebox(void)
         robotarm_student_2021a_Ebox_DW.is_Robot_Arm =
           robotarm_student_IN_Move_Z_down;
         robotarm_student_2021a_Ebox_B.t = 2.0;
-        robotarm_stude_invkin_simulator(robotarm_student_2021a_Ebox_DW.x,
+        robotarm_student_2021a_E_invkin(robotarm_student_2021a_Ebox_DW.x,
           robotarm_student_2021a_Ebox_DW.y, robotarm_student_2021a_Ebox_DW.z,
           &robotarm_student_2021a_Ebox_B.R, &robotarm_student_2021a_Ebox_B.X,
           &robotarm_student_2021a_Ebox_B.Z);
@@ -847,7 +881,8 @@ static void c3_robotarm_student_2021a_Ebox(void)
         robotarm_student_2021a_Ebox_DW.is_Robot_Arm =
           robotarm_student_2_IN_Move_Z_up;
         robotarm_student_2021a_Ebox_DW.temporalCounter_i2 = 0U;
-        robotarm_stude_invkin_simulator(robotarm_student_2021a_Ebox_DW.x,
+        robotarm_student_2021a_Ebox_DW.Buffer_Z = 0.0;
+        robotarm_student_2021a_E_invkin(robotarm_student_2021a_Ebox_DW.x,
           robotarm_student_2021a_Ebox_DW.y, robotarm_student_2021a_Ebox_DW.z +
           robotarm_student_2021a_Ebox_DW.BUFFER_Z,
           &robotarm_student_2021a_Ebox_B.R, &robotarm_student_2021a_Ebox_B.X,
@@ -861,11 +896,11 @@ static void c3_robotarm_student_2021a_Ebox(void)
         robotarm_student_2021a_Ebox_DW.is_Robot_Arm =
           robotarm_stu_IN_MoveToIntercept;
         robotarm_student_2021a_Ebox_DW.temporalCounter_i2 = 0U;
-        robotarm_stude_invkin_simulator(robotarm_student_2021a_Ebox_B.X_in, 0.0,
+        robotarm_student_2021a_E_invkin(robotarm_student_2021a_Ebox_DW.X_in, 0.0,
           75.0, &robotarm_student_2021a_Ebox_B.R,
           &robotarm_student_2021a_Ebox_B.X, &robotarm_student_2021a_Ebox_B.Z);
         robotarm_student_2021a_Ebox_B.t = ((0.0 -
-          robotarm_student_2021a_Ebox_B.Y_in) /
+          robotarm_student_2021a_Ebox_DW.Y_in) /
           robotarm_student_2021a_Ebox_B.Conveyor -
           robotarm_student_2021a_Ebox_B.Sum) - robotarm_student_2021a_Ebox_B.Sum;
       }
@@ -886,7 +921,7 @@ static void c3_robotarm_student_2021a_Ebox(void)
         robotarm_student_2021a_Ebox_DW.sfEvent_b = d_previousEvent;
         if (robotarm_student_2021a_Ebox_DW.is_Robot_Arm ==
             robotarm_student_202_IN_Move_XY) {
-          robotarm_stude_invkin_simulator(robotarm_student_2021a_Ebox_DW.x,
+          robotarm_student_2021a_E_invkin(robotarm_student_2021a_Ebox_DW.x,
             robotarm_student_2021a_Ebox_DW.y, robotarm_student_2021a_Ebox_DW.z +
             robotarm_student_2021a_Ebox_DW.BUFFER_Z,
             &robotarm_student_2021a_Ebox_B.R, &robotarm_student_2021a_Ebox_B.X,
@@ -912,7 +947,7 @@ static void c3_robotarm_student_2021a_Ebox(void)
   if (robotarm_student_2021a_Ebox_DW.is_active_Vacuum != 0U) {
     switch (robotarm_student_2021a_Ebox_DW.is_Vacuum) {
      case robotarm_student_20_IN_AirBurst:
-      if (robotarm_student_2021a_Ebox_DW.temporalCounter_i1_g >= 1024U) {
+      if (robotarm_student_2021a_Ebox_DW.temporalCounter_i1_m >= 1024U) {
         robotarm_student_2021a_Ebox_DW.is_Vacuum =
           robotarm_student__IN_Vacuum_Off;
         robotarm_student_2021a_Ebox_B.Pump = 0.0;
@@ -933,7 +968,7 @@ static void c3_robotarm_student_2021a_Ebox(void)
           robotarm_studen_event_VacuumOff) {
         robotarm_student_2021a_Ebox_DW.is_Vacuum =
           robotarm_student_20_IN_AirBurst;
-        robotarm_student_2021a_Ebox_DW.temporalCounter_i1_g = 0U;
+        robotarm_student_2021a_Ebox_DW.temporalCounter_i1_m = 0U;
         robotarm_student_2021a_Ebox_B.Blow_suck = 1.0;
       } else {
         robotarm_student_2021a_Ebox_B.Blow_suck = 0.0;
@@ -954,9 +989,9 @@ static void enter_atomic_Start_AboveLabels(void)
 {
   int32_T b_previousEvent;
   robotarm_student_2021a_Ebox_B.t = 1.0;
-  robotarm_student_2021a_Ebox_B.R = 1.5707963267948966;
-  robotarm_student_2021a_Ebox_B.X = -0.30896030307383204;
-  robotarm_student_2021a_Ebox_B.Z = 0.0623571430524581;
+  robotarm_student_2021a_E_invkin(0.0, 125.0, 99.0,
+    &robotarm_student_2021a_Ebox_B.R, &robotarm_student_2021a_Ebox_B.X,
+    &robotarm_student_2021a_Ebox_B.Z);
   b_previousEvent = robotarm_student_2021a_Ebox_DW.sfEvent_b;
   robotarm_student_2021a_Ebox_DW.sfEvent_b = robotarm_studen_event_ScanAgain;
 
@@ -1968,37 +2003,6 @@ void robotarm_student_2021a_Ebox_step(void)
     }
 
     /* End of Outputs for SubSystem: '<S166>/Enabled Subsystem' */
-
-    /* ManualSwitch: '<S1>/Manual Switch' */
-    if (robotarm_student_2021a_Ebox_P.ManualSwitch_CurrentSetting == 1) {
-      /* ManualSwitch: '<S1>/Manual Switch' incorporates:
-       *  Constant: '<S1>/Constant1'
-       */
-      robotarm_student_2021a_Ebox_B.ManualSwitch =
-        robotarm_student_2021a_Ebox_P.Constant1_Value;
-    } else {
-      /* ManualSwitch: '<S1>/Manual Switch' incorporates:
-       *  Constant: '<S1>/Constant2'
-       */
-      robotarm_student_2021a_Ebox_B.ManualSwitch =
-        robotarm_student_2021a_Ebox_P.Constant2_Value;
-    }
-
-    /* End of ManualSwitch: '<S1>/Manual Switch' */
-
-    /* Selector: '<S166>/Selector3' incorporates:
-     *  Constant: '<S166>/Object detection matrix'
-     */
-    robotarm_student_2021a_Ebox_B.Selector3 =
-      robotarm_student_2021a_Ebox_P.Objectdetectionmatrix_Value[9];
-
-    /* Sum: '<S166>/Sum' */
-    robotarm_student_2021a_Ebox_B.Sum = robotarm_student_2021a_Ebox_B.In1 -
-      robotarm_student_2021a_Ebox_B.Selector3;
-
-    /* Constant: '<S1>/Constant' */
-    robotarm_student_2021a_Ebox_B.Constant =
-      robotarm_student_2021a_Ebox_P.Constant_Value;
     for (robotarm_student_2021a_Ebox_B.i = 0; robotarm_student_2021a_Ebox_B.i <
          3; robotarm_student_2021a_Ebox_B.i++) {
       /* Selector: '<S166>/Selector2' incorporates:
@@ -2042,10 +2046,41 @@ void robotarm_student_2021a_Ebox_step(void)
         robotarm_student_2021a_Ebox_B.fy2_tmp;
     }
 
+    /* ManualSwitch: '<S1>/Manual Switch' */
+    if (robotarm_student_2021a_Ebox_P.ManualSwitch_CurrentSetting == 1) {
+      /* ManualSwitch: '<S1>/Manual Switch' incorporates:
+       *  Constant: '<S1>/Constant1'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch =
+        robotarm_student_2021a_Ebox_P.Constant1_Value;
+    } else {
+      /* ManualSwitch: '<S1>/Manual Switch' incorporates:
+       *  Constant: '<S1>/Constant2'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch =
+        robotarm_student_2021a_Ebox_P.Constant2_Value;
+    }
+
+    /* End of ManualSwitch: '<S1>/Manual Switch' */
+
+    /* Selector: '<S166>/Selector3' incorporates:
+     *  Constant: '<S166>/Object detection matrix'
+     */
+    robotarm_student_2021a_Ebox_B.Selector3 =
+      robotarm_student_2021a_Ebox_P.Objectdetectionmatrix_Value[9];
+
+    /* Sum: '<S166>/Sum' */
+    robotarm_student_2021a_Ebox_B.Sum = robotarm_student_2021a_Ebox_B.In1 -
+      robotarm_student_2021a_Ebox_B.Selector3;
+
+    /* Constant: '<S1>/Constant' */
+    robotarm_student_2021a_Ebox_B.Constant =
+      robotarm_student_2021a_Ebox_P.Constant_Value;
+
     /* Chart: '<S1>/Stateflow ' */
     if (robotarm_student_2021a_Ebox_DW.isNotInit) {
-      if (robotarm_student_2021a_Ebox_DW.temporalCounter_i1_g < 2047U) {
-        robotarm_student_2021a_Ebox_DW.temporalCounter_i1_g++;
+      if (robotarm_student_2021a_Ebox_DW.temporalCounter_i1_m < 2047U) {
+        robotarm_student_2021a_Ebox_DW.temporalCounter_i1_m++;
       }
 
       if (robotarm_student_2021a_Ebox_DW.temporalCounter_i2 < MAX_uint32_T) {
@@ -3807,10 +3842,10 @@ void robotarm_student_2021a_Ebox_initialize(void)
   robotarm_student_2021a_Ebox_M->Timing.stepSize1 = 0.00048828125;
 
   /* External mode info */
-  robotarm_student_2021a_Ebox_M->Sizes.checksums[0] = (3317973973U);
-  robotarm_student_2021a_Ebox_M->Sizes.checksums[1] = (4033038992U);
-  robotarm_student_2021a_Ebox_M->Sizes.checksums[2] = (126741576U);
-  robotarm_student_2021a_Ebox_M->Sizes.checksums[3] = (929200203U);
+  robotarm_student_2021a_Ebox_M->Sizes.checksums[0] = (4025008068U);
+  robotarm_student_2021a_Ebox_M->Sizes.checksums[1] = (2751157822U);
+  robotarm_student_2021a_Ebox_M->Sizes.checksums[2] = (1639653707U);
+  robotarm_student_2021a_Ebox_M->Sizes.checksums[3] = (2004747334U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
@@ -10985,15 +11020,28 @@ void robotarm_student_2021a_Ebox_initialize(void)
     robotarm_student_2021a_Ebox_DW.temporalCounter_i2 = 0U;
     robotarm_student_2021a_Ebox_DW.is_active_Vacuum = 0U;
     robotarm_student_2021a_Ebox_DW.is_Vacuum = 0U;
-    robotarm_student_2021a_Ebox_DW.temporalCounter_i1_g = 0U;
+    robotarm_student_2021a_Ebox_DW.temporalCounter_i1_m = 0U;
     robotarm_student_2021a_Ebox_DW.is_active_dataAssign = 0U;
     robotarm_student_2021a_Ebox_DW.z = 0.0;
     robotarm_student_2021a_Ebox_DW.y = 0.0;
     robotarm_student_2021a_Ebox_DW.x = 0.0;
     robotarm_student_2021a_Ebox_DW.BUFFER_Z = 80.0;
+    robotarm_student_2021a_Ebox_DW.X_in = 0.0;
+    robotarm_student_2021a_Ebox_DW.Y_in = 0.0;
     robotarm_student_2021a_Ebox_DW.objectCoordinate1[0] = 0.0;
+    robotarm_student_2021a_Ebox_DW.objectCoordinate2[0] = 0.0;
+    robotarm_student_2021a_Ebox_DW.objectCoordinate3[0] = 0.0;
+    robotarm_student_2021a_Ebox_DW.area[0] = 0.0;
     robotarm_student_2021a_Ebox_DW.objectCoordinate1[1] = 0.0;
+    robotarm_student_2021a_Ebox_DW.objectCoordinate2[1] = 0.0;
+    robotarm_student_2021a_Ebox_DW.objectCoordinate3[1] = 0.0;
+    robotarm_student_2021a_Ebox_DW.area[1] = 0.0;
     robotarm_student_2021a_Ebox_DW.objectCoordinate1[2] = 0.0;
+    robotarm_student_2021a_Ebox_DW.objectCoordinate2[2] = 0.0;
+    robotarm_student_2021a_Ebox_DW.objectCoordinate3[2] = 0.0;
+    robotarm_student_2021a_Ebox_DW.area[2] = 0.0;
+    robotarm_student_2021a_Ebox_DW.Z_in = 0.0;
+    robotarm_student_2021a_Ebox_DW.Buffer_Z = 0.0;
     robotarm_student_2021a_Ebox_B.Pump = 0.0;
     robotarm_student_2021a_Ebox_B.Blow_suck = 0.0;
     robotarm_student_2021a_Ebox_B.Conveyor = 0.0;
@@ -11001,8 +11049,6 @@ void robotarm_student_2021a_Ebox_initialize(void)
     robotarm_student_2021a_Ebox_B.X = 0.0;
     robotarm_student_2021a_Ebox_B.Z = 0.0;
     robotarm_student_2021a_Ebox_B.R = 0.0;
-    robotarm_student_2021a_Ebox_B.X_in = 0.0;
-    robotarm_student_2021a_Ebox_B.Y_in = 0.0;
     robotarm_student_2021a_Ebox_DW.isNotInit = false;
     robotarm_student_2021a_Ebox_DW.sfEvent_b = robotarm_student_202_CALL_EVENT;
 

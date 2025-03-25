@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.2
+ * Model version              : 2.43
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Fri Jan 24 13:11:34 2025
+ * C source code generated on : Tue Mar 25 14:20:36 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -24,8 +24,28 @@
 #include "multiword_types.h"
 
 /* Model Code Variants */
+#ifndef struct_emxArray_real_T
+#define struct_emxArray_real_T
 
-/* Custom Type definition for MATLABSystem: '<S28>/Serial Write1' */
+struct emxArray_real_T
+{
+  real_T *data;
+  int32_T *size;
+  int32_T allocatedSize;
+  int32_T numDimensions;
+  boolean_T canFreeData;
+};
+
+#endif                                 /* struct_emxArray_real_T */
+
+#ifndef typedef_emxArray_real_T_robotarm_stud_T
+#define typedef_emxArray_real_T_robotarm_stud_T
+
+typedef struct emxArray_real_T emxArray_real_T_robotarm_stud_T;
+
+#endif                             /* typedef_emxArray_real_T_robotarm_stud_T */
+
+/* Custom Type definition for MATLABSystem: '<S185>/Serial Write1' */
 #include "MW_SVD.h"
 #ifndef struct_tag_vB8gURpcbTUBlHcczw228B
 #define struct_tag_vB8gURpcbTUBlHcczw228B

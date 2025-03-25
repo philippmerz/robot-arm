@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.2
+ * Model version              : 2.43
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Fri Jan 24 13:11:34 2025
+ * C source code generated on : Tue Mar 25 14:20:36 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -59,9 +59,18 @@ extern "C" {
 extern void dweakint(SimStruct *rts);
 extern void dlowpass1(SimStruct *rts);
 extern void dleadlag(SimStruct *rts);
+extern void dpd(SimStruct *rts);
+extern void dnotch(SimStruct *rts);
 extern void ec_Supervisor(SimStruct *rts);
 extern void ec_Ebox(SimStruct *rts);
 extern void ec_EboxResetEnc(SimStruct *rts);
+extern void rob_quintictrajectorytime3_Init(DW_quintictrajectorytime3_rob_T
+  *localDW);
+extern void quintictrajectorytim_CleanupRTR(DW_quintictrajectorytime3_rob_T
+  *localDW);
+extern void robotarm_quintictrajectorytime3(real_T rtu_reference_end, real_T
+  rtu_end_time, real_T rtu_measured_position, B_quintictrajectorytime3_robo_T
+  *localB, DW_quintictrajectorytime3_rob_T *localDW);
 extern void robotarm_stu_SerialWrite1_Start(DW_SerialWrite1_robotarm_stud_T
   *localDW);
 extern void robotarm_student_2_SerialWrite1(const uint8_T rtu_0[32],
