@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.39
+ * Model version              : 2.40
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Mar 25 10:40:44 2025
+ * C source code generated on : Tue Mar 25 11:30:57 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -168,6 +168,7 @@ typedef struct {
 typedef struct {
   char_T rtb_StringConcatenate_m[256];
   char_T HomingRunningSwitch_c[256];   /* '<S177>/Homing Running Switch' */
+  real_T ec_Ebox_o3_p[8];              /* '<S172>/ec_Ebox' */
   uint8_T MatrixConcatenate1[32];      /* '<S185>/Matrix Concatenate1' */
   uint8_T MatrixConcatenate[32];       /* '<S186>/Matrix Concatenate' */
   char_T cv[31];
@@ -178,7 +179,6 @@ typedef struct {
   real_T ec_Ebox_o3[8];                /* '<S171>/ec_Ebox' */
   real_T ec_Ebox_o1_h[2];              /* '<S172>/ec_Ebox' */
   real_T ec_Ebox_o2_o[2];              /* '<S172>/ec_Ebox' */
-  real_T ec_Ebox_o3_p[8];              /* '<S172>/ec_Ebox' */
   real_T ec_Ebox_o1_o[2];              /* '<S173>/ec_Ebox' */
   real_T ec_Ebox_o2_p[2];              /* '<S173>/ec_Ebox' */
   real_T ec_Ebox_o3_j[8];              /* '<S173>/ec_Ebox' */
@@ -296,6 +296,7 @@ typedef struct {
   real_T Sum5;                         /* '<S1>/Sum5' */
   real_T Gain1_o;                      /* '<S5>/Gain1' */
   real_T AddConstant;                  /* '<S15>/Add Constant' */
+  real_T Object;                       /* '<S15>/Object' */
   real_T Plot;                         /* '<S15>/Plot' */
   real_T Stop;                         /* '<S15>/Stop' */
   real_T In1;                          /* '<S168>/In1' */
@@ -306,6 +307,8 @@ typedef struct {
   real_T X;                            /* '<S1>/Stateflow ' */
   real_T Z;                            /* '<S1>/Stateflow ' */
   real_T R;                            /* '<S1>/Stateflow ' */
+  real_T X_in;                         /* '<S1>/Stateflow ' */
+  real_T Y_in;                         /* '<S1>/Stateflow ' */
   real_T d12;
   real_T Sum2_k;                       /* '<S178>/Sum2' */
   real_T Sum4_c;                       /* '<S169>/Sum4' */
@@ -595,11 +598,11 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Delays_Y0;                    /* Computed Parameter: Delays_Y0
                                         * Referenced by: '<S168>/Delay [s]'
                                         */
-  real_T Constant2_Value;              /* Expression: 0
-                                        * Referenced by: '<S1>/Constant2'
-                                        */
-  real_T Constant1_Value;              /* Expression: 1
+  real_T Constant1_Value;              /* Expression: 0
                                         * Referenced by: '<S1>/Constant1'
+                                        */
+  real_T Constant2_Value;              /* Expression: 1
+                                        * Referenced by: '<S1>/Constant2'
                                         */
   real_T RobotV_Y0;                    /* Computed Parameter: RobotV_Y0
                                         * Referenced by: '<S1>/Robot [V]'
@@ -611,7 +614,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
                                         * Referenced by: '<S1>/Vacuum [V] '
                                         */
   real_T Objectdetectionmatrix_Value[12];
-  /* Expression: [0                    0                    0      1738079509.4003;0  0  0  0;0  0  0  0]
+  /* Expression: [0                    0                    0      1738082935.0803;0  0  0  0;0  0  0  0]
    * Referenced by: '<S166>/Object detection matrix'
    */
   real_T Constant_Value;               /* Expression: 1
@@ -942,6 +945,9 @@ struct P_robotarm_student_2021a_Ebox_T_ {
                                         */
   real_T AddConstant_Bias;             /* Expression: 1
                                         * Referenced by: '<S15>/Add Constant'
+                                        */
+  real_T Object_Value;                 /* Expression: 1
+                                        * Referenced by: '<S15>/Object'
                                         */
   real_T Plot_Value;                   /* Expression: 0
                                         * Referenced by: '<S15>/Plot'
@@ -2382,7 +2388,6 @@ extern RT_MODEL_robotarm_student_2021a_Ebox_T *const
  * Block '<S11>/Data Type Duplicate' : Unused code path elimination
  * Block '<S12>/Data Type Duplicate' : Unused code path elimination
  * Block '<S13>/Data Type Duplicate' : Unused code path elimination
- * Block '<S15>/Object' : Unused code path elimination
  * Block '<S193>/Data Type Duplicate' : Unused code path elimination
  * Block '<S202>/Data Type Duplicate' : Unused code path elimination
  * Block '<S212>/Data Type Duplicate' : Unused code path elimination
