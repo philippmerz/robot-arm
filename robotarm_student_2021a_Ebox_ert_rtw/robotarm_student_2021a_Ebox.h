@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.37
+ * Model version              : 2.39
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Mon Mar 24 14:29:20 2025
+ * C source code generated on : Tue Mar 25 10:40:44 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -264,6 +264,7 @@ typedef struct {
   real_T y_j;                          /* '<S178>/Angle2Z' */
   real_T SFunctionBuilder;             /* '<S166>/S-Function Builder' */
   real_T Selector2[9];                 /* '<S166>/Selector2' */
+  real_T ManualSwitch;                 /* '<S1>/Manual Switch' */
   real_T Selector3;                    /* '<S166>/Selector3' */
   real_T Sum;                          /* '<S166>/Sum' */
   real_T Constant;                     /* '<S1>/Constant' */
@@ -294,10 +295,9 @@ typedef struct {
   real_T Sum6;                         /* '<S1>/Sum6' */
   real_T Sum5;                         /* '<S1>/Sum5' */
   real_T Gain1_o;                      /* '<S5>/Gain1' */
-  real_T Object;                       /* '<S15>/Object' */
+  real_T AddConstant;                  /* '<S15>/Add Constant' */
   real_T Plot;                         /* '<S15>/Plot' */
   real_T Stop;                         /* '<S15>/Stop' */
-  real_T Object1;                      /* '<S15>/Object1' */
   real_T In1;                          /* '<S168>/In1' */
   real_T Pump;                         /* '<S1>/Stateflow ' */
   real_T Blow_suck;                    /* '<S1>/Stateflow ' */
@@ -311,7 +311,7 @@ typedef struct {
   real_T Sum4_c;                       /* '<S169>/Sum4' */
   real_T Sum1_k;                       /* '<S169>/Sum1' */
   real_T Diff_h;                       /* '<S212>/Diff' */
-  real_T ManualSwitch;                 /* '<S6>/Manual Switch' */
+  real_T Object1;                      /* '<S15>/Object1' */
   real_T fy2_tmp;
   real_T d12_tmp;
   real_T d13_tmp;
@@ -474,9 +474,9 @@ typedef struct {
   uint8_T is_active_c3_robotarm_student_2;/* '<S1>/Stateflow ' */
   uint8_T is_active_Vacuum;            /* '<S1>/Stateflow ' */
   uint8_T is_active_Robot_Arm;         /* '<S1>/Stateflow ' */
+  uint8_T is_active_dataAssign;        /* '<S1>/Stateflow ' */
   uint8_T is_active_Belt;              /* '<S1>/Stateflow ' */
   uint8_T is_active_Object_Detection;  /* '<S1>/Stateflow ' */
-  uint8_T is_active_dataAssign;        /* '<S1>/Stateflow ' */
   boolean_T doneDoubleBufferReInit;    /* '<S1>/Stateflow ' */
   boolean_T isNotInit;                 /* '<S1>/Stateflow ' */
   boolean_T Controller_MODE;           /* '<Root>/Controller' */
@@ -595,6 +595,12 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Delays_Y0;                    /* Computed Parameter: Delays_Y0
                                         * Referenced by: '<S168>/Delay [s]'
                                         */
+  real_T Constant2_Value;              /* Expression: 0
+                                        * Referenced by: '<S1>/Constant2'
+                                        */
+  real_T Constant1_Value;              /* Expression: 1
+                                        * Referenced by: '<S1>/Constant1'
+                                        */
   real_T RobotV_Y0;                    /* Computed Parameter: RobotV_Y0
                                         * Referenced by: '<S1>/Robot [V]'
                                         */
@@ -605,9 +611,9 @@ struct P_robotarm_student_2021a_Ebox_T_ {
                                         * Referenced by: '<S1>/Vacuum [V] '
                                         */
   real_T Objectdetectionmatrix_Value[12];
-                               /* Expression: [0  0  0  0;0  0  0  0;0  0  0  0]
-                                * Referenced by: '<S166>/Object detection matrix'
-                                */
+  /* Expression: [0                    0                    0      1738079509.4003;0  0  0  0;0  0  0  0]
+   * Referenced by: '<S166>/Object detection matrix'
+   */
   real_T Constant_Value;               /* Expression: 1
                                         * Referenced by: '<S1>/Constant'
                                         */
@@ -922,15 +928,6 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Saturation_LowerSat;          /* Expression: -100
                                         * Referenced by: '<S1>/Saturation '
                                         */
-  real_T Object_Value;                 /* Expression: 1
-                                        * Referenced by: '<S15>/Object'
-                                        */
-  real_T Plot_Value;                   /* Expression: 0
-                                        * Referenced by: '<S15>/Plot'
-                                        */
-  real_T Stop_Value;                   /* Expression: 0
-                                        * Referenced by: '<S15>/Stop'
-                                        */
   real_T Object1_Amp;                  /* Expression: 1
                                         * Referenced by: '<S15>/Object1'
                                         */
@@ -943,7 +940,16 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Object1_PhaseDelay;           /* Expression: 1
                                         * Referenced by: '<S15>/Object1'
                                         */
-  real_T Constant1_Value;              /* Expression: 5
+  real_T AddConstant_Bias;             /* Expression: 1
+                                        * Referenced by: '<S15>/Add Constant'
+                                        */
+  real_T Plot_Value;                   /* Expression: 0
+                                        * Referenced by: '<S15>/Plot'
+                                        */
+  real_T Stop_Value;                   /* Expression: 0
+                                        * Referenced by: '<S15>/Stop'
+                                        */
+  real_T Constant1_Value_f;            /* Expression: 5
                                         * Referenced by: '<S169>/Constant1'
                                         */
   real_T Gain5_Gain_e;                 /* Expression: 0.25
@@ -1028,7 +1034,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T DiscreteTimeIntegrator_IC;    /* Expression: 0
                                         * Referenced by: '<S178>/Discrete-Time Integrator'
                                         */
-  real_T Constant1_Value_f;            /* Expression: 0
+  real_T Constant1_Value_f3;           /* Expression: 0
                                         * Referenced by: '<S190>/Constant1'
                                         */
   real_T DiscreteTimeIntegrator_gainva_b;
@@ -1600,8 +1606,12 @@ struct P_robotarm_student_2021a_Ebox_T_ {
                                     */
   uint8_T ManualSwitch_CurrentSetting;
                               /* Computed Parameter: ManualSwitch_CurrentSetting
-                               * Referenced by: '<S4>/Manual Switch'
+                               * Referenced by: '<S1>/Manual Switch'
                                */
+  uint8_T ManualSwitch_CurrentSetting_c;
+                            /* Computed Parameter: ManualSwitch_CurrentSetting_c
+                             * Referenced by: '<S4>/Manual Switch'
+                             */
   uint8_T ManualSwitch_CurrentSetting_d;
                             /* Computed Parameter: ManualSwitch_CurrentSetting_d
                              * Referenced by: '<S7>/Manual Switch'
@@ -2372,6 +2382,7 @@ extern RT_MODEL_robotarm_student_2021a_Ebox_T *const
  * Block '<S11>/Data Type Duplicate' : Unused code path elimination
  * Block '<S12>/Data Type Duplicate' : Unused code path elimination
  * Block '<S13>/Data Type Duplicate' : Unused code path elimination
+ * Block '<S15>/Object' : Unused code path elimination
  * Block '<S193>/Data Type Duplicate' : Unused code path elimination
  * Block '<S202>/Data Type Duplicate' : Unused code path elimination
  * Block '<S212>/Data Type Duplicate' : Unused code path elimination

@@ -68,6 +68,14 @@
       IsTestPoint  1\
     }\
     ChartData {\
+      Name         "is_active_dataAssign"\
+      Description  "StateIsActive"\
+      SFName       "is_active_dataAssign"\
+      Path         "dataAssign.is_active_dataAssign"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
       Name         "is_Belt"\
       Description  "StateActiveChild"\
       SFName       "is_Belt"\
@@ -96,14 +104,6 @@
       Description  "StateIsActive"\
       SFName       "is_active_Object_Detection"\
       Path         "Object_Detection.is_active_Object_Detection"\
-      SrcLocation  ""\
-      IsTestPoint  1\
-    }\
-    ChartData {\
-      Name         "is_active_dataAssign"\
-      Description  "StateIsActive"\
-      SFName       "is_active_dataAssign"\
-      Path         "dataAssign.is_active_dataAssign"\
       SrcLocation  ""\
       IsTestPoint  1\
     }\

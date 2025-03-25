@@ -13,18 +13,18 @@
 %% Set detection variables; ONLY MAKE CHANGES IN THIS SECTION!
 % Color; change to exported color threshold function from the app "Color
 % Thresholder" per object
-mask_object_1 = @example_mask_red;
-mask_object_2 = @example_mask_yellow;
+mask_object_1 = @Bluemask3;
+mask_object_2 = @redMask2;
 mask_object_3 = @example_mask_blue;
 
 % Blob area; minimum and maximum area for the blob analysis per object
 % in pixels
-min_blob_area_object_1 = 1000;  % Minimal blob area in pixels for object 1
-max_blob_area_object_1 = 40000; % Maximum blob area in pixels for object 1       
-min_blob_area_object_2 = 1000;  % Minimal blob area in pixels for object 2
-max_blob_area_object_2 = 40000; % Maximum blob area in pixels for object 2     
-min_blob_area_object_3 = 1000;  % Minimal blob area in pixels for object 3
-max_blob_area_object_3 = 40000; % Maximum blob area in pixels for object 3       
+min_blob_area_object_1 = 10000;  % Minimal blob area in pixels for object 1
+max_blob_area_object_1 = 400000; % Maximum blob area in pixels for object 1       
+min_blob_area_object_2 = 10000;  % Minimal blob area in pixels for object 2
+max_blob_area_object_2 = 400000; % Maximum blob area in pixels for object 2     
+min_blob_area_object_3 = 10000;  % Minimal blob area in pixels for object 3
+max_blob_area_object_3 = 400000; % Maximum blob area in pixels for object 3       
 
 % Framerate in Hz of the object detection; set this lower if you notice
 % that the model is running slow. Do not set it higher than 5. 
@@ -131,7 +131,7 @@ while stop_detection ~= 1 %&& strcmp(get_param(file_name_simulink,...
     position_matrix(max_objects+1,1) = unix_time;
     
     set_param(file_name_simulink + ...
-        "/Controller/Camera/Object detection matrix",'Value',"["+num2str...
+        "/Controller/Subsystem/Camera/Object detection matrix",'Value',"["+num2str...
         (position_matrix(:,1)')+";"+num2str(position_matrix(:,2)')...
         +";"+num2str(position_matrix(:,3)')+"]");
     
@@ -238,7 +238,7 @@ function [x, y, area, figure_open, image_handle, f] = object_detection(...
         
         if ~ishandle(image_handle)
             figure_open = false;
-            set_param(file_name_simulink + "/Controller/Plot",'Value',"0")
+            set_param(file_name_simulink + "/Controller/Subsystem/Plot",'Value',"0")
             return
         end 
         

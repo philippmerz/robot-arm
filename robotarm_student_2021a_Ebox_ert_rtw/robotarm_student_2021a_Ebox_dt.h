@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.37
+ * Model version              : 2.39
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Mon Mar 24 14:29:20 2025
+ * C source code generated on : Tue Mar 25 10:40:44 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -161,12 +161,12 @@ static DataTypeTransitionTable rtBTransTable = {
 
 /* data type transitions for Parameters structure */
 static DataTypeTransition rtPTransitions[] = {
-  { (char_T *)(&robotarm_student_2021a_Ebox_P.PIDController_D), 0, 0, 455 },
+  { (char_T *)(&robotarm_student_2021a_Ebox_P.PIDController_D), 0, 0, 457 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_P.LEDRing_Y0[0]), 14, 0, 2560 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_P.ManualSwitch_CurrentSetting), 3, 0,
-    6 }
+    7 }
 };
 
 /* data type transition table for Parameters structure */

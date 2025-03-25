@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.37
+ * Model version              : 2.39
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Mon Mar 24 14:29:20 2025
+ * C source code generated on : Tue Mar 25 10:40:44 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -173,6 +173,16 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
+  /* Expression: 0
+   * Referenced by: '<S1>/Constant2'
+   */
+  0.0,
+
+  /* Expression: 1
+   * Referenced by: '<S1>/Constant1'
+   */
+  1.0,
+
   /* Computed Parameter: RobotV_Y0
    * Referenced by: '<S1>/Robot [V]'
    */
@@ -188,10 +198,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Expression: [0  0  0  0;0  0  0  0;0  0  0  0]
+  /* Expression: [0                    0                    0      1738079509.4003;0  0  0  0;0  0  0  0]
    * Referenced by: '<S166>/Object detection matrix'
    */
-  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
+  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.7380795094003E+9, 0.0, 0.0 },
 
   /* Expression: 1
    * Referenced by: '<S1>/Constant'
@@ -709,21 +719,6 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   -100.0,
 
   /* Expression: 1
-   * Referenced by: '<S15>/Object'
-   */
-  1.0,
-
-  /* Expression: 0
-   * Referenced by: '<S15>/Plot'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S15>/Stop'
-   */
-  0.0,
-
-  /* Expression: 1
    * Referenced by: '<S15>/Object1'
    */
   1.0,
@@ -742,6 +737,21 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    * Referenced by: '<S15>/Object1'
    */
   1.0,
+
+  /* Expression: 1
+   * Referenced by: '<S15>/Add Constant'
+   */
+  1.0,
+
+  /* Expression: 0
+   * Referenced by: '<S15>/Plot'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S15>/Stop'
+   */
+  0.0,
 
   /* Expression: 5
    * Referenced by: '<S169>/Constant1'
@@ -1756,7 +1766,7 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   /* Computed Parameter: Colorspecifiedin6hexdigitsrrggb
    * Referenced by: '<S15>/Color; specified in 6 hex digits, rrggbb'
    */
-  "0072bd",
+  "8ab1ff",
 
   /* Computed Parameter: StringConstant3_String
    * Referenced by: '<S186>/String Constant3'
@@ -1794,6 +1804,11 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   "",
 
   /* Computed Parameter: ManualSwitch_CurrentSetting
+   * Referenced by: '<S1>/Manual Switch'
+   */
+  1U,
+
+  /* Computed Parameter: ManualSwitch_CurrentSetting_c
    * Referenced by: '<S4>/Manual Switch'
    */
   0U,
