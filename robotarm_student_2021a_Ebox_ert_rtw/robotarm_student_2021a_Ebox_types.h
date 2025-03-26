@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.43
+ * Model version              : 2.82
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Mar 25 14:59:26 2025
+ * C source code generated on : Wed Mar 26 13:00:49 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -45,7 +45,7 @@ typedef struct emxArray_real_T emxArray_real_T_robotarm_stud_T;
 
 #endif                             /* typedef_emxArray_real_T_robotarm_stud_T */
 
-/* Custom Type definition for MATLABSystem: '<S185>/Serial Write1' */
+/* Custom Type definition for MATLABSystem: '<S192>/Serial Write1' */
 #include "MW_SVD.h"
 #ifndef struct_tag_vB8gURpcbTUBlHcczw228B
 #define struct_tag_vB8gURpcbTUBlHcczw228B
@@ -84,6 +84,9 @@ struct tag_QY5kIkagyBWqman9TieI9D
 typedef struct tag_QY5kIkagyBWqman9TieI9D codertarget_raspi_internal_SC_T;
 
 #endif                             /* typedef_codertarget_raspi_internal_SC_T */
+
+/* Parameters for system: '<S166>/If Action Subsystem' */
+typedef struct P_IfActionSubsystem_robotarm__T_ P_IfActionSubsystem_robotarm__T;
 
 /* Parameters (default storage) */
 typedef struct P_robotarm_student_2021a_Ebox_T_ P_robotarm_student_2021a_Ebox_T;

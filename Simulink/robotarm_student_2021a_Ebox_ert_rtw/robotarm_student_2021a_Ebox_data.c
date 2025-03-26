@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.43
+ * Model version              : 2.73
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Mar 25 14:20:36 2025
+ * C source code generated on : Wed Mar 26 12:00:32 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -84,17 +84,17 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   0.0,
 
   /* Mask Parameter: DiscreteDerivative_ICPrevScal_p
-   * Referenced by: '<S193>/UD'
+   * Referenced by: '<S200>/UD'
    */
   0.0,
 
   /* Mask Parameter: DiscreteDerivative_ICPrevSca_pl
-   * Referenced by: '<S202>/UD'
+   * Referenced by: '<S209>/UD'
    */
   0.0,
 
   /* Mask Parameter: DiscreteDerivative_ICPrevScal_i
-   * Referenced by: '<S212>/UD'
+   * Referenced by: '<S219>/UD'
    */
   0.0,
 
@@ -159,7 +159,7 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   20.0,
 
   /* Mask Parameter: CompareToConstant_const
-   * Referenced by: '<S175>/Constant'
+   * Referenced by: '<S182>/Constant'
    */
   4.0,
 
@@ -173,15 +173,75 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
+  /* Expression: 100
+   * Referenced by: '<S166>/Constant'
+   */
+  100.0,
+
   /* Expression: 0
-   * Referenced by: '<S1>/Constant1'
+   * Referenced by: '<S166>/Constant2'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Switch'
+   */
+  0.0,
+
+  /* Expression: 100
+   * Referenced by: '<S166>/Constant1'
+   */
+  100.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant3'
+   */
+  1.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Switch1'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Constant5'
    */
   0.0,
 
   /* Expression: 1
-   * Referenced by: '<S1>/Constant2'
+   * Referenced by: '<S166>/Constant4'
    */
   1.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Constant7'
+   */
+  0.0,
+
+  /* Expression: 2
+   * Referenced by: '<S166>/Constant6'
+   */
+  2.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Constant9'
+   */
+  0.0,
+
+  /* Expression: 3
+   * Referenced by: '<S166>/Constant8'
+   */
+  3.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Constant11'
+   */
+  0.0,
+
+  /* Expression: 4
+   * Referenced by: '<S166>/Constant10'
+   */
+  4.0,
 
   /* Computed Parameter: RobotV_Y0
    * Referenced by: '<S1>/Robot [V]'
@@ -202,6 +262,126 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    * Referenced by: '<S166>/Object detection matrix'
    */
   { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.7380833131993E+9, 0.0, 0.0 },
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Pulse Generator'
+   */
+  1.0,
+
+  /* Computed Parameter: PulseGenerator_Period
+   * Referenced by: '<S166>/Pulse Generator'
+   */
+  1024.0,
+
+  /* Computed Parameter: PulseGenerator_Duty
+   * Referenced by: '<S166>/Pulse Generator'
+   */
+  512.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Pulse Generator'
+   */
+  0.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant12'
+   */
+  1.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Pulse Generator1'
+   */
+  1.0,
+
+  /* Computed Parameter: PulseGenerator1_Period
+   * Referenced by: '<S166>/Pulse Generator1'
+   */
+  1024.0,
+
+  /* Computed Parameter: PulseGenerator1_Duty
+   * Referenced by: '<S166>/Pulse Generator1'
+   */
+  512.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Pulse Generator1'
+   */
+  0.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant13'
+   */
+  1.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Pulse Generator2'
+   */
+  1.0,
+
+  /* Computed Parameter: PulseGenerator2_Period
+   * Referenced by: '<S166>/Pulse Generator2'
+   */
+  1024.0,
+
+  /* Computed Parameter: PulseGenerator2_Duty
+   * Referenced by: '<S166>/Pulse Generator2'
+   */
+  512.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Pulse Generator2'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Switch2'
+   */
+  0.0,
+
+  /* Expression: 100
+   * Referenced by: '<S166>/Constant18'
+   */
+  100.0,
+
+  /* Expression: 2
+   * Referenced by: '<S166>/Constant15'
+   */
+  2.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant14'
+   */
+  1.0,
+
+  /* Expression: 4
+   * Referenced by: '<S166>/Constant17'
+   */
+  4.0,
+
+  /* Expression: 3
+   * Referenced by: '<S166>/Constant16'
+   */
+  3.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Switch5'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Switch3'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Switch4'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Switch6'
+   */
+  0.0,
 
   /* Expression: 1
    * Referenced by: '<S1>/Constant'
@@ -726,25 +906,20 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   /* Computed Parameter: Object1_Period
    * Referenced by: '<S15>/Object1'
    */
-  2048.0,
+  1024.0,
 
   /* Computed Parameter: Object1_Duty
    * Referenced by: '<S15>/Object1'
    */
-  1024.0,
+  512.0,
 
-  /* Expression: 1
+  /* Expression: 0
    * Referenced by: '<S15>/Object1'
    */
-  1.0,
+  0.0,
 
   /* Expression: 1
    * Referenced by: '<S15>/Add Constant'
-   */
-  1.0,
-
-  /* Expression: 1
-   * Referenced by: '<S15>/Object'
    */
   1.0,
 
@@ -759,1002 +934,1002 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   0.0,
 
   /* Expression: 5
-   * Referenced by: '<S169>/Constant1'
+   * Referenced by: '<S176>/Constant1'
    */
   5.0,
 
   /* Expression: 0.25
-   * Referenced by: '<S169>/Gain5'
+   * Referenced by: '<S176>/Gain5'
    */
   0.25,
 
   /* Expression: 50
-   * Referenced by: '<S177>/Homing Running Switch2'
+   * Referenced by: '<S184>/Homing Running Switch2'
    */
   50.0,
 
   /* Expression: 2.5
-   * Referenced by: '<S177>/Homing Running Switch1'
+   * Referenced by: '<S184>/Homing Running Switch1'
    */
   2.5,
 
   /* Expression: 0.7
-   * Referenced by: '<S178>/Saturation'
+   * Referenced by: '<S185>/Saturation'
    */
   0.7,
 
   /* Expression: -0.7
-   * Referenced by: '<S178>/Saturation'
+   * Referenced by: '<S185>/Saturation'
    */
   -0.7,
 
   /* Expression: 0.5
-   * Referenced by: '<S178>/Homing Running Switch'
+   * Referenced by: '<S185>/Homing Running Switch'
    */
   0.5,
 
   /* Expression: 0.5
-   * Referenced by: '<S179>/Homing Running Switch'
+   * Referenced by: '<S186>/Homing Running Switch'
    */
   0.5,
 
   /* Expression: 0.5
-   * Referenced by: '<S180>/Homing Running Switch'
+   * Referenced by: '<S187>/Homing Running Switch'
    */
   0.5,
 
   /* Computed Parameter: SFunction_P1_Size
-   * Referenced by: '<S174>/S-Function'
+   * Referenced by: '<S181>/S-Function'
    */
   { 1.0, 1.0 },
 
   /* Expression: portid
-   * Referenced by: '<S174>/S-Function'
+   * Referenced by: '<S181>/S-Function'
    */
   0.0,
 
   /* Computed Parameter: SFunction_P2_Size
-   * Referenced by: '<S174>/S-Function'
+   * Referenced by: '<S181>/S-Function'
    */
   { 1.0, 1.0 },
 
   /* Expression: ectimeout
-   * Referenced by: '<S174>/S-Function'
+   * Referenced by: '<S181>/S-Function'
    */
   500.0,
 
   /* Computed Parameter: ec_Ebox_P1_Size
-   * Referenced by: '<S171>/ec_Ebox'
+   * Referenced by: '<S178>/ec_Ebox'
    */
   { 1.0, 1.0 },
 
   /* Expression: link_id
-   * Referenced by: '<S171>/ec_Ebox'
+   * Referenced by: '<S178>/ec_Ebox'
    */
   0.0,
 
   /* Expression: 1/4000*9/150*2*pi
-   * Referenced by: '<S169>/Gain'
+   * Referenced by: '<S176>/Gain'
    */
   9.4247779607693812E-5,
 
   /* Expression: -1/4000*9/100*2*pi
-   * Referenced by: '<S169>/Gain1'
+   * Referenced by: '<S176>/Gain1'
    */
   -0.00014137166941154071,
 
   /* Computed Parameter: ec_Ebox_P1_Size_d
-   * Referenced by: '<S172>/ec_Ebox'
+   * Referenced by: '<S179>/ec_Ebox'
    */
   { 1.0, 1.0 },
 
   /* Expression: link_id
-   * Referenced by: '<S172>/ec_Ebox'
+   * Referenced by: '<S179>/ec_Ebox'
    */
   1.0,
 
   /* Expression: 1/4000*9/100*2*pi
-   * Referenced by: '<S169>/Gain2'
+   * Referenced by: '<S176>/Gain2'
    */
   0.00014137166941154071,
 
   /* Computed Parameter: ec_Ebox_P1_Size_du
-   * Referenced by: '<S173>/ec_Ebox'
+   * Referenced by: '<S180>/ec_Ebox'
    */
   { 1.0, 1.0 },
 
   /* Expression: link_id
-   * Referenced by: '<S173>/ec_Ebox'
+   * Referenced by: '<S180>/ec_Ebox'
    */
   2.0,
 
   /* Expression: 2
-   * Referenced by: '<S169>/Homing Running Switch'
+   * Referenced by: '<S176>/Homing Running Switch'
    */
   2.0,
 
   /* Expression: -1/16000*2*pi*2.07*10
-   * Referenced by: '<S169>/Gain3'
+   * Referenced by: '<S176>/Gain3'
    */
   -0.00812887099116359,
 
   /* Expression: -0.1
-   * Referenced by: '<S169>/Gain6'
+   * Referenced by: '<S176>/Gain6'
    */
   -0.1,
 
   /* Expression: 1
-   * Referenced by: '<S176>/Constant'
+   * Referenced by: '<S183>/Constant'
    */
   1.0,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainval
-   * Referenced by: '<S178>/Discrete-Time Integrator'
+   * Referenced by: '<S185>/Discrete-Time Integrator'
    */
   0.00048828125,
 
   /* Expression: 0
-   * Referenced by: '<S178>/Discrete-Time Integrator'
+   * Referenced by: '<S185>/Discrete-Time Integrator'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S190>/Constant1'
+   * Referenced by: '<S197>/Constant1'
    */
   0.0,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainva_b
-   * Referenced by: '<S190>/Discrete-Time Integrator'
+   * Referenced by: '<S197>/Discrete-Time Integrator'
    */
   0.00048828125,
 
   /* Expression: -0.1
-   * Referenced by: '<S178>/Constant'
+   * Referenced by: '<S185>/Constant'
    */
   -0.1,
 
   /* Expression: 0
-   * Referenced by: '<S170>/Unit Delay'
+   * Referenced by: '<S177>/Unit Delay'
    */
   0.0,
 
-  /* Expression: 1.2974
-   * Referenced by: '<S170>/set_robot_calibration_r'
+  /* Expression: 1.17
+   * Referenced by: '<S177>/set_robot_calibration_r'
    */
-  1.2974,
+  1.17,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainva_a
-   * Referenced by: '<S179>/Discrete-Time Integrator'
+   * Referenced by: '<S186>/Discrete-Time Integrator'
    */
   0.00048828125,
 
   /* Expression: 0
-   * Referenced by: '<S179>/Discrete-Time Integrator'
+   * Referenced by: '<S186>/Discrete-Time Integrator'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S196>/Constant1'
+   * Referenced by: '<S203>/Constant1'
    */
   0.0,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainva_i
-   * Referenced by: '<S196>/Discrete-Time Integrator'
+   * Referenced by: '<S203>/Discrete-Time Integrator'
    */
   0.00048828125,
 
   /* Expression: -0.1
-   * Referenced by: '<S179>/Constant'
+   * Referenced by: '<S186>/Constant'
    */
   -0.1,
 
-  /* Expression: 0.69287
-   * Referenced by: '<S170>/set_robot_calibration_x'
+  /* Expression: 0.6542
+   * Referenced by: '<S177>/set_robot_calibration_x'
    */
-  0.69287,
+  0.6542,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainv_ip
-   * Referenced by: '<S180>/Discrete-Time Integrator'
+   * Referenced by: '<S187>/Discrete-Time Integrator'
    */
   0.00048828125,
 
   /* Expression: 0
-   * Referenced by: '<S180>/Discrete-Time Integrator'
+   * Referenced by: '<S187>/Discrete-Time Integrator'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S206>/Constant1'
+   * Referenced by: '<S213>/Constant1'
    */
   0.0,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainva_n
-   * Referenced by: '<S206>/Discrete-Time Integrator'
+   * Referenced by: '<S213>/Discrete-Time Integrator'
    */
   0.00048828125,
 
   /* Expression: 0.1
-   * Referenced by: '<S180>/Constant'
+   * Referenced by: '<S187>/Constant'
    */
   0.1,
 
-  /* Expression: -0.40164
-   * Referenced by: '<S170>/set_robot_calibration_z'
+  /* Expression: -0.3901
+   * Referenced by: '<S177>/set_robot_calibration_z'
    */
-  -0.40164,
+  -0.3901,
 
   /* Expression: [1,0,0,0,0,0,0,0]
-   * Referenced by: '<S169>/Enable//Ventiel'
+   * Referenced by: '<S176>/Enable//Ventiel'
    */
   { 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
 
   /* Expression: 1/100
-   * Referenced by: '<S171>/Gain'
+   * Referenced by: '<S178>/Gain'
    */
   0.01,
 
   /* Expression: 25
-   * Referenced by: '<S187>/Gain'
+   * Referenced by: '<S194>/Gain'
    */
   25.0,
 
   /* Computed Parameter: Dctintegrator_P1_Size_f
-   * Referenced by: '<S187>/Dctintegrator'
+   * Referenced by: '<S194>/Dctintegrator'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_num
-   * Referenced by: '<S187>/Dctintegrator'
+   * Referenced by: '<S194>/Dctintegrator'
    */
   0.5,
 
   /* Computed Parameter: Dctintegrator_P2_Size_j
-   * Referenced by: '<S187>/Dctintegrator'
+   * Referenced by: '<S194>/Dctintegrator'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S187>/Dctintegrator'
+   * Referenced by: '<S194>/Dctintegrator'
    */
   0.001,
 
   /* Computed Parameter: Dctleadlag_P1_Size_p
-   * Referenced by: '<S187>/Dctleadlag'
+   * Referenced by: '<S194>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_num
-   * Referenced by: '<S187>/Dctleadlag'
+   * Referenced by: '<S194>/Dctleadlag'
    */
   6.6667,
 
   /* Computed Parameter: Dctleadlag_P2_Size_p
-   * Referenced by: '<S187>/Dctleadlag'
+   * Referenced by: '<S194>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S187>/Dctleadlag'
+   * Referenced by: '<S194>/Dctleadlag'
    */
   60.0,
 
   /* Computed Parameter: Dctleadlag_P3_Size_c
-   * Referenced by: '<S187>/Dctleadlag'
+   * Referenced by: '<S194>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S187>/Dctleadlag'
+   * Referenced by: '<S194>/Dctleadlag'
    */
   0.001,
 
   /* Computed Parameter: Dct1lowpass_P1_Size_f
-   * Referenced by: '<S187>/Dct1lowpass'
+   * Referenced by: '<S194>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S187>/Dct1lowpass'
+   * Referenced by: '<S194>/Dct1lowpass'
    */
   100.0,
 
   /* Computed Parameter: Dct1lowpass_P2_Size_g
-   * Referenced by: '<S187>/Dct1lowpass'
+   * Referenced by: '<S194>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S187>/Dct1lowpass'
+   * Referenced by: '<S194>/Dct1lowpass'
    */
   0.001,
 
   /* Expression: 25
-   * Referenced by: '<S188>/Gain'
+   * Referenced by: '<S195>/Gain'
    */
   25.0,
 
   /* Computed Parameter: Dctleadlag_P1_Size_n
-   * Referenced by: '<S188>/Dctleadlag'
+   * Referenced by: '<S195>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_num
-   * Referenced by: '<S188>/Dctleadlag'
+   * Referenced by: '<S195>/Dctleadlag'
    */
   6.6667,
 
   /* Computed Parameter: Dctleadlag_P2_Size_b
-   * Referenced by: '<S188>/Dctleadlag'
+   * Referenced by: '<S195>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S188>/Dctleadlag'
+   * Referenced by: '<S195>/Dctleadlag'
    */
   60.0,
 
   /* Computed Parameter: Dctleadlag_P3_Size_d
-   * Referenced by: '<S188>/Dctleadlag'
+   * Referenced by: '<S195>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S188>/Dctleadlag'
+   * Referenced by: '<S195>/Dctleadlag'
    */
   0.001,
 
   /* Computed Parameter: Dct1lowpass_P1_Size_p
-   * Referenced by: '<S188>/Dct1lowpass'
+   * Referenced by: '<S195>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S188>/Dct1lowpass'
+   * Referenced by: '<S195>/Dct1lowpass'
    */
   100.0,
 
   /* Computed Parameter: Dct1lowpass_P2_Size_gi
-   * Referenced by: '<S188>/Dct1lowpass'
+   * Referenced by: '<S195>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S188>/Dct1lowpass'
+   * Referenced by: '<S195>/Dct1lowpass'
    */
   0.001,
 
   /* Expression: 2.5
-   * Referenced by: '<S169>/Voltage middle'
+   * Referenced by: '<S176>/Voltage middle'
    */
   2.5,
 
   /* Expression: 20
-   * Referenced by: '<S194>/Gain1'
+   * Referenced by: '<S201>/Gain1'
    */
   20.0,
 
   /* Computed Parameter: Dctintegrator_P1_Size_c
-   * Referenced by: '<S194>/Dctintegrator'
+   * Referenced by: '<S201>/Dctintegrator'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_num
-   * Referenced by: '<S194>/Dctintegrator'
+   * Referenced by: '<S201>/Dctintegrator'
    */
   0.5,
 
   /* Computed Parameter: Dctintegrator_P2_Size_ja
-   * Referenced by: '<S194>/Dctintegrator'
+   * Referenced by: '<S201>/Dctintegrator'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S194>/Dctintegrator'
+   * Referenced by: '<S201>/Dctintegrator'
    */
   0.001,
 
   /* Computed Parameter: Dctleadlag_P1_Size_ph
-   * Referenced by: '<S194>/Dctleadlag'
+   * Referenced by: '<S201>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_num
-   * Referenced by: '<S194>/Dctleadlag'
+   * Referenced by: '<S201>/Dctleadlag'
    */
   10.0,
 
   /* Computed Parameter: Dctleadlag_P2_Size_l
-   * Referenced by: '<S194>/Dctleadlag'
+   * Referenced by: '<S201>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S194>/Dctleadlag'
+   * Referenced by: '<S201>/Dctleadlag'
    */
   90.0,
 
   /* Computed Parameter: Dctleadlag_P3_Size_j
-   * Referenced by: '<S194>/Dctleadlag'
+   * Referenced by: '<S201>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S194>/Dctleadlag'
+   * Referenced by: '<S201>/Dctleadlag'
    */
   0.001,
 
   /* Computed Parameter: Dct1lowpass_P1_Size_m
-   * Referenced by: '<S194>/Dct1lowpass'
+   * Referenced by: '<S201>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S194>/Dct1lowpass'
+   * Referenced by: '<S201>/Dct1lowpass'
    */
   200.0,
 
   /* Computed Parameter: Dct1lowpass_P2_Size_i
-   * Referenced by: '<S194>/Dct1lowpass'
+   * Referenced by: '<S201>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S194>/Dct1lowpass'
+   * Referenced by: '<S201>/Dct1lowpass'
    */
   0.001,
 
   /* Expression: 20
-   * Referenced by: '<S195>/Gain1'
+   * Referenced by: '<S202>/Gain1'
    */
   20.0,
 
   /* Computed Parameter: Dctleadlag_P1_Size_b
-   * Referenced by: '<S195>/Dctleadlag'
+   * Referenced by: '<S202>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_num
-   * Referenced by: '<S195>/Dctleadlag'
+   * Referenced by: '<S202>/Dctleadlag'
    */
   10.0,
 
   /* Computed Parameter: Dctleadlag_P2_Size_o
-   * Referenced by: '<S195>/Dctleadlag'
+   * Referenced by: '<S202>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S195>/Dctleadlag'
+   * Referenced by: '<S202>/Dctleadlag'
    */
   90.0,
 
   /* Computed Parameter: Dctleadlag_P3_Size_a
-   * Referenced by: '<S195>/Dctleadlag'
+   * Referenced by: '<S202>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S195>/Dctleadlag'
+   * Referenced by: '<S202>/Dctleadlag'
    */
   0.001,
 
   /* Computed Parameter: Dct1lowpass_P1_Size_i
-   * Referenced by: '<S195>/Dct1lowpass'
+   * Referenced by: '<S202>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S195>/Dct1lowpass'
+   * Referenced by: '<S202>/Dct1lowpass'
    */
   200.0,
 
   /* Computed Parameter: Dct1lowpass_P2_Size_j
-   * Referenced by: '<S195>/Dct1lowpass'
+   * Referenced by: '<S202>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S195>/Dct1lowpass'
+   * Referenced by: '<S202>/Dct1lowpass'
    */
   0.001,
 
   /* Expression: 5
-   * Referenced by: '<S169>/Saturation'
+   * Referenced by: '<S176>/Saturation'
    */
   5.0,
 
   /* Expression: 0
-   * Referenced by: '<S169>/Saturation'
+   * Referenced by: '<S176>/Saturation'
    */
   0.0,
 
   /* Expression: 10
-   * Referenced by: '<S171>/Saturation'
+   * Referenced by: '<S178>/Saturation'
    */
   10.0,
 
   /* Expression: -10
-   * Referenced by: '<S171>/Saturation'
+   * Referenced by: '<S178>/Saturation'
    */
   -10.0,
 
   /* Expression: 1/100
-   * Referenced by: '<S172>/Gain'
+   * Referenced by: '<S179>/Gain'
    */
   0.01,
 
   /* Expression: 25
-   * Referenced by: '<S203>/Gain'
+   * Referenced by: '<S210>/Gain'
    */
   25.0,
 
   /* Computed Parameter: Dctintegrator_P1_Size_j
-   * Referenced by: '<S203>/Dctintegrator'
+   * Referenced by: '<S210>/Dctintegrator'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_num
-   * Referenced by: '<S203>/Dctintegrator'
+   * Referenced by: '<S210>/Dctintegrator'
    */
   0.5,
 
   /* Computed Parameter: Dctintegrator_P2_Size_n
-   * Referenced by: '<S203>/Dctintegrator'
+   * Referenced by: '<S210>/Dctintegrator'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S203>/Dctintegrator'
+   * Referenced by: '<S210>/Dctintegrator'
    */
   0.001,
 
   /* Computed Parameter: Dctleadlag_P1_Size_o
-   * Referenced by: '<S203>/Dctleadlag'
+   * Referenced by: '<S210>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_num
-   * Referenced by: '<S203>/Dctleadlag'
+   * Referenced by: '<S210>/Dctleadlag'
    */
   10.0,
 
   /* Computed Parameter: Dctleadlag_P2_Size_o4
-   * Referenced by: '<S203>/Dctleadlag'
+   * Referenced by: '<S210>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S203>/Dctleadlag'
+   * Referenced by: '<S210>/Dctleadlag'
    */
   90.0,
 
   /* Computed Parameter: Dctleadlag_P3_Size_l
-   * Referenced by: '<S203>/Dctleadlag'
+   * Referenced by: '<S210>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S203>/Dctleadlag'
+   * Referenced by: '<S210>/Dctleadlag'
    */
   0.001,
 
   /* Computed Parameter: Dct1lowpass_P1_Size_g
-   * Referenced by: '<S203>/Dct1lowpass'
+   * Referenced by: '<S210>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S203>/Dct1lowpass'
+   * Referenced by: '<S210>/Dct1lowpass'
    */
   200.0,
 
   /* Computed Parameter: Dct1lowpass_P2_Size_p
-   * Referenced by: '<S203>/Dct1lowpass'
+   * Referenced by: '<S210>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S203>/Dct1lowpass'
+   * Referenced by: '<S210>/Dct1lowpass'
    */
   0.001,
 
   /* Expression: 30
-   * Referenced by: '<S204>/Gain'
+   * Referenced by: '<S211>/Gain'
    */
   30.0,
 
   /* Computed Parameter: Dctleadlag_P1_Size_f
-   * Referenced by: '<S204>/Dctleadlag'
+   * Referenced by: '<S211>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_num
-   * Referenced by: '<S204>/Dctleadlag'
+   * Referenced by: '<S211>/Dctleadlag'
    */
   10.0,
 
   /* Computed Parameter: Dctleadlag_P2_Size_d
-   * Referenced by: '<S204>/Dctleadlag'
+   * Referenced by: '<S211>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S204>/Dctleadlag'
+   * Referenced by: '<S211>/Dctleadlag'
    */
   90.0,
 
   /* Computed Parameter: Dctleadlag_P3_Size_p
-   * Referenced by: '<S204>/Dctleadlag'
+   * Referenced by: '<S211>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S204>/Dctleadlag'
+   * Referenced by: '<S211>/Dctleadlag'
    */
   0.001,
 
   /* Computed Parameter: Dct1lowpass_P1_Size_d
-   * Referenced by: '<S204>/Dct1lowpass'
+   * Referenced by: '<S211>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S204>/Dct1lowpass'
+   * Referenced by: '<S211>/Dct1lowpass'
    */
   200.0,
 
   /* Computed Parameter: Dct1lowpass_P2_Size_k
-   * Referenced by: '<S204>/Dct1lowpass'
+   * Referenced by: '<S211>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S204>/Dct1lowpass'
+   * Referenced by: '<S211>/Dct1lowpass'
    */
   0.001,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainva_c
-   * Referenced by: '<S181>/Discrete-Time Integrator'
+   * Referenced by: '<S188>/Discrete-Time Integrator'
    */
   0.00048828125,
 
   /* Expression: 0
-   * Referenced by: '<S181>/Discrete-Time Integrator'
+   * Referenced by: '<S188>/Discrete-Time Integrator'
    */
   0.0,
 
   /* Expression: 10*2.5/500
-   * Referenced by: '<S213>/Gain1'
+   * Referenced by: '<S220>/Gain1'
    */
   0.05,
 
   /* Computed Parameter: Dctintegrator3_P1_Size_e
-   * Referenced by: '<S213>/Dctintegrator3'
+   * Referenced by: '<S220>/Dctintegrator3'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_num
-   * Referenced by: '<S213>/Dctintegrator3'
+   * Referenced by: '<S220>/Dctintegrator3'
    */
   0.01,
 
   /* Computed Parameter: Dctintegrator3_P2_Size_i
-   * Referenced by: '<S213>/Dctintegrator3'
+   * Referenced by: '<S220>/Dctintegrator3'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S213>/Dctintegrator3'
+   * Referenced by: '<S220>/Dctintegrator3'
    */
   0.001,
 
   /* Computed Parameter: Dct1lowpass_P1_Size_ph
-   * Referenced by: '<S213>/Dct1lowpass'
+   * Referenced by: '<S220>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S213>/Dct1lowpass'
+   * Referenced by: '<S220>/Dct1lowpass'
    */
   30.0,
 
   /* Computed Parameter: Dct1lowpass_P2_Size_p0
-   * Referenced by: '<S213>/Dct1lowpass'
+   * Referenced by: '<S220>/Dct1lowpass'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S213>/Dct1lowpass'
+   * Referenced by: '<S220>/Dct1lowpass'
    */
   0.001,
 
   /* Computed Parameter: Dctleadlag_P1_Size_pu
-   * Referenced by: '<S213>/Dctleadlag'
+   * Referenced by: '<S220>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_num
-   * Referenced by: '<S213>/Dctleadlag'
+   * Referenced by: '<S220>/Dctleadlag'
    */
   3.0,
 
   /* Computed Parameter: Dctleadlag_P2_Size_n
-   * Referenced by: '<S213>/Dctleadlag'
+   * Referenced by: '<S220>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: f_den
-   * Referenced by: '<S213>/Dctleadlag'
+   * Referenced by: '<S220>/Dctleadlag'
    */
   20.0,
 
   /* Computed Parameter: Dctleadlag_P3_Size_f
-   * Referenced by: '<S213>/Dctleadlag'
+   * Referenced by: '<S220>/Dctleadlag'
    */
   { 1.0, 1.0 },
 
   /* Expression: 0.001
-   * Referenced by: '<S213>/Dctleadlag'
+   * Referenced by: '<S220>/Dctleadlag'
    */
   0.001,
 
   /* Expression: 0.5
-   * Referenced by: '<S181>/Homing Running Switch'
+   * Referenced by: '<S188>/Homing Running Switch'
    */
   0.5,
 
   /* Expression: 1
-   * Referenced by: '<S169>/Gain4'
+   * Referenced by: '<S176>/Gain4'
    */
   1.0,
 
   /* Expression: 5
-   * Referenced by: '<S169>/Saturation1'
+   * Referenced by: '<S176>/Saturation1'
    */
   5.0,
 
   /* Expression: 0
-   * Referenced by: '<S169>/Saturation1'
+   * Referenced by: '<S176>/Saturation1'
    */
   0.0,
 
   /* Expression: 10
-   * Referenced by: '<S172>/Saturation'
+   * Referenced by: '<S179>/Saturation'
    */
   10.0,
 
   /* Expression: -10
-   * Referenced by: '<S172>/Saturation'
+   * Referenced by: '<S179>/Saturation'
    */
   -10.0,
 
   /* Expression: 1/100
-   * Referenced by: '<S173>/Gain'
+   * Referenced by: '<S180>/Gain'
    */
   0.01,
 
   /* Expression: 0.5
-   * Referenced by: '<S169>/Homing Running Switch1'
+   * Referenced by: '<S176>/Homing Running Switch1'
    */
   0.5,
 
   /* Expression: 5
-   * Referenced by: '<S169>/Saturation2'
+   * Referenced by: '<S176>/Saturation2'
    */
   5.0,
 
   /* Expression: 0
-   * Referenced by: '<S169>/Saturation2'
+   * Referenced by: '<S176>/Saturation2'
    */
   0.0,
 
   /* Expression: 10
-   * Referenced by: '<S173>/Saturation'
+   * Referenced by: '<S180>/Saturation'
    */
   10.0,
 
   /* Expression: -10
-   * Referenced by: '<S173>/Saturation'
+   * Referenced by: '<S180>/Saturation'
    */
   -10.0,
 
   /* Expression: 0
-   * Referenced by: '<S170>/Unit Delay1'
+   * Referenced by: '<S177>/Unit Delay1'
    */
   0.0,
 
   /* Expression: 0.5
-   * Referenced by: '<S177>/Homing Running Switch'
+   * Referenced by: '<S184>/Homing Running Switch'
    */
   0.5,
 
   /* Expression: 3
-   * Referenced by: '<S170>/Gain'
+   * Referenced by: '<S177>/Gain'
    */
   3.0,
 
   /* Computed Parameter: ResetEncoderR_P1_Size
-   * Referenced by: '<S178>/Reset EncoderR'
+   * Referenced by: '<S185>/Reset EncoderR'
    */
   { 1.0, 1.0 },
 
   /* Expression: link_id
-   * Referenced by: '<S178>/Reset EncoderR'
+   * Referenced by: '<S185>/Reset EncoderR'
    */
   0.0,
 
   /* Computed Parameter: ResetEncoderR_P2_Size
-   * Referenced by: '<S178>/Reset EncoderR'
+   * Referenced by: '<S185>/Reset EncoderR'
    */
   { 1.0, 1.0 },
 
   /* Expression: chan_id
-   * Referenced by: '<S178>/Reset EncoderR'
+   * Referenced by: '<S185>/Reset EncoderR'
    */
   0.0,
 
   /* Expression: 0.6
-   * Referenced by: '<S190>/Limit Speed'
+   * Referenced by: '<S197>/Limit Speed'
    */
   0.6,
 
   /* Expression: -0.6
-   * Referenced by: '<S190>/Limit Speed'
+   * Referenced by: '<S197>/Limit Speed'
    */
   -0.6,
 
   /* Expression: 0
-   * Referenced by: '<S190>/Limit Speed'
+   * Referenced by: '<S197>/Limit Speed'
    */
   0.0,
 
   /* Computed Parameter: TSamp_WtEt_a
-   * Referenced by: '<S193>/TSamp'
+   * Referenced by: '<S200>/TSamp'
    */
   2048.0,
 
   /* Expression: 0.8
-   * Referenced by: '<S190>/Limit Acceleration'
+   * Referenced by: '<S197>/Limit Acceleration'
    */
   0.8,
 
   /* Expression: -0.8
-   * Referenced by: '<S190>/Limit Acceleration'
+   * Referenced by: '<S197>/Limit Acceleration'
    */
   -0.8,
 
   /* Expression: 0
-   * Referenced by: '<S190>/Limit Acceleration'
+   * Referenced by: '<S197>/Limit Acceleration'
    */
   0.0,
 
   /* Computed Parameter: ResetEncoderX_P1_Size
-   * Referenced by: '<S179>/Reset EncoderX'
+   * Referenced by: '<S186>/Reset EncoderX'
    */
   { 1.0, 1.0 },
 
   /* Expression: link_id
-   * Referenced by: '<S179>/Reset EncoderX'
+   * Referenced by: '<S186>/Reset EncoderX'
    */
   0.0,
 
   /* Computed Parameter: ResetEncoderX_P2_Size
-   * Referenced by: '<S179>/Reset EncoderX'
+   * Referenced by: '<S186>/Reset EncoderX'
    */
   { 1.0, 1.0 },
 
   /* Expression: chan_id
-   * Referenced by: '<S179>/Reset EncoderX'
+   * Referenced by: '<S186>/Reset EncoderX'
    */
   1.0,
 
   /* Expression: 0.4
-   * Referenced by: '<S196>/Limit Speed'
+   * Referenced by: '<S203>/Limit Speed'
    */
   0.4,
 
   /* Expression: -0.4
-   * Referenced by: '<S196>/Limit Speed'
+   * Referenced by: '<S203>/Limit Speed'
    */
   -0.4,
 
   /* Expression: 0
-   * Referenced by: '<S196>/Limit Speed'
+   * Referenced by: '<S203>/Limit Speed'
    */
   0.0,
 
   /* Computed Parameter: TSamp_WtEt_h
-   * Referenced by: '<S202>/TSamp'
+   * Referenced by: '<S209>/TSamp'
    */
   2048.0,
 
   /* Expression: 0.5
-   * Referenced by: '<S196>/Limit Acceleration'
+   * Referenced by: '<S203>/Limit Acceleration'
    */
   0.5,
 
   /* Expression: -0.5
-   * Referenced by: '<S196>/Limit Acceleration'
+   * Referenced by: '<S203>/Limit Acceleration'
    */
   -0.5,
 
   /* Expression: 0
-   * Referenced by: '<S196>/Limit Acceleration'
+   * Referenced by: '<S203>/Limit Acceleration'
    */
   0.0,
 
   /* Computed Parameter: ResetEncoderX_P1_Size_k
-   * Referenced by: '<S180>/Reset EncoderX'
+   * Referenced by: '<S187>/Reset EncoderX'
    */
   { 1.0, 1.0 },
 
   /* Expression: link_id
-   * Referenced by: '<S180>/Reset EncoderX'
+   * Referenced by: '<S187>/Reset EncoderX'
    */
   1.0,
 
   /* Computed Parameter: ResetEncoderX_P2_Size_k
-   * Referenced by: '<S180>/Reset EncoderX'
+   * Referenced by: '<S187>/Reset EncoderX'
    */
   { 1.0, 1.0 },
 
   /* Expression: chan_id
-   * Referenced by: '<S180>/Reset EncoderX'
+   * Referenced by: '<S187>/Reset EncoderX'
    */
   0.0,
 
   /* Expression: 0.2
-   * Referenced by: '<S206>/Limit Speed'
+   * Referenced by: '<S213>/Limit Speed'
    */
   0.2,
 
   /* Expression: -0.2
-   * Referenced by: '<S206>/Limit Speed'
+   * Referenced by: '<S213>/Limit Speed'
    */
   -0.2,
 
   /* Expression: 0
-   * Referenced by: '<S206>/Limit Speed'
+   * Referenced by: '<S213>/Limit Speed'
    */
   0.0,
 
   /* Computed Parameter: TSamp_WtEt_i
-   * Referenced by: '<S212>/TSamp'
+   * Referenced by: '<S219>/TSamp'
    */
   2048.0,
 
   /* Expression: 0.5
-   * Referenced by: '<S206>/Limit Acceleration'
+   * Referenced by: '<S213>/Limit Acceleration'
    */
   0.5,
 
   /* Expression: -0.5
-   * Referenced by: '<S206>/Limit Acceleration'
+   * Referenced by: '<S213>/Limit Acceleration'
    */
   -0.5,
 
   /* Expression: 0
-   * Referenced by: '<S206>/Limit Acceleration'
+   * Referenced by: '<S213>/Limit Acceleration'
    */
   0.0,
 
   /* Computed Parameter: ResetEncoderConv_P1_Size
-   * Referenced by: '<S181>/Reset EncoderConv'
+   * Referenced by: '<S188>/Reset EncoderConv'
    */
   { 1.0, 1.0 },
 
   /* Expression: link_id
-   * Referenced by: '<S181>/Reset EncoderConv'
+   * Referenced by: '<S188>/Reset EncoderConv'
    */
   1.0,
 
   /* Computed Parameter: ResetEncoderConv_P2_Size
-   * Referenced by: '<S181>/Reset EncoderConv'
+   * Referenced by: '<S188>/Reset EncoderConv'
    */
   { 1.0, 1.0 },
 
   /* Expression: chan_id
-   * Referenced by: '<S181>/Reset EncoderConv'
+   * Referenced by: '<S188>/Reset EncoderConv'
    */
   1.0,
 
@@ -1773,47 +1948,52 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   "8ab1ff",
 
+  /* Computed Parameter: StringConstant_String
+   * Referenced by: '<S166>/String Constant'
+   */
+  "Blue",
+
+  /* Computed Parameter: StringConstant1_String
+   * Referenced by: '<S166>/String Constant1'
+   */
+  "Red",
+
   /* Computed Parameter: StringConstant3_String
-   * Referenced by: '<S186>/String Constant3'
+   * Referenced by: '<S193>/String Constant3'
    */
   "color ",
 
   /* Computed Parameter: StringConstant4_String
-   * Referenced by: '<S184>/String Constant4'
+   * Referenced by: '<S191>/String Constant4'
    */
   "white",
 
-  /* Computed Parameter: StringConstant1_String
-   * Referenced by: '<S184>/String Constant1'
+  /* Computed Parameter: StringConstant1_String_k
+   * Referenced by: '<S191>/String Constant1'
    */
   "black",
 
   /* Computed Parameter: ReadyGreen_String
-   * Referenced by: '<S170>/Ready Green'
+   * Referenced by: '<S177>/Ready Green'
    */
   "0000FF00",
 
   /* Computed Parameter: AirbagRed_String
-   * Referenced by: '<S170>/Airbag Red'
+   * Referenced by: '<S177>/Airbag Red'
    */
   "00FF0000",
 
   /* Computed Parameter: HomingOrange_String
-   * Referenced by: '<S170>/Homing Orange'
+   * Referenced by: '<S177>/Homing Orange'
    */
   "00FF3900",
 
   /* Computed Parameter: Delay_InitialCondition
-   * Referenced by: '<S183>/Delay'
+   * Referenced by: '<S190>/Delay'
    */
   "",
 
   /* Computed Parameter: ManualSwitch_CurrentSetting
-   * Referenced by: '<S1>/Manual Switch'
-   */
-  1U,
-
-  /* Computed Parameter: ManualSwitch_CurrentSetting_c
    * Referenced by: '<S4>/Manual Switch'
    */
   0U,
@@ -1834,12 +2014,87 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   1U,
 
   /* Computed Parameter: Constant1_Value_b
-   * Referenced by: '<S185>/Constant1'
+   * Referenced by: '<S192>/Constant1'
    */
   13U,
 
   /* Computed Parameter: Constant_Value_c
-   * Referenced by: '<S186>/Constant'
+   * Referenced by: '<S193>/Constant'
    */
-  13U
+  13U,
+
+  /* Start of '<S166>/If Action Subsystem5' */
+  {
+    /* Computed Parameter: Out1_Y0
+     * Referenced by: '<S174>/Out1'
+     */
+    0.0
+  }
+  ,
+
+  /* End of '<S166>/If Action Subsystem5' */
+
+  /* Start of '<S166>/If Action Subsystem4' */
+  {
+    /* Computed Parameter: Out1_Y0
+     * Referenced by: '<S173>/Out1'
+     */
+    0.0
+  }
+  ,
+
+  /* End of '<S166>/If Action Subsystem4' */
+
+  /* Start of '<S166>/If Action Subsystem6' */
+  {
+    /* Computed Parameter: Out1_Y0
+     * Referenced by: '<S175>/Out1'
+     */
+    0.0
+  }
+  ,
+
+  /* End of '<S166>/If Action Subsystem6' */
+
+  /* Start of '<S166>/If Action Subsystem3' */
+  {
+    /* Computed Parameter: Out1_Y0
+     * Referenced by: '<S172>/Out1'
+     */
+    0.0
+  }
+  ,
+
+  /* End of '<S166>/If Action Subsystem3' */
+
+  /* Start of '<S166>/If Action Subsystem2' */
+  {
+    /* Computed Parameter: Out1_Y0
+     * Referenced by: '<S171>/Out1'
+     */
+    0.0
+  }
+  ,
+
+  /* End of '<S166>/If Action Subsystem2' */
+
+  /* Start of '<S166>/If Action Subsystem1' */
+  {
+    /* Computed Parameter: Out1_Y0
+     * Referenced by: '<S170>/Out1'
+     */
+    0.0
+  }
+  ,
+
+  /* End of '<S166>/If Action Subsystem1' */
+
+  /* Start of '<S166>/If Action Subsystem' */
+  {
+    /* Computed Parameter: Out1_Y0
+     * Referenced by: '<S169>/Out1'
+     */
+    0.0
+  }
+  /* End of '<S166>/If Action Subsystem' */
 };
