@@ -3045,15 +3045,15 @@
 	  section.data(5).logicalSrcIdx = 116;
 	  section.data(5).dtTransOffset = 4;
 	
-	  ;% robotarm_student_2021a_Ebox_DW.is_active_Vacuum
+	  ;% robotarm_student_2021a_Ebox_DW.is_active_dataAssign
 	  section.data(6).logicalSrcIdx = 117;
 	  section.data(6).dtTransOffset = 5;
 	
-	  ;% robotarm_student_2021a_Ebox_DW.is_active_Robot_Arm
+	  ;% robotarm_student_2021a_Ebox_DW.is_active_Vacuum
 	  section.data(7).logicalSrcIdx = 118;
 	  section.data(7).dtTransOffset = 6;
 	
-	  ;% robotarm_student_2021a_Ebox_DW.is_active_dataAssign
+	  ;% robotarm_student_2021a_Ebox_DW.is_active_Robot_Arm
 	  section.data(8).logicalSrcIdx = 119;
 	  section.data(8).dtTransOffset = 7;
 	
@@ -3362,8 +3362,8 @@
   ;%
 
 
-  targMap.checksum0 = 3931066606;
-  targMap.checksum1 = 2004904109;
-  targMap.checksum2 = 2628081243;
-  targMap.checksum3 = 4048044663;
+  targMap.checksum0 = 4290705675;
+  targMap.checksum1 = 3887485944;
+  targMap.checksum2 = 2134869427;
+  targMap.checksum3 = 3186119638;
 

@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.73
+ * Model version              : 2.83
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Wed Mar 26 12:00:32 2025
+ * C source code generated on : Thu Mar 27 12:04:29 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -68,7 +68,7 @@ static DataTypeTransition rtBTransitions[] = {
 
   { (char_T *)(&robotarm_student_2021a_Ebox_B.ManualSwitch1[0]), 15, 0, 256 },
 
-  { (char_T *)(&robotarm_student_2021a_Ebox_B.SFunction), 0, 0, 178 },
+  { (char_T *)(&robotarm_student_2021a_Ebox_B.SFunction), 0, 0, 185 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_B.RelationalOperator), 8, 0, 16 },
 
@@ -106,7 +106,7 @@ static DataTypeTransition rtBTransitions[] = {
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.Scope_PWORK.LoggedData[0]), 11, 0,
     6 },
 
-  { (char_T *)(&robotarm_student_2021a_Ebox_DW.sfEvent), 6, 0, 9 },
+  { (char_T *)(&robotarm_student_2021a_Ebox_DW.sfEvent), 6, 0, 8 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.is_c4_robotarm_student_2021a_Eb),
     7, 0, 10 },
@@ -205,7 +205,7 @@ static DataTypeTransitionTable rtBTransTable = {
 
 /* data type transitions for Parameters structure */
 static DataTypeTransition rtPTransitions[] = {
-  { (char_T *)(&robotarm_student_2021a_Ebox_P.PIDController_D), 0, 0, 493 },
+  { (char_T *)(&robotarm_student_2021a_Ebox_P.PIDController_D), 0, 0, 489 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_P.LEDRing_Y0[0]), 14, 0, 3072 },
 

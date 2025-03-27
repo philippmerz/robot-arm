@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.73
+ * Model version              : 2.83
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Wed Mar 26 12:00:32 2025
+ * C source code generated on : Thu Mar 27 12:04:29 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -156,7 +156,7 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   /* Mask Parameter: PIDController_P_d
    * Referenced by: '<S154>/Proportional Gain'
    */
-  20.0,
+  10.0,
 
   /* Mask Parameter: CompareToConstant_const
    * Referenced by: '<S182>/Constant'
@@ -174,74 +174,64 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   0.0,
 
   /* Expression: 100
-   * Referenced by: '<S166>/Constant'
-   */
-  100.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Constant2'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Switch'
-   */
-  0.0,
-
-  /* Expression: 100
-   * Referenced by: '<S166>/Constant1'
-   */
-  100.0,
-
-  /* Expression: 1
    * Referenced by: '<S166>/Constant3'
    */
-  1.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Switch1'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Constant5'
-   */
-  0.0,
+  100.0,
 
   /* Expression: 1
-   * Referenced by: '<S166>/Constant4'
+   * Referenced by: '<S166>/Constant1'
+   */
+  1.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant5'
    */
   1.0,
 
   /* Expression: 0
-   * Referenced by: '<S166>/Constant7'
+   * Referenced by: '<S166>/Constant4'
    */
   0.0,
 
   /* Expression: 2
-   * Referenced by: '<S166>/Constant6'
+   * Referenced by: '<S166>/Constant7'
    */
   2.0,
 
   /* Expression: 0
-   * Referenced by: '<S166>/Constant9'
+   * Referenced by: '<S166>/Constant6'
    */
   0.0,
 
   /* Expression: 3
-   * Referenced by: '<S166>/Constant8'
+   * Referenced by: '<S166>/Constant9'
    */
   3.0,
 
   /* Expression: 0
-   * Referenced by: '<S166>/Constant11'
+   * Referenced by: '<S166>/Constant8'
    */
   0.0,
 
   /* Expression: 4
-   * Referenced by: '<S166>/Constant10'
+   * Referenced by: '<S166>/Constant11'
    */
   4.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Constant10'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Constant'
+   */
+  0.0,
+
+  /* Expression: 100
+   * Referenced by: '<S166>/Constant2'
+   */
+  100.0,
 
   /* Computed Parameter: RobotV_Y0
    * Referenced by: '<S1>/Robot [V]'
@@ -258,35 +248,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Expression: [0                    0                    0      1738083313.1993;0  0  0  0;0  0  0  0]
+  /* Expression: [0                    0                    0      1737869582.2633;0  0  0  0;0  0  0  0]
    * Referenced by: '<S166>/Object detection matrix'
    */
-  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.7380833131993E+9, 0.0, 0.0 },
-
-  /* Expression: 1
-   * Referenced by: '<S166>/Pulse Generator'
-   */
-  1.0,
-
-  /* Computed Parameter: PulseGenerator_Period
-   * Referenced by: '<S166>/Pulse Generator'
-   */
-  1024.0,
-
-  /* Computed Parameter: PulseGenerator_Duty
-   * Referenced by: '<S166>/Pulse Generator'
-   */
-  512.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Pulse Generator'
-   */
-  0.0,
-
-  /* Expression: 1
-   * Referenced by: '<S166>/Constant12'
-   */
-  1.0,
+  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.7378695822633E+9, 0.0, 0.0 },
 
   /* Expression: 1
    * Referenced by: '<S166>/Pulse Generator1'
@@ -314,22 +279,37 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   1.0,
 
   /* Expression: 1
-   * Referenced by: '<S166>/Pulse Generator2'
+   * Referenced by: '<S166>/Pulse Generator'
    */
   1.0,
 
-  /* Computed Parameter: PulseGenerator2_Period
-   * Referenced by: '<S166>/Pulse Generator2'
+  /* Computed Parameter: PulseGenerator_Period
+   * Referenced by: '<S166>/Pulse Generator'
    */
   1024.0,
 
-  /* Computed Parameter: PulseGenerator2_Duty
-   * Referenced by: '<S166>/Pulse Generator2'
+  /* Computed Parameter: PulseGenerator_Duty
+   * Referenced by: '<S166>/Pulse Generator'
    */
   512.0,
 
   /* Expression: 0
-   * Referenced by: '<S166>/Pulse Generator2'
+   * Referenced by: '<S166>/Pulse Generator'
+   */
+  0.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant12'
+   */
+  1.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Switch1'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Switch'
    */
   0.0,
 
@@ -343,25 +323,25 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   100.0,
 
-  /* Expression: 2
+  /* Expression: 1
    * Referenced by: '<S166>/Constant15'
    */
-  2.0,
+  1.0,
 
   /* Expression: 1
    * Referenced by: '<S166>/Constant14'
    */
   1.0,
 
-  /* Expression: 4
+  /* Expression: 1
    * Referenced by: '<S166>/Constant17'
    */
-  4.0,
+  1.0,
 
-  /* Expression: 3
+  /* Expression: 1
    * Referenced by: '<S166>/Constant16'
    */
-  3.0,
+  1.0,
 
   /* Expression: 0
    * Referenced by: '<S166>/Switch5'
@@ -1093,10 +1073,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Expression: 1.17
+  /* Expression: 1.2358
    * Referenced by: '<S177>/set_robot_calibration_r'
    */
-  1.17,
+  1.2358,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainva_a
    * Referenced by: '<S186>/Discrete-Time Integrator'
@@ -1123,10 +1103,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   -0.1,
 
-  /* Expression: 0.6542
+  /* Expression: 0.6
    * Referenced by: '<S177>/set_robot_calibration_x'
    */
-  0.6542,
+  0.6,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainv_ip
    * Referenced by: '<S187>/Discrete-Time Integrator'
@@ -1153,10 +1133,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.1,
 
-  /* Expression: -0.3901
+  /* Expression: -0.4036
    * Referenced by: '<S177>/set_robot_calibration_z'
    */
-  -0.3901,
+  -0.4036,
 
   /* Expression: [1,0,0,0,0,0,0,0]
    * Referenced by: '<S176>/Enable//Ventiel'

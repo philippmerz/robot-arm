@@ -36,6 +36,14 @@
       IsTestPoint  1\
     }\
     ChartData {\
+      Name         "is_active_dataAssign"\
+      Description  "StateIsActive"\
+      SFName       "is_active_dataAssign"\
+      Path         "dataAssign.is_active_dataAssign"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
       Name         "is_Vacuum"\
       Description  "StateActiveChild"\
       SFName       "is_Vacuum"\
@@ -64,14 +72,6 @@
       Description  "StateIsActive"\
       SFName       "is_active_Robot_Arm"\
       Path         "Robot_Arm.is_active_Robot_Arm"\
-      SrcLocation  ""\
-      IsTestPoint  1\
-    }\
-    ChartData {\
-      Name         "is_active_dataAssign"\
-      Description  "StateIsActive"\
-      SFName       "is_active_dataAssign"\
-      Path         "dataAssign.is_active_dataAssign"\
       SrcLocation  ""\
       IsTestPoint  1\
     }\

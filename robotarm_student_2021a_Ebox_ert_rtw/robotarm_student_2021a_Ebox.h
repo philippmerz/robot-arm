@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.82
+ * Model version              : 2.83
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Wed Mar 26 13:00:49 2025
+ * C source code generated on : Thu Mar 27 12:54:36 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -509,9 +509,9 @@ typedef struct {
   uint8_T is_active_c6_robotarm_student_2;/* '<S186>/Supervisor' */
   uint8_T is_active_c5_robotarm_student_2;/* '<S185>/Supervisor' */
   uint8_T is_active_c3_robotarm_student_2;/* '<S1>/Stateflow ' */
+  uint8_T is_active_dataAssign;        /* '<S1>/Stateflow ' */
   uint8_T is_active_Vacuum;            /* '<S1>/Stateflow ' */
   uint8_T is_active_Robot_Arm;         /* '<S1>/Stateflow ' */
-  uint8_T is_active_dataAssign;        /* '<S1>/Stateflow ' */
   uint8_T is_active_Belt;              /* '<S1>/Stateflow ' */
   uint8_T is_active_Object_Detection;  /* '<S1>/Stateflow ' */
   boolean_T doneDoubleBufferReInit;    /* '<S1>/Stateflow ' */
@@ -692,7 +692,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
                                         * Referenced by: '<S1>/Vacuum [V] '
                                         */
   real_T Objectdetectionmatrix_Value[12];
-  /* Expression: [0                    0                    0      1738105980.5573;0  0  0  0;0  0  0  0]
+  /* Expression: [0                    0                    0      1737872587.6063;0  0  0  0;0  0  0  0]
    * Referenced by: '<S166>/Object detection matrix'
    */
   real_T PulseGenerator1_Amp;          /* Expression: 1
@@ -1194,7 +1194,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T UnitDelay_InitialCondition;   /* Expression: 0
                                         * Referenced by: '<S177>/Unit Delay'
                                         */
-  real_T set_robot_calibration_r_Value;/* Expression: 1.17
+  real_T set_robot_calibration_r_Value;/* Expression: 1.2358
                                         * Referenced by: '<S177>/set_robot_calibration_r'
                                         */
   real_T DiscreteTimeIntegrator_gainva_a;
@@ -1214,7 +1214,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Constant_Value_n;             /* Expression: -0.1
                                         * Referenced by: '<S186>/Constant'
                                         */
-  real_T set_robot_calibration_x_Value;/* Expression: 0.6542
+  real_T set_robot_calibration_x_Value;/* Expression: 0.6
                                         * Referenced by: '<S177>/set_robot_calibration_x'
                                         */
   real_T DiscreteTimeIntegrator_gainv_ip;
@@ -1234,7 +1234,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Constant_Value_p;             /* Expression: 0.1
                                         * Referenced by: '<S187>/Constant'
                                         */
-  real_T set_robot_calibration_z_Value;/* Expression: -0.3901
+  real_T set_robot_calibration_z_Value;/* Expression: -0.4036
                                         * Referenced by: '<S177>/set_robot_calibration_z'
                                         */
   real_T EnableVentiel_Value[8];       /* Expression: [1,0,0,0,0,0,0,0]

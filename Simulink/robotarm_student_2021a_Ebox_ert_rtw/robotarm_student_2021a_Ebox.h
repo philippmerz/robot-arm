@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.73
+ * Model version              : 2.83
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Wed Mar 26 12:00:32 2025
+ * C source code generated on : Thu Mar 27 12:04:29 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -275,6 +275,13 @@ typedef struct {
   real_T SFunctionBuilder;             /* '<S166>/S-Function Builder' */
   real_T Selector2[9];                 /* '<S166>/Selector2' */
   real_T Selector[3];                  /* '<S166>/Selector' */
+  real_T Switch1;                      /* '<S166>/Switch1' */
+  real_T Switch;                       /* '<S166>/Switch' */
+  real_T Switch2;                      /* '<S166>/Switch2' */
+  real_T Switch5;                      /* '<S166>/Switch5' */
+  real_T Switch3;                      /* '<S166>/Switch3' */
+  real_T Switch4;                      /* '<S166>/Switch4' */
+  real_T Switch6;                      /* '<S166>/Switch6' */
   real_T Add;                          /* '<S166>/Add' */
   real_T Selector3;                    /* '<S166>/Selector3' */
   real_T Sum;                          /* '<S166>/Sum' */
@@ -473,9 +480,8 @@ typedef struct {
   int32_T sfEvent_j;                   /* '<S187>/Supervisor' */
   int32_T sfEvent_jk;                  /* '<S186>/Supervisor' */
   int32_T sfEvent_f;                   /* '<S185>/Supervisor' */
-  int32_T clockTickCounter;            /* '<S166>/Pulse Generator' */
-  int32_T clockTickCounter_p;          /* '<S166>/Pulse Generator1' */
-  int32_T clockTickCounter_py;         /* '<S166>/Pulse Generator2' */
+  int32_T clockTickCounter;            /* '<S166>/Pulse Generator1' */
+  int32_T clockTickCounter_k;          /* '<S166>/Pulse Generator' */
   int32_T clockTickCounter_j;          /* '<S15>/Object1' */
   int32_T sfEvent_b;                   /* '<S1>/Stateflow ' */
   uint32_T is_c4_robotarm_student_2021a_Eb;/* '<S188>/Supervisor' */
@@ -503,9 +509,9 @@ typedef struct {
   uint8_T is_active_c6_robotarm_student_2;/* '<S186>/Supervisor' */
   uint8_T is_active_c5_robotarm_student_2;/* '<S185>/Supervisor' */
   uint8_T is_active_c3_robotarm_student_2;/* '<S1>/Stateflow ' */
+  uint8_T is_active_dataAssign;        /* '<S1>/Stateflow ' */
   uint8_T is_active_Vacuum;            /* '<S1>/Stateflow ' */
   uint8_T is_active_Robot_Arm;         /* '<S1>/Stateflow ' */
-  uint8_T is_active_dataAssign;        /* '<S1>/Stateflow ' */
   uint8_T is_active_Belt;              /* '<S1>/Stateflow ' */
   uint8_T is_active_Object_Detection;  /* '<S1>/Stateflow ' */
   boolean_T doneDoubleBufferReInit;    /* '<S1>/Stateflow ' */
@@ -640,47 +646,41 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Delays_Y0;                    /* Computed Parameter: Delays_Y0
                                         * Referenced by: '<S168>/Delay [s]'
                                         */
-  real_T Constant_Value;               /* Expression: 100
-                                        * Referenced by: '<S166>/Constant'
-                                        */
-  real_T Constant2_Value;              /* Expression: 0
-                                        * Referenced by: '<S166>/Constant2'
-                                        */
-  real_T Switch_Threshold;             /* Expression: 0
-                                        * Referenced by: '<S166>/Switch'
-                                        */
-  real_T Constant1_Value;              /* Expression: 100
-                                        * Referenced by: '<S166>/Constant1'
-                                        */
-  real_T Constant3_Value;              /* Expression: 1
+  real_T Constant3_Value;              /* Expression: 100
                                         * Referenced by: '<S166>/Constant3'
                                         */
-  real_T Switch1_Threshold;            /* Expression: 0
-                                        * Referenced by: '<S166>/Switch1'
+  real_T Constant1_Value;              /* Expression: 1
+                                        * Referenced by: '<S166>/Constant1'
                                         */
-  real_T Constant5_Value;              /* Expression: 0
+  real_T Constant5_Value;              /* Expression: 1
                                         * Referenced by: '<S166>/Constant5'
                                         */
-  real_T Constant4_Value;              /* Expression: 1
+  real_T Constant4_Value;              /* Expression: 0
                                         * Referenced by: '<S166>/Constant4'
                                         */
-  real_T Constant7_Value;              /* Expression: 0
+  real_T Constant7_Value;              /* Expression: 2
                                         * Referenced by: '<S166>/Constant7'
                                         */
-  real_T Constant6_Value;              /* Expression: 2
+  real_T Constant6_Value;              /* Expression: 0
                                         * Referenced by: '<S166>/Constant6'
                                         */
-  real_T Constant9_Value;              /* Expression: 0
+  real_T Constant9_Value;              /* Expression: 3
                                         * Referenced by: '<S166>/Constant9'
                                         */
-  real_T Constant8_Value;              /* Expression: 3
+  real_T Constant8_Value;              /* Expression: 0
                                         * Referenced by: '<S166>/Constant8'
                                         */
-  real_T Constant11_Value;             /* Expression: 0
+  real_T Constant11_Value;             /* Expression: 4
                                         * Referenced by: '<S166>/Constant11'
                                         */
-  real_T Constant10_Value;             /* Expression: 4
+  real_T Constant10_Value;             /* Expression: 0
                                         * Referenced by: '<S166>/Constant10'
+                                        */
+  real_T Constant_Value;               /* Expression: 0
+                                        * Referenced by: '<S166>/Constant'
+                                        */
+  real_T Constant2_Value;              /* Expression: 100
+                                        * Referenced by: '<S166>/Constant2'
                                         */
   real_T RobotV_Y0;                    /* Computed Parameter: RobotV_Y0
                                         * Referenced by: '<S1>/Robot [V]'
@@ -692,24 +692,9 @@ struct P_robotarm_student_2021a_Ebox_T_ {
                                         * Referenced by: '<S1>/Vacuum [V] '
                                         */
   real_T Objectdetectionmatrix_Value[12];
-  /* Expression: [0                    0                    0      1738083313.1993;0  0  0  0;0  0  0  0]
+  /* Expression: [0                    0                    0      1737869582.2633;0  0  0  0;0  0  0  0]
    * Referenced by: '<S166>/Object detection matrix'
    */
-  real_T PulseGenerator_Amp;           /* Expression: 1
-                                        * Referenced by: '<S166>/Pulse Generator'
-                                        */
-  real_T PulseGenerator_Period;     /* Computed Parameter: PulseGenerator_Period
-                                     * Referenced by: '<S166>/Pulse Generator'
-                                     */
-  real_T PulseGenerator_Duty;         /* Computed Parameter: PulseGenerator_Duty
-                                       * Referenced by: '<S166>/Pulse Generator'
-                                       */
-  real_T PulseGenerator_PhaseDelay;    /* Expression: 0
-                                        * Referenced by: '<S166>/Pulse Generator'
-                                        */
-  real_T Constant12_Value;             /* Expression: 1
-                                        * Referenced by: '<S166>/Constant12'
-                                        */
   real_T PulseGenerator1_Amp;          /* Expression: 1
                                         * Referenced by: '<S166>/Pulse Generator1'
                                         */
@@ -725,17 +710,26 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Constant13_Value;             /* Expression: 1
                                         * Referenced by: '<S166>/Constant13'
                                         */
-  real_T PulseGenerator2_Amp;          /* Expression: 1
-                                        * Referenced by: '<S166>/Pulse Generator2'
+  real_T PulseGenerator_Amp;           /* Expression: 1
+                                        * Referenced by: '<S166>/Pulse Generator'
                                         */
-  real_T PulseGenerator2_Period;   /* Computed Parameter: PulseGenerator2_Period
-                                    * Referenced by: '<S166>/Pulse Generator2'
-                                    */
-  real_T PulseGenerator2_Duty;       /* Computed Parameter: PulseGenerator2_Duty
-                                      * Referenced by: '<S166>/Pulse Generator2'
-                                      */
-  real_T PulseGenerator2_PhaseDelay;   /* Expression: 0
-                                        * Referenced by: '<S166>/Pulse Generator2'
+  real_T PulseGenerator_Period;     /* Computed Parameter: PulseGenerator_Period
+                                     * Referenced by: '<S166>/Pulse Generator'
+                                     */
+  real_T PulseGenerator_Duty;         /* Computed Parameter: PulseGenerator_Duty
+                                       * Referenced by: '<S166>/Pulse Generator'
+                                       */
+  real_T PulseGenerator_PhaseDelay;    /* Expression: 0
+                                        * Referenced by: '<S166>/Pulse Generator'
+                                        */
+  real_T Constant12_Value;             /* Expression: 1
+                                        * Referenced by: '<S166>/Constant12'
+                                        */
+  real_T Switch1_Threshold;            /* Expression: 0
+                                        * Referenced by: '<S166>/Switch1'
+                                        */
+  real_T Switch_Threshold;             /* Expression: 0
+                                        * Referenced by: '<S166>/Switch'
                                         */
   real_T Switch2_Threshold;            /* Expression: 0
                                         * Referenced by: '<S166>/Switch2'
@@ -743,16 +737,16 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Constant18_Value;             /* Expression: 100
                                         * Referenced by: '<S166>/Constant18'
                                         */
-  real_T Constant15_Value;             /* Expression: 2
+  real_T Constant15_Value;             /* Expression: 1
                                         * Referenced by: '<S166>/Constant15'
                                         */
   real_T Constant14_Value;             /* Expression: 1
                                         * Referenced by: '<S166>/Constant14'
                                         */
-  real_T Constant17_Value;             /* Expression: 4
+  real_T Constant17_Value;             /* Expression: 1
                                         * Referenced by: '<S166>/Constant17'
                                         */
-  real_T Constant16_Value;             /* Expression: 3
+  real_T Constant16_Value;             /* Expression: 1
                                         * Referenced by: '<S166>/Constant16'
                                         */
   real_T Switch5_Threshold;            /* Expression: 0
@@ -1200,7 +1194,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T UnitDelay_InitialCondition;   /* Expression: 0
                                         * Referenced by: '<S177>/Unit Delay'
                                         */
-  real_T set_robot_calibration_r_Value;/* Expression: 1.17
+  real_T set_robot_calibration_r_Value;/* Expression: 1.2358
                                         * Referenced by: '<S177>/set_robot_calibration_r'
                                         */
   real_T DiscreteTimeIntegrator_gainva_a;
@@ -1220,7 +1214,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Constant_Value_n;             /* Expression: -0.1
                                         * Referenced by: '<S186>/Constant'
                                         */
-  real_T set_robot_calibration_x_Value;/* Expression: 0.6542
+  real_T set_robot_calibration_x_Value;/* Expression: 0.6
                                         * Referenced by: '<S177>/set_robot_calibration_x'
                                         */
   real_T DiscreteTimeIntegrator_gainv_ip;
@@ -1240,7 +1234,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Constant_Value_p;             /* Expression: 0.1
                                         * Referenced by: '<S187>/Constant'
                                         */
-  real_T set_robot_calibration_z_Value;/* Expression: -0.3901
+  real_T set_robot_calibration_z_Value;/* Expression: -0.4036
                                         * Referenced by: '<S177>/set_robot_calibration_z'
                                         */
   real_T EnableVentiel_Value[8];       /* Expression: [1,0,0,0,0,0,0,0]

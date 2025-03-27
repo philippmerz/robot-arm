@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.73
+ * Model version              : 2.83
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Wed Mar 26 12:00:32 2025
+ * C source code generated on : Thu Mar 27 12:04:29 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -778,7 +778,10 @@ static void c3_robotarm_student_2021a_Ebox(void)
   if (robotarm_student_2021a_Ebox_DW.is_active_Object_Detection != 0U) {
     switch (robotarm_student_2021a_Ebox_DW.is_Object_Detection) {
      case robotarm_student_202_IN_Seeking:
-      if (robotarm_student_2021a_Ebox_B.Add > 0.0) {
+      if ((robotarm_student_2021a_Ebox_B.Add > 0.0) &&
+          (robotarm_student_2021a_Ebox_DW.temporalCounter_i3 >= (uint32_T)ceil
+           (robotarm_student_2021a_Ebox_DW.block_delay / 0.00048828125 -
+            4.8828125E-12))) {
         robotarm_student_2021a_Ebox_DW.is_Object_Detection =
           robotarm_student_IN_WaitSeeking;
         robotarm_student_2021a_Ebox_DW.temporalCounter_i3 = 0U;
@@ -871,6 +874,7 @@ static void c3_robotarm_student_2021a_Ebox(void)
             4.8828125E-12))) {
         robotarm_student_2021a_Ebox_DW.is_Object_Detection =
           robotarm_student_202_IN_Seeking;
+        robotarm_student_2021a_Ebox_DW.temporalCounter_i3 = 0U;
       }
       break;
 
@@ -884,14 +888,15 @@ static void c3_robotarm_student_2021a_Ebox(void)
   if ((robotarm_student_2021a_Ebox_DW.is_active_Belt != 0U) &&
       (robotarm_student_2021a_Ebox_DW.is_Belt == robotarm_student_2_IN_Belt_Home))
   {
-    robotarm_student_2021a_Ebox_B.Conveyor = 100.0;
+    robotarm_student_2021a_Ebox_B.Conveyor = 5.0;
   }
 
   if (robotarm_student_2021a_Ebox_DW.is_active_Robot_Arm != 0U) {
     switch (robotarm_student_2021a_Ebox_DW.is_Robot_Arm) {
      case robotarm_stu_IN_MoveToIntercept:
       if (robotarm_student_2021a_Ebox_DW.temporalCounter_i2 >= (uint32_T)ceil
-          (robotarm_student_2021a_Ebox_B.t / 0.00048828125 - 4.8828125E-12)) {
+          (robotarm_student_2021a_Ebox_DW.block_delay / 0.00048828125 -
+           4.8828125E-12)) {
         robotarm_student_2021a_Ebox_DW.is_Robot_Arm =
           robotarm_student_2_IN_VacuumOff;
         d_previousEvent = robotarm_student_2021a_Ebox_DW.sfEvent_b;
@@ -941,17 +946,17 @@ static void c3_robotarm_student_2021a_Ebox(void)
         robotarm_student_2021a_Ebox_DW.is_Robot_Arm =
           robotarm_stu_IN_MoveToIntercept;
         robotarm_student_2021a_Ebox_DW.temporalCounter_i2 = 0U;
-        robotarm_student_2021a_E_invkin(robotarm_student_2021a_Ebox_DW.X_in, 0.0,
-          75.0, &robotarm_student_2021a_Ebox_B.R,
-          &robotarm_student_2021a_Ebox_B.X, &robotarm_student_2021a_Ebox_B.Z);
-        robotarm_student_2021a_Ebox_B.t = ((0.0 -
-          robotarm_student_2021a_Ebox_DW.Y_in) /
-          robotarm_student_2021a_Ebox_B.Conveyor -
-          robotarm_student_2021a_Ebox_B.Sum) - robotarm_student_2021a_Ebox_B.Sum;
+        robotarm_student_2021a_E_invkin(robotarm_student_2021a_Ebox_DW.X_in,
+          (5.0 * robotarm_student_2021a_Ebox_DW.block_delay +
+           robotarm_student_2021a_Ebox_B.Sum) *
+          robotarm_student_2021a_Ebox_B.Conveyor, 75.0,
+          &robotarm_student_2021a_Ebox_B.R, &robotarm_student_2021a_Ebox_B.X,
+          &robotarm_student_2021a_Ebox_B.Z);
       }
       break;
 
      case robotarm_s_IN_Start_AboveLabels:
+      robotarm_student_2021a_Ebox_B.t = 1.0;
       if ((robotarm_student_2021a_Ebox_DW.sfEvent_b ==
            robotarm_student_event_GetLabel) &&
           (robotarm_student_2021a_Ebox_DW.temporalCounter_i2 >= (uint32_T)ceil
@@ -1036,8 +1041,8 @@ static void c3_robotarm_student_2021a_Ebox(void)
 static void enter_atomic_Start_AboveLabels(void)
 {
   int32_T b_previousEvent;
-  robotarm_student_2021a_Ebox_DW.block_delay = 3.0;
-  robotarm_student_2021a_Ebox_B.t = 2.0;
+  robotarm_student_2021a_Ebox_DW.block_delay = 2.0;
+  robotarm_student_2021a_Ebox_B.t = 1.0;
   robotarm_student_2021a_E_invkin(0.0, 125.0, 99.0,
     &robotarm_student_2021a_Ebox_B.R, &robotarm_student_2021a_Ebox_B.X,
     &robotarm_student_2021a_Ebox_B.Z);
@@ -2099,49 +2104,17 @@ void robotarm_student_2021a_Ebox_step(void)
         robotarm_student_2021a_Ebox_B.fy2_tmp;
     }
 
-    /* DiscretePulseGenerator: '<S166>/Pulse Generator' */
+    /* DiscretePulseGenerator: '<S166>/Pulse Generator1' */
     robotarm_student_2021a_Ebox_B.Diff_h =
       (robotarm_student_2021a_Ebox_DW.clockTickCounter <
-       robotarm_student_2021a_Ebox_P.PulseGenerator_Duty) &&
+       robotarm_student_2021a_Ebox_P.PulseGenerator1_Duty) &&
       (robotarm_student_2021a_Ebox_DW.clockTickCounter >= 0) ?
-      robotarm_student_2021a_Ebox_P.PulseGenerator_Amp : 0.0;
+      robotarm_student_2021a_Ebox_P.PulseGenerator1_Amp : 0.0;
     if (robotarm_student_2021a_Ebox_DW.clockTickCounter >=
-        robotarm_student_2021a_Ebox_P.PulseGenerator_Period - 1.0) {
+        robotarm_student_2021a_Ebox_P.PulseGenerator1_Period - 1.0) {
       robotarm_student_2021a_Ebox_DW.clockTickCounter = 0;
     } else {
       robotarm_student_2021a_Ebox_DW.clockTickCounter++;
-    }
-
-    /* End of DiscretePulseGenerator: '<S166>/Pulse Generator' */
-
-    /* If: '<S166>/If' incorporates:
-     *  Constant: '<S166>/Constant12'
-     */
-    if ((robotarm_student_2021a_Ebox_B.Diff_h == 0.0) &&
-        (robotarm_student_2021a_Ebox_B.Selector[2] > 5000.0)) {
-      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem' incorporates:
-       *  ActionPort: '<S169>/Action Port'
-       */
-      robotarm_stud_IfActionSubsystem
-        (robotarm_student_2021a_Ebox_P.Constant12_Value,
-         &robotarm_student_2021a_Ebox_B.IfActionSubsystem);
-
-      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem' */
-    }
-
-    /* End of If: '<S166>/If' */
-
-    /* DiscretePulseGenerator: '<S166>/Pulse Generator1' */
-    robotarm_student_2021a_Ebox_B.Diff_h =
-      (robotarm_student_2021a_Ebox_DW.clockTickCounter_p <
-       robotarm_student_2021a_Ebox_P.PulseGenerator1_Duty) &&
-      (robotarm_student_2021a_Ebox_DW.clockTickCounter_p >= 0) ?
-      robotarm_student_2021a_Ebox_P.PulseGenerator1_Amp : 0.0;
-    if (robotarm_student_2021a_Ebox_DW.clockTickCounter_p >=
-        robotarm_student_2021a_Ebox_P.PulseGenerator1_Period - 1.0) {
-      robotarm_student_2021a_Ebox_DW.clockTickCounter_p = 0;
-    } else {
-      robotarm_student_2021a_Ebox_DW.clockTickCounter_p++;
     }
 
     /* End of DiscretePulseGenerator: '<S166>/Pulse Generator1' */
@@ -2150,7 +2123,7 @@ void robotarm_student_2021a_Ebox_step(void)
      *  Constant: '<S166>/Constant13'
      */
     if ((robotarm_student_2021a_Ebox_B.Diff_h == 1.0) &&
-        (robotarm_student_2021a_Ebox_B.Selector[2] > 5000.0)) {
+        (robotarm_student_2021a_Ebox_B.Selector[0] > 50000.0)) {
       /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem1' incorporates:
        *  ActionPort: '<S170>/Action Port'
        */
@@ -2163,51 +2136,83 @@ void robotarm_student_2021a_Ebox_step(void)
 
     /* End of If: '<S166>/If1' */
 
-    /* DiscretePulseGenerator: '<S166>/Pulse Generator2' */
+    /* DiscretePulseGenerator: '<S166>/Pulse Generator' */
     robotarm_student_2021a_Ebox_B.Diff_h =
-      (robotarm_student_2021a_Ebox_DW.clockTickCounter_py <
-       robotarm_student_2021a_Ebox_P.PulseGenerator2_Duty) &&
-      (robotarm_student_2021a_Ebox_DW.clockTickCounter_py >= 0) ?
-      robotarm_student_2021a_Ebox_P.PulseGenerator2_Amp : 0.0;
-    if (robotarm_student_2021a_Ebox_DW.clockTickCounter_py >=
-        robotarm_student_2021a_Ebox_P.PulseGenerator2_Period - 1.0) {
-      robotarm_student_2021a_Ebox_DW.clockTickCounter_py = 0;
+      (robotarm_student_2021a_Ebox_DW.clockTickCounter_k <
+       robotarm_student_2021a_Ebox_P.PulseGenerator_Duty) &&
+      (robotarm_student_2021a_Ebox_DW.clockTickCounter_k >= 0) ?
+      robotarm_student_2021a_Ebox_P.PulseGenerator_Amp : 0.0;
+    if (robotarm_student_2021a_Ebox_DW.clockTickCounter_k >=
+        robotarm_student_2021a_Ebox_P.PulseGenerator_Period - 1.0) {
+      robotarm_student_2021a_Ebox_DW.clockTickCounter_k = 0;
     } else {
-      robotarm_student_2021a_Ebox_DW.clockTickCounter_py++;
+      robotarm_student_2021a_Ebox_DW.clockTickCounter_k++;
     }
 
-    /* End of DiscretePulseGenerator: '<S166>/Pulse Generator2' */
+    /* End of DiscretePulseGenerator: '<S166>/Pulse Generator' */
 
-    /* Switch: '<S166>/Switch2' incorporates:
-     *  Constant: '<S166>/Constant3'
-     *  Switch: '<S166>/Switch1'
+    /* If: '<S166>/If' incorporates:
+     *  Constant: '<S166>/Constant12'
      */
-    if (robotarm_student_2021a_Ebox_B.Diff_h >
-        robotarm_student_2021a_Ebox_P.Switch2_Threshold) {
-      /* Switch: '<S166>/Switch' incorporates:
-       *  Constant: '<S166>/Constant'
-       *  Constant: '<S166>/Constant2'
+    if ((robotarm_student_2021a_Ebox_B.Diff_h == 0.0) &&
+        (robotarm_student_2021a_Ebox_B.Selector[0] > 50000.0)) {
+      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem' incorporates:
+       *  ActionPort: '<S169>/Action Port'
        */
-      if (robotarm_student_2021a_Ebox_B.IfActionSubsystem.In1 >
-          robotarm_student_2021a_Ebox_P.Switch_Threshold) {
-        robotarm_student_2021a_Ebox_B.Diff_h =
-          robotarm_student_2021a_Ebox_P.Constant_Value;
-      } else {
-        robotarm_student_2021a_Ebox_B.Diff_h =
-          robotarm_student_2021a_Ebox_P.Constant2_Value;
-      }
+      robotarm_stud_IfActionSubsystem
+        (robotarm_student_2021a_Ebox_P.Constant12_Value,
+         &robotarm_student_2021a_Ebox_B.IfActionSubsystem);
 
-      /* End of Switch: '<S166>/Switch' */
-    } else if (robotarm_student_2021a_Ebox_B.IfActionSubsystem1.In1 >
-               robotarm_student_2021a_Ebox_P.Switch1_Threshold) {
+      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem' */
+    }
+
+    /* End of If: '<S166>/If' */
+
+    /* Switch: '<S166>/Switch1' */
+    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem1.In1 >
+        robotarm_student_2021a_Ebox_P.Switch1_Threshold) {
+      /* Switch: '<S166>/Switch1' incorporates:
+       *  Constant: '<S166>/Constant3'
+       */
+      robotarm_student_2021a_Ebox_B.Switch1 =
+        robotarm_student_2021a_Ebox_P.Constant3_Value;
+    } else {
       /* Switch: '<S166>/Switch1' incorporates:
        *  Constant: '<S166>/Constant1'
        */
-      robotarm_student_2021a_Ebox_B.Diff_h =
+      robotarm_student_2021a_Ebox_B.Switch1 =
         robotarm_student_2021a_Ebox_P.Constant1_Value;
+    }
+
+    /* End of Switch: '<S166>/Switch1' */
+
+    /* Switch: '<S166>/Switch' */
+    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem.In1 >
+        robotarm_student_2021a_Ebox_P.Switch_Threshold) {
+      /* Switch: '<S166>/Switch' incorporates:
+       *  Constant: '<S166>/Constant'
+       */
+      robotarm_student_2021a_Ebox_B.Switch =
+        robotarm_student_2021a_Ebox_P.Constant_Value;
     } else {
-      robotarm_student_2021a_Ebox_B.Diff_h =
-        robotarm_student_2021a_Ebox_P.Constant3_Value;
+      /* Switch: '<S166>/Switch' incorporates:
+       *  Constant: '<S166>/Constant2'
+       */
+      robotarm_student_2021a_Ebox_B.Switch =
+        robotarm_student_2021a_Ebox_P.Constant2_Value;
+    }
+
+    /* End of Switch: '<S166>/Switch' */
+
+    /* Switch: '<S166>/Switch2' */
+    if (0.0 > robotarm_student_2021a_Ebox_P.Switch2_Threshold) {
+      /* Switch: '<S166>/Switch2' */
+      robotarm_student_2021a_Ebox_B.Switch2 =
+        robotarm_student_2021a_Ebox_B.Switch1;
+    } else {
+      /* Switch: '<S166>/Switch2' */
+      robotarm_student_2021a_Ebox_B.Switch2 =
+        robotarm_student_2021a_Ebox_B.Switch;
     }
 
     /* End of Switch: '<S166>/Switch2' */
@@ -2217,8 +2222,7 @@ void robotarm_student_2021a_Ebox_step(void)
      *  Constant: '<S166>/Constant15'
      *  Constant: '<S166>/Constant18'
      */
-    if ((robotarm_student_2021a_Ebox_B.Diff_h == 0.0) &&
-        (robotarm_student_2021a_Ebox_B.Selector[2] < 85000.0)) {
+    if (robotarm_student_2021a_Ebox_B.Switch2 == 0.0) {
       /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem2' incorporates:
        *  ActionPort: '<S171>/Action Port'
        */
@@ -2227,8 +2231,8 @@ void robotarm_student_2021a_Ebox_step(void)
          &robotarm_student_2021a_Ebox_B.IfActionSubsystem2);
 
       /* End of Outputs for SubSystem: '<S166>/If Action Subsystem2' */
-    } else if ((robotarm_student_2021a_Ebox_B.Diff_h == 0.0) &&
-               (robotarm_student_2021a_Ebox_B.Selector[2] > 85000.0)) {
+    } else if ((robotarm_student_2021a_Ebox_B.Switch2 == 0.0) &&
+               (robotarm_student_2021a_Ebox_B.Selector[0] > 85000.0)) {
       /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem3' incorporates:
        *  ActionPort: '<S172>/Action Port'
        */
@@ -2254,8 +2258,7 @@ void robotarm_student_2021a_Ebox_step(void)
      *  Constant: '<S166>/Constant16'
      *  Constant: '<S166>/Constant17'
      */
-    if ((robotarm_student_2021a_Ebox_B.Diff_h == 1.0) &&
-        (robotarm_student_2021a_Ebox_B.Selector[2] < 85000.0)) {
+    if (robotarm_student_2021a_Ebox_B.Switch2 == 1.0) {
       /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem4' incorporates:
        *  ActionPort: '<S173>/Action Port'
        */
@@ -2264,8 +2267,8 @@ void robotarm_student_2021a_Ebox_step(void)
          &robotarm_student_2021a_Ebox_B.IfActionSubsystem4);
 
       /* End of Outputs for SubSystem: '<S166>/If Action Subsystem4' */
-    } else if ((robotarm_student_2021a_Ebox_B.Diff_h == 1.0) &&
-               (robotarm_student_2021a_Ebox_B.Selector[2] > 85000.0)) {
+    } else if ((robotarm_student_2021a_Ebox_B.Switch2 == 1.0) &&
+               (robotarm_student_2021a_Ebox_B.Selector[0] > 85000.0)) {
       /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem5' incorporates:
        *  ActionPort: '<S174>/Action Port'
        */
@@ -2278,71 +2281,83 @@ void robotarm_student_2021a_Ebox_step(void)
 
     /* End of If: '<S166>/If3' */
 
-    /* Switch: '<S166>/Switch3' incorporates:
-     *  Constant: '<S166>/Constant4'
-     *  Constant: '<S166>/Constant5'
-     */
-    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem2.In1 >
-        robotarm_student_2021a_Ebox_P.Switch3_Threshold) {
-      robotarm_student_2021a_Ebox_B.fy2_tmp =
-        robotarm_student_2021a_Ebox_P.Constant5_Value;
-    } else {
-      robotarm_student_2021a_Ebox_B.fy2_tmp =
-        robotarm_student_2021a_Ebox_P.Constant4_Value;
-    }
-
-    /* End of Switch: '<S166>/Switch3' */
-
-    /* Switch: '<S166>/Switch4' incorporates:
-     *  Constant: '<S166>/Constant6'
-     *  Constant: '<S166>/Constant7'
-     */
-    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem3.In1 >
-        robotarm_student_2021a_Ebox_P.Switch4_Threshold) {
-      robotarm_student_2021a_Ebox_B.Diff_h =
-        robotarm_student_2021a_Ebox_P.Constant7_Value;
-    } else {
-      robotarm_student_2021a_Ebox_B.Diff_h =
-        robotarm_student_2021a_Ebox_P.Constant6_Value;
-    }
-
-    /* End of Switch: '<S166>/Switch4' */
-
-    /* Switch: '<S166>/Switch5' incorporates:
-     *  Constant: '<S166>/Constant8'
-     *  Constant: '<S166>/Constant9'
-     */
+    /* Switch: '<S166>/Switch5' */
     if (robotarm_student_2021a_Ebox_B.IfActionSubsystem4.In1 >
         robotarm_student_2021a_Ebox_P.Switch5_Threshold) {
-      robotarm_student_2021a_Ebox_B.Object1 =
+      /* Switch: '<S166>/Switch5' incorporates:
+       *  Constant: '<S166>/Constant9'
+       */
+      robotarm_student_2021a_Ebox_B.Switch5 =
         robotarm_student_2021a_Ebox_P.Constant9_Value;
     } else {
-      robotarm_student_2021a_Ebox_B.Object1 =
+      /* Switch: '<S166>/Switch5' incorporates:
+       *  Constant: '<S166>/Constant8'
+       */
+      robotarm_student_2021a_Ebox_B.Switch5 =
         robotarm_student_2021a_Ebox_P.Constant8_Value;
     }
 
     /* End of Switch: '<S166>/Switch5' */
 
-    /* Switch: '<S166>/Switch6' incorporates:
-     *  Constant: '<S166>/Constant10'
-     *  Constant: '<S166>/Constant11'
-     */
+    /* Switch: '<S166>/Switch3' */
+    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem2.In1 >
+        robotarm_student_2021a_Ebox_P.Switch3_Threshold) {
+      /* Switch: '<S166>/Switch3' incorporates:
+       *  Constant: '<S166>/Constant5'
+       */
+      robotarm_student_2021a_Ebox_B.Switch3 =
+        robotarm_student_2021a_Ebox_P.Constant5_Value;
+    } else {
+      /* Switch: '<S166>/Switch3' incorporates:
+       *  Constant: '<S166>/Constant4'
+       */
+      robotarm_student_2021a_Ebox_B.Switch3 =
+        robotarm_student_2021a_Ebox_P.Constant4_Value;
+    }
+
+    /* End of Switch: '<S166>/Switch3' */
+
+    /* Switch: '<S166>/Switch4' */
+    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem3.In1 >
+        robotarm_student_2021a_Ebox_P.Switch4_Threshold) {
+      /* Switch: '<S166>/Switch4' incorporates:
+       *  Constant: '<S166>/Constant7'
+       */
+      robotarm_student_2021a_Ebox_B.Switch4 =
+        robotarm_student_2021a_Ebox_P.Constant7_Value;
+    } else {
+      /* Switch: '<S166>/Switch4' incorporates:
+       *  Constant: '<S166>/Constant6'
+       */
+      robotarm_student_2021a_Ebox_B.Switch4 =
+        robotarm_student_2021a_Ebox_P.Constant6_Value;
+    }
+
+    /* End of Switch: '<S166>/Switch4' */
+
+    /* Switch: '<S166>/Switch6' */
     if (robotarm_student_2021a_Ebox_B.IfActionSubsystem5.In1 >
         robotarm_student_2021a_Ebox_P.Switch6_Threshold) {
-      robotarm_student_2021a_Ebox_B.d12_tmp =
+      /* Switch: '<S166>/Switch6' incorporates:
+       *  Constant: '<S166>/Constant11'
+       */
+      robotarm_student_2021a_Ebox_B.Switch6 =
         robotarm_student_2021a_Ebox_P.Constant11_Value;
     } else {
-      robotarm_student_2021a_Ebox_B.d12_tmp =
+      /* Switch: '<S166>/Switch6' incorporates:
+       *  Constant: '<S166>/Constant10'
+       */
+      robotarm_student_2021a_Ebox_B.Switch6 =
         robotarm_student_2021a_Ebox_P.Constant10_Value;
     }
 
     /* End of Switch: '<S166>/Switch6' */
 
     /* Sum: '<S166>/Add' */
-    robotarm_student_2021a_Ebox_B.Add = ((robotarm_student_2021a_Ebox_B.fy2_tmp
-      + robotarm_student_2021a_Ebox_B.Diff_h) +
-      robotarm_student_2021a_Ebox_B.Object1) +
-      robotarm_student_2021a_Ebox_B.d12_tmp;
+    robotarm_student_2021a_Ebox_B.Add = ((robotarm_student_2021a_Ebox_B.Switch3
+      + robotarm_student_2021a_Ebox_B.Switch4) +
+      robotarm_student_2021a_Ebox_B.Switch5) +
+      robotarm_student_2021a_Ebox_B.Switch6;
 
     /* Selector: '<S166>/Selector3' incorporates:
      *  Constant: '<S166>/Object detection matrix'
@@ -4123,15 +4138,15 @@ void robotarm_student_2021a_Ebox_initialize(void)
   robotarm_student_2021a_Ebox_M->Timing.stepSize1 = 0.00048828125;
 
   /* External mode info */
-  robotarm_student_2021a_Ebox_M->Sizes.checksums[0] = (2607396662U);
-  robotarm_student_2021a_Ebox_M->Sizes.checksums[1] = (1367484780U);
-  robotarm_student_2021a_Ebox_M->Sizes.checksums[2] = (2755389677U);
-  robotarm_student_2021a_Ebox_M->Sizes.checksums[3] = (1705127000U);
+  robotarm_student_2021a_Ebox_M->Sizes.checksums[0] = (3288525399U);
+  robotarm_student_2021a_Ebox_M->Sizes.checksums[1] = (1253899455U);
+  robotarm_student_2021a_Ebox_M->Sizes.checksums[2] = (327821599U);
+  robotarm_student_2021a_Ebox_M->Sizes.checksums[3] = (93629041U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
     static RTWExtModeInfo rt_ExtModeInfo;
-    static const sysRanDType *systemRan[50];
+    static const sysRanDType *systemRan[48];
     robotarm_student_2021a_Ebox_M->extModeInfo = (&rt_ExtModeInfo);
     rteiSetSubSystemActiveVectorAddresses(&rt_ExtModeInfo, systemRan);
     systemRan[0] = &rtAlwaysEnabled;
@@ -4185,22 +4200,20 @@ void robotarm_student_2021a_Ebox_initialize(void)
       &robotarm_student_2021a_Ebox_DW.Controller_SubsysRanBC;
     systemRan[25] = (sysRanDType *)
       &robotarm_student_2021a_Ebox_DW.Controller_SubsysRanBC;
-    systemRan[26] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.Controller_SubsysRanBC;
-    systemRan[27] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.Controller_SubsysRanBC;
-    systemRan[28] = &rtAlwaysEnabled;
-    systemRan[29] = &rtAlwaysEnabled;
+    systemRan[26] = &rtAlwaysEnabled;
+    systemRan[27] = &rtAlwaysEnabled;
+    systemRan[28] = (sysRanDType *)
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem_SubsysRanBC;
+    systemRan[29] = (sysRanDType *)
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem_SubsysRanBC;
     systemRan[30] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem_SubsysRanBC;
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem1_SubsysRanBC;
     systemRan[31] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem_SubsysRanBC;
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem1_SubsysRanBC;
     systemRan[32] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem1_SubsysRanBC;
-    systemRan[33] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem1_SubsysRanBC;
-    systemRan[34] = (sysRanDType *)
       &robotarm_student_2021a_Ebox_DW.Subsystem3_SubsysRanBC;
+    systemRan[33] = &rtAlwaysEnabled;
+    systemRan[34] = &rtAlwaysEnabled;
     systemRan[35] = &rtAlwaysEnabled;
     systemRan[36] = &rtAlwaysEnabled;
     systemRan[37] = &rtAlwaysEnabled;
@@ -4214,8 +4227,6 @@ void robotarm_student_2021a_Ebox_initialize(void)
     systemRan[45] = &rtAlwaysEnabled;
     systemRan[46] = &rtAlwaysEnabled;
     systemRan[47] = &rtAlwaysEnabled;
-    systemRan[48] = &rtAlwaysEnabled;
-    systemRan[49] = &rtAlwaysEnabled;
     rteiSetModelMappingInfoPtr(robotarm_student_2021a_Ebox_M->extModeInfo,
       &robotarm_student_2021a_Ebox_M->SpecialInfo.mappingInfo);
     rteiSetChecksumsPtr(robotarm_student_2021a_Ebox_M->extModeInfo,
@@ -10833,14 +10844,11 @@ void robotarm_student_2021a_Ebox_initialize(void)
 
   /* End of Start for SubSystem: '<S166>/Enabled Subsystem' */
 
-  /* Start for DiscretePulseGenerator: '<S166>/Pulse Generator' */
+  /* Start for DiscretePulseGenerator: '<S166>/Pulse Generator1' */
   robotarm_student_2021a_Ebox_DW.clockTickCounter = 0;
 
-  /* Start for DiscretePulseGenerator: '<S166>/Pulse Generator1' */
-  robotarm_student_2021a_Ebox_DW.clockTickCounter_p = 0;
-
-  /* Start for DiscretePulseGenerator: '<S166>/Pulse Generator2' */
-  robotarm_student_2021a_Ebox_DW.clockTickCounter_py = 0;
+  /* Start for DiscretePulseGenerator: '<S166>/Pulse Generator' */
+  robotarm_student_2021a_Ebox_DW.clockTickCounter_k = 0;
 
   /* Start for Constant: '<S1>/Constant' */
   robotarm_student_2021a_Ebox_B.Constant =
@@ -11344,19 +11352,19 @@ void robotarm_student_2021a_Ebox_initialize(void)
 
     /* End of SystemInitialize for SubSystem: '<S166>/Enabled Subsystem' */
 
-    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem' */
-    robotarm_IfActionSubsystem_Init
-      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem,
-       &robotarm_student_2021a_Ebox_P.IfActionSubsystem);
-
-    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem' */
-
     /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem1' */
     robotarm_IfActionSubsystem_Init
       (&robotarm_student_2021a_Ebox_B.IfActionSubsystem1,
        &robotarm_student_2021a_Ebox_P.IfActionSubsystem1);
 
     /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem1' */
+
+    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem' */
+    robotarm_IfActionSubsystem_Init
+      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem,
+       &robotarm_student_2021a_Ebox_P.IfActionSubsystem);
+
+    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem' */
 
     /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem2' */
     robotarm_IfActionSubsystem_Init
@@ -11394,7 +11402,6 @@ void robotarm_student_2021a_Ebox_initialize(void)
     /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem5' */
 
     /* SystemInitialize for Chart: '<S1>/Stateflow ' */
-    robotarm_student_2021a_Ebox_DW.temporalCounter_i3 = 0U;
     robotarm_student_2021a_Ebox_DW.is_active_Vacuum = 0U;
     robotarm_student_2021a_Ebox_DW.is_Vacuum = 0U;
     robotarm_student_2021a_Ebox_DW.temporalCounter_i1_ac = 0U;
@@ -11437,6 +11444,7 @@ void robotarm_student_2021a_Ebox_initialize(void)
     robotarm_student_2021a_Ebox_DW.is_active_Object_Detection = 1U;
     robotarm_student_2021a_Ebox_DW.is_Object_Detection =
       robotarm_student_202_IN_Seeking;
+    robotarm_student_2021a_Ebox_DW.temporalCounter_i3 = 0U;
     robotarm_student_2021a_Ebox_DW.is_active_Belt = 1U;
     robotarm_student_2021a_Ebox_DW.is_Belt = robotarm_student_2_IN_Belt_Home;
     robotarm_student_2021a_Ebox_DW.is_active_Robot_Arm = 1U;
