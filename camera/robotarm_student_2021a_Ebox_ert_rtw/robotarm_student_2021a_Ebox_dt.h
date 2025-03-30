@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.83
+ * Model version              : 2.125
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Thu Mar 27 12:19:57 2025
+ * C source code generated on : Fri Mar 28 16:12:28 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -68,7 +68,7 @@ static DataTypeTransition rtBTransitions[] = {
 
   { (char_T *)(&robotarm_student_2021a_Ebox_B.ManualSwitch1[0]), 15, 0, 256 },
 
-  { (char_T *)(&robotarm_student_2021a_Ebox_B.SFunction), 0, 0, 185 },
+  { (char_T *)(&robotarm_student_2021a_Ebox_B.SFunction), 0, 0, 187 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_B.RelationalOperator), 8, 0, 16 },
 
@@ -91,9 +91,7 @@ static DataTypeTransition rtBTransitions[] = {
 
   { (char_T *)(&robotarm_student_2021a_Ebox_B.IfActionSubsystem2.In1), 0, 0, 1 },
 
-  { (char_T *)(&robotarm_student_2021a_Ebox_B.IfActionSubsystem1.In1), 0, 0, 1 },
-
-  { (char_T *)(&robotarm_student_2021a_Ebox_B.IfActionSubsystem.In1), 0, 0, 1 }
+  { (char_T *)(&robotarm_student_2021a_Ebox_B.IfActionSubsystem1.In1), 0, 0, 1 }
   ,
 
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.DiscreteTimeIntegrator_DSTATE), 0,
@@ -101,7 +99,8 @@ static DataTypeTransition rtBTransitions[] = {
 
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.Delay_DSTATE[0]), 15, 0, 1 },
 
-  { (char_T *)(&robotarm_student_2021a_Ebox_DW.PrevY), 0, 0, 98 },
+  { (char_T *)(&robotarm_student_2021a_Ebox_DW.new7_define_label_picker), 0, 0,
+    97 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.Scope_PWORK.LoggedData[0]), 11, 0,
     6 },
@@ -113,11 +112,11 @@ static DataTypeTransition rtBTransitions[] = {
 
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.temporalCounter_i1), 5, 0, 5 },
 
-  { (char_T *)(&robotarm_student_2021a_Ebox_DW.Subsystem3_SubsysRanBC), 2, 0, 5
+  { (char_T *)(&robotarm_student_2021a_Ebox_DW.Subsystem3_SubsysRanBC), 2, 0, 6
   },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.is_active_c4_robotarm_student_2),
-    3, 0, 10 },
+    3, 0, 9 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.doneDoubleBufferReInit), 8, 0, 4
   },
@@ -169,48 +168,44 @@ static DataTypeTransition rtBTransitions[] = {
     8, 0, 1 },
 
   { (char_T *)
-    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem5.IfActionSubsystem_SubsysRanBC),
+    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem5.IfActionSubsystem1_SubsysRanBC),
     2, 0, 1 },
 
   { (char_T *)
-    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem4.IfActionSubsystem_SubsysRanBC),
+    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem4.IfActionSubsystem1_SubsysRanBC),
     2, 0, 1 },
 
   { (char_T *)
-    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem6.IfActionSubsystem_SubsysRanBC),
+    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem6.IfActionSubsystem1_SubsysRanBC),
     2, 0, 1 },
 
   { (char_T *)
-    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem3.IfActionSubsystem_SubsysRanBC),
+    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem3.IfActionSubsystem1_SubsysRanBC),
     2, 0, 1 },
 
   { (char_T *)
-    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem2.IfActionSubsystem_SubsysRanBC),
+    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem2.IfActionSubsystem1_SubsysRanBC),
     2, 0, 1 },
 
   { (char_T *)
-    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem1.IfActionSubsystem_SubsysRanBC),
-    2, 0, 1 },
-
-  { (char_T *)
-    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem.IfActionSubsystem_SubsysRanBC),
+    (&robotarm_student_2021a_Ebox_DW.IfActionSubsystem1.IfActionSubsystem1_SubsysRanBC),
     2, 0, 1 }
 };
 
 /* data type transition table for block I/O structure */
 static DataTypeTransitionTable rtBTransTable = {
-  44U,
+  42U,
   rtBTransitions
 };
 
 /* data type transitions for Parameters structure */
 static DataTypeTransition rtPTransitions[] = {
-  { (char_T *)(&robotarm_student_2021a_Ebox_P.PIDController_D), 0, 0, 489 },
+  { (char_T *)(&robotarm_student_2021a_Ebox_P.PIDController_D), 0, 0, 486 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_P.LEDRing_Y0[0]), 14, 0, 3072 },
 
-  { (char_T *)(&robotarm_student_2021a_Ebox_P.ManualSwitch_CurrentSetting), 3, 0,
-    6 },
+  { (char_T *)(&robotarm_student_2021a_Ebox_P.ManualSwitch1_CurrentSetting), 3,
+    0, 11 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_P.IfActionSubsystem5.Out1_Y0), 0, 0,
     1 },
@@ -228,15 +223,12 @@ static DataTypeTransition rtPTransitions[] = {
     1 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_P.IfActionSubsystem1.Out1_Y0), 0, 0,
-    1 },
-
-  { (char_T *)(&robotarm_student_2021a_Ebox_P.IfActionSubsystem.Out1_Y0), 0, 0,
     1 }
 };
 
 /* data type transition table for Parameters structure */
 static DataTypeTransitionTable rtPTransTable = {
-  10U,
+  9U,
   rtPTransitions
 };
 

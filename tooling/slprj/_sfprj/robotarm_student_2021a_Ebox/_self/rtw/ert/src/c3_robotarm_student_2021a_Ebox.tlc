@@ -1,0 +1,241 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  1 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   30 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "sfEvent"\
+      Description  "ActiveChartEvent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "doneDoubleBufferReInit"\
+      Description  "DoubleBufferInitCheck"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_c3_robotarm_student_2021a_Ebox"\
+      Description  "StateIsActive"\
+      SFName       "is_active_c3_robotarm_student_2021a_Ebox"\
+      Path         "is_active_c3_robotarm_student_2021a_Ebox"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_Vacuum"\
+      Description  "StateActiveChild"\
+      SFName       "is_Vacuum"\
+      Path         "Vacuum.is_Vacuum"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_Vacuum"\
+      Description  "StateIsActive"\
+      SFName       "is_active_Vacuum"\
+      Path         "Vacuum.is_active_Vacuum"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_Robot_Arm"\
+      Description  "StateActiveChild"\
+      SFName       "is_Robot_Arm"\
+      Path         "Robot_Arm.is_Robot_Arm"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_Robot_Arm"\
+      Description  "StateIsActive"\
+      SFName       "is_active_Robot_Arm"\
+      Path         "Robot_Arm.is_active_Robot_Arm"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_Belt"\
+      Description  "StateActiveChild"\
+      SFName       "is_Belt"\
+      Path         "Belt.is_Belt"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_Belt"\
+      Description  "StateIsActive"\
+      SFName       "is_active_Belt"\
+      Path         "Belt.is_active_Belt"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_Object_Detection"\
+      Description  "StateActiveChild"\
+      SFName       "is_Object_Detection"\
+      Path         "Object_Detection.is_Object_Detection"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_Object_Detection"\
+      Description  "StateIsActive"\
+      SFName       "is_active_Object_Detection"\
+      Path         "Object_Detection.is_active_Object_Detection"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "z"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "z"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "y"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "y"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "x"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "x"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "BUFFER_Z"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "BUFFER_Z"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "objectCoordinate1"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "objectCoordinate1"\
+      SrcLocation  ""\
+      Dimensions   [3]\
+    }\
+    ChartData {\
+      Name         "X_in"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "X_in"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "Y_in"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Y_in"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "objectCoordinate2"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "objectCoordinate2"\
+      SrcLocation  ""\
+      Dimensions   [3]\
+    }\
+    ChartData {\
+      Name         "objectCoordinate3"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "objectCoordinate3"\
+      SrcLocation  ""\
+      Dimensions   [3]\
+    }\
+    ChartData {\
+      Name         "area"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "area"\
+      SrcLocation  ""\
+      Dimensions   [1,3]\
+    }\
+    ChartData {\
+      Name         "Z_in"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Z_in"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "Buffer_Z"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Buffer_Z"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "label_picker"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "label_picker"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "item_tracker"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "item_tracker"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "block_delay"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "block_delay"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i1"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i2"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i3"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "isNotInit"\
+      Description  "HasOutputsRun"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

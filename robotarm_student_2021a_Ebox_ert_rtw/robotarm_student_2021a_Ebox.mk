@@ -2,7 +2,7 @@
 ## Makefile generated for component 'robotarm_student_2021a_Ebox'. 
 ## 
 ## Makefile     : robotarm_student_2021a_Ebox.mk
-## Generated on : Thu Mar 27 12:23:31 2025
+## Generated on : Fri Mar 28 15:25:44 2025
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/robotarm_student_2021a_Ebox.elf
 ## Product type : executable
 ## 
@@ -21,7 +21,7 @@ MAKEFILE                  = robotarm_student_2021a_Ebox.mk
 MATLAB_ROOT               = $(MATLAB_WORKSPACE)/C/Program_Files/MATLAB/R2021a
 MATLAB_BIN                = $(MATLAB_WORKSPACE)/C/Program_Files/MATLAB/R2021a/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm
+START_DIR                 = $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0

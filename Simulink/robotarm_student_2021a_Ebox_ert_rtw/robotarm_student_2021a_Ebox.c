@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.83
+ * Model version              : 2.117
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Thu Mar 27 12:04:29 2025
+ * C source code generated on : Fri Mar 28 12:22:44 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -27,6 +27,7 @@
 #define robotarm_stu_IN_MoveToIntercept (1U)
 #define robotarm_studen_event_ScanAgain (1)
 #define robotarm_studen_event_VacuumOff (2)
+#define robotarm_student_2021a_Ebo_IN_a (3U)
 #define robotarm_student_202_CALL_EVENT (-1)
 #define robotarm_student_202_IN_Move_XY (2U)
 #define robotarm_student_202_IN_Seeking (1U)
@@ -126,7 +127,6 @@ static void enter_atomic_Start_AboveLabels(void);
 
 /*
  * System initialize for action system:
- *    '<S166>/If Action Subsystem'
  *    '<S166>/If Action Subsystem1'
  *    '<S166>/If Action Subsystem2'
  *    '<S166>/If Action Subsystem3'
@@ -134,18 +134,17 @@ static void enter_atomic_Start_AboveLabels(void);
  *    '<S166>/If Action Subsystem4'
  *    '<S166>/If Action Subsystem5'
  */
-void robotarm_IfActionSubsystem_Init(B_IfActionSubsystem_robotarm__T *localB,
-  P_IfActionSubsystem_robotarm__T *localP)
+void robotar_IfActionSubsystem1_Init(B_IfActionSubsystem1_robotarm_T *localB,
+  P_IfActionSubsystem1_robotarm_T *localP)
 {
-  /* SystemInitialize for Outport: '<S169>/Out1' incorporates:
-   *  Inport: '<S169>/In1'
+  /* SystemInitialize for Outport: '<S170>/Out1' incorporates:
+   *  Inport: '<S170>/In1'
    */
   localB->In1 = localP->Out1_Y0;
 }
 
 /*
  * Output and update for action system:
- *    '<S166>/If Action Subsystem'
  *    '<S166>/If Action Subsystem1'
  *    '<S166>/If Action Subsystem2'
  *    '<S166>/If Action Subsystem3'
@@ -153,10 +152,10 @@ void robotarm_IfActionSubsystem_Init(B_IfActionSubsystem_robotarm__T *localB,
  *    '<S166>/If Action Subsystem4'
  *    '<S166>/If Action Subsystem5'
  */
-void robotarm_stud_IfActionSubsystem(real_T rtu_In1,
-  B_IfActionSubsystem_robotarm__T *localB)
+void robotarm_stu_IfActionSubsystem1(real_T rtu_In1,
+  B_IfActionSubsystem1_robotarm_T *localB)
 {
-  /* Inport: '<S169>/In1' */
+  /* Inport: '<S170>/In1' */
   localB->In1 = rtu_In1;
 }
 
@@ -730,13 +729,13 @@ static void robotarm_student_2021a_E_invkin(real_T x, real_T y, real_T z, real_T
   *Psi, real_T *Phi, real_T *Theta)
 {
   robotarm_student_2021a_Ebox_B.Y = y * 0.001;
-  robotarm_student_2021a_Ebox_B.X_c = x * 0.001;
-  robotarm_student_2021a_Ebox_B.R_f = sqrt(robotarm_student_2021a_Ebox_B.X_c *
-    robotarm_student_2021a_Ebox_B.X_c + robotarm_student_2021a_Ebox_B.Y *
+  robotarm_student_2021a_Ebox_B.X_f = x * 0.001;
+  robotarm_student_2021a_Ebox_B.R_g = sqrt(robotarm_student_2021a_Ebox_B.X_f *
+    robotarm_student_2021a_Ebox_B.X_f + robotarm_student_2021a_Ebox_B.Y *
     robotarm_student_2021a_Ebox_B.Y);
   robotarm_student_2021a_Ebox_B.a = 0.246 - (z * 0.001 + 0.045);
-  robotarm_student_2021a_Ebox_B.L_DB = sqrt(robotarm_student_2021a_Ebox_B.R_f *
-    robotarm_student_2021a_Ebox_B.R_f + robotarm_student_2021a_Ebox_B.a *
+  robotarm_student_2021a_Ebox_B.L_DB = sqrt(robotarm_student_2021a_Ebox_B.R_g *
+    robotarm_student_2021a_Ebox_B.R_g + robotarm_student_2021a_Ebox_B.a *
     robotarm_student_2021a_Ebox_B.a);
   robotarm_student_2021a_Ebox_B.a = robotarm_student_2021a_Ebox_B.L_DB *
     robotarm_student_2021a_Ebox_B.L_DB;
@@ -749,15 +748,15 @@ static void robotarm_student_2021a_E_invkin(real_T x, real_T y, real_T z, real_T
      (0.37 * robotarm_student_2021a_Ebox_B.L_DB))) * 0.0312);
   robotarm_student_2021a_Ebox_B.a = robotarm_student_2021a_Ebox_B.L_DF *
     robotarm_student_2021a_Ebox_B.L_DF;
-  robotarm_student_2021a_Ebox_B.R_f = robotarm_student_2021a_Ebox_B.H_CDB + asin
-    (robotarm_student_2021a_Ebox_B.R_f / robotarm_student_2021a_Ebox_B.L_DB);
+  robotarm_student_2021a_Ebox_B.R_g = robotarm_student_2021a_Ebox_B.H_CDB + asin
+    (robotarm_student_2021a_Ebox_B.R_g / robotarm_student_2021a_Ebox_B.L_DB);
   robotarm_student_2021a_Ebox_B.L_DB = sqrt((robotarm_student_2021a_Ebox_B.a +
-    0.027225000000000003) - cos(robotarm_student_2021a_Ebox_B.R_f - acos
+    0.027225000000000003) - cos(robotarm_student_2021a_Ebox_B.R_g - acos
     (((robotarm_student_2021a_Ebox_B.a + 0.016900000000000002) - 0.0144) / (0.26
     * robotarm_student_2021a_Ebox_B.L_DF))) * (2.0 *
     robotarm_student_2021a_Ebox_B.L_DF * 0.165));
   *Psi = robotarm_student__rt_atan2d_snf(robotarm_student_2021a_Ebox_B.Y,
-    robotarm_student_2021a_Ebox_B.X_c);
+    robotarm_student_2021a_Ebox_B.X_f);
   robotarm_student_2021a_Ebox_B.Y = robotarm_student_2021a_Ebox_B.L_DB *
     robotarm_student_2021a_Ebox_B.L_DB;
   *Phi = (1.5707963267948966 - ((1.5707963267948966 - acos
@@ -766,7 +765,7 @@ static void robotarm_student_2021a_E_invkin(real_T x, real_T y, real_T z, real_T
               robotarm_student_2021a_Ebox_B.L_DB * 0.165))) + acos
            (((robotarm_student_2021a_Ebox_B.Y + 0.0064) - 0.016900000000000002) /
             (0.16 * robotarm_student_2021a_Ebox_B.L_DB)))) + -0.2551;
-  *Theta = (robotarm_student_2021a_Ebox_B.R_f - 1.5707963267948966) + -0.615;
+  *Theta = (robotarm_student_2021a_Ebox_B.R_g - 1.5707963267948966) + -0.615;
 }
 
 /* Function for Chart: '<S1>/Stateflow ' */
@@ -778,6 +777,24 @@ static void c3_robotarm_student_2021a_Ebox(void)
   if (robotarm_student_2021a_Ebox_DW.is_active_Object_Detection != 0U) {
     switch (robotarm_student_2021a_Ebox_DW.is_Object_Detection) {
      case robotarm_student_202_IN_Seeking:
+      if (robotarm_student_2021a_Ebox_DW.sfEvent_b ==
+          robotarm_studen_event_ScanAgain) {
+        robotarm_student_2021a_Ebox_DW.is_Object_Detection =
+          robotarm_student_2021a_Ebo_IN_a;
+        robotarm_student_2021a_Ebox_DW.temporalCounter_i3 = 0U;
+      }
+      break;
+
+     case robotarm_student_IN_WaitSeeking:
+      if (robotarm_student_2021a_Ebox_DW.temporalCounter_i3 >= (uint32_T)ceil
+          (9.0 * robotarm_student_2021a_Ebox_DW.block_delay / 0.00048828125 -
+           4.8828125E-12)) {
+        robotarm_student_2021a_Ebox_DW.is_Object_Detection =
+          robotarm_student_202_IN_Seeking;
+      }
+      break;
+
+     case robotarm_student_2021a_Ebo_IN_a:
       if ((robotarm_student_2021a_Ebox_B.Add > 0.0) &&
           (robotarm_student_2021a_Ebox_DW.temporalCounter_i3 >= (uint32_T)ceil
            (robotarm_student_2021a_Ebox_DW.block_delay / 0.00048828125 -
@@ -832,21 +849,21 @@ static void c3_robotarm_student_2021a_Ebox(void)
         robotarm_student_2021a_Ebox_DW.Z_in =
           robotarm_student_2021a_Ebox_DW.objectCoordinate1[2];
         if (robotarm_student_2021a_Ebox_B.Add == 1.0) {
-          d_previousEvent = 25;
+          d_previousEvent = 20;
           y = 190;
-          z = 50;
+          z = 40;
         } else if (robotarm_student_2021a_Ebox_B.Add == 2.0) {
-          d_previousEvent = 25;
-          y = 230;
-          z = 50;
+          d_previousEvent = 20;
+          y = 150;
+          z = 48;
         } else if (robotarm_student_2021a_Ebox_B.Add == 3.0) {
-          d_previousEvent = 65;
+          d_previousEvent = -20;
           y = 190;
-          z = 50;
+          z = 40;
         } else if (robotarm_student_2021a_Ebox_B.Add == 4.0) {
-          d_previousEvent = 65;
-          y = 230;
-          z = 50;
+          d_previousEvent = -20;
+          y = 150;
+          z = 40;
         } else {
           d_previousEvent = 0;
           y = 125;
@@ -866,18 +883,6 @@ static void c3_robotarm_student_2021a_Ebox(void)
       }
       break;
 
-     case robotarm_student_IN_WaitSeeking:
-      if ((robotarm_student_2021a_Ebox_DW.sfEvent_b ==
-           robotarm_studen_event_ScanAgain) &&
-          (robotarm_student_2021a_Ebox_DW.temporalCounter_i3 >= (uint32_T)ceil
-           (robotarm_student_2021a_Ebox_DW.block_delay / 0.00048828125 -
-            4.8828125E-12))) {
-        robotarm_student_2021a_Ebox_DW.is_Object_Detection =
-          robotarm_student_202_IN_Seeking;
-        robotarm_student_2021a_Ebox_DW.temporalCounter_i3 = 0U;
-      }
-      break;
-
      default:
       /* Unreachable state, for coverage only */
       robotarm_student_2021a_Ebox_DW.is_Object_Detection = 0U;
@@ -888,17 +893,18 @@ static void c3_robotarm_student_2021a_Ebox(void)
   if ((robotarm_student_2021a_Ebox_DW.is_active_Belt != 0U) &&
       (robotarm_student_2021a_Ebox_DW.is_Belt == robotarm_student_2_IN_Belt_Home))
   {
-    robotarm_student_2021a_Ebox_B.Conveyor = 5.0;
+    robotarm_student_2021a_Ebox_B.Conveyor = 20.0;
   }
 
   if (robotarm_student_2021a_Ebox_DW.is_active_Robot_Arm != 0U) {
     switch (robotarm_student_2021a_Ebox_DW.is_Robot_Arm) {
      case robotarm_stu_IN_MoveToIntercept:
       if (robotarm_student_2021a_Ebox_DW.temporalCounter_i2 >= (uint32_T)ceil
-          (robotarm_student_2021a_Ebox_DW.block_delay / 0.00048828125 -
+          (1.5 * robotarm_student_2021a_Ebox_DW.block_delay / 0.00048828125 -
            4.8828125E-12)) {
         robotarm_student_2021a_Ebox_DW.is_Robot_Arm =
           robotarm_student_2_IN_VacuumOff;
+        robotarm_student_2021a_Ebox_DW.temporalCounter_i2 = 0U;
         d_previousEvent = robotarm_student_2021a_Ebox_DW.sfEvent_b;
         robotarm_student_2021a_Ebox_DW.sfEvent_b =
           robotarm_studen_event_VacuumOff;
@@ -917,9 +923,9 @@ static void c3_robotarm_student_2021a_Ebox(void)
           robotarm_student_IN_Move_Z_down;
         robotarm_student_2021a_Ebox_DW.temporalCounter_i2 = 0U;
         robotarm_student_2021a_E_invkin(robotarm_student_2021a_Ebox_DW.x,
-          robotarm_student_2021a_Ebox_DW.y, robotarm_student_2021a_Ebox_DW.z,
-          &robotarm_student_2021a_Ebox_B.R, &robotarm_student_2021a_Ebox_B.X,
-          &robotarm_student_2021a_Ebox_B.Z);
+          robotarm_student_2021a_Ebox_DW.y - 15.0,
+          robotarm_student_2021a_Ebox_DW.z, &robotarm_student_2021a_Ebox_B.R,
+          &robotarm_student_2021a_Ebox_B.X, &robotarm_student_2021a_Ebox_B.Z);
       }
       break;
 
@@ -932,7 +938,8 @@ static void c3_robotarm_student_2021a_Ebox(void)
         robotarm_student_2021a_Ebox_DW.temporalCounter_i2 = 0U;
         robotarm_student_2021a_Ebox_DW.Buffer_Z = 0.0;
         robotarm_student_2021a_E_invkin(robotarm_student_2021a_Ebox_DW.x,
-          robotarm_student_2021a_Ebox_DW.y, robotarm_student_2021a_Ebox_DW.z +
+          robotarm_student_2021a_Ebox_DW.y - 15.0,
+          robotarm_student_2021a_Ebox_DW.z +
           robotarm_student_2021a_Ebox_DW.BUFFER_Z,
           &robotarm_student_2021a_Ebox_B.R, &robotarm_student_2021a_Ebox_B.X,
           &robotarm_student_2021a_Ebox_B.Z);
@@ -947,9 +954,10 @@ static void c3_robotarm_student_2021a_Ebox(void)
           robotarm_stu_IN_MoveToIntercept;
         robotarm_student_2021a_Ebox_DW.temporalCounter_i2 = 0U;
         robotarm_student_2021a_E_invkin(robotarm_student_2021a_Ebox_DW.X_in,
-          (5.0 * robotarm_student_2021a_Ebox_DW.block_delay +
-           robotarm_student_2021a_Ebox_B.Sum) *
-          robotarm_student_2021a_Ebox_B.Conveyor, 75.0,
+          (robotarm_student_2021a_Ebox_DW.Y_in - 10.0) + (5.0 *
+          robotarm_student_2021a_Ebox_DW.block_delay +
+          robotarm_student_2021a_Ebox_B.Sum) *
+          robotarm_student_2021a_Ebox_B.Conveyor, 120.0,
           &robotarm_student_2021a_Ebox_B.R, &robotarm_student_2021a_Ebox_B.X,
           &robotarm_student_2021a_Ebox_B.Z);
       }
@@ -975,7 +983,8 @@ static void c3_robotarm_student_2021a_Ebox(void)
         if (robotarm_student_2021a_Ebox_DW.is_Robot_Arm ==
             robotarm_student_202_IN_Move_XY) {
           robotarm_student_2021a_E_invkin(robotarm_student_2021a_Ebox_DW.x,
-            robotarm_student_2021a_Ebox_DW.y, robotarm_student_2021a_Ebox_DW.z +
+            robotarm_student_2021a_Ebox_DW.y - 15.0,
+            robotarm_student_2021a_Ebox_DW.z +
             robotarm_student_2021a_Ebox_DW.BUFFER_Z,
             &robotarm_student_2021a_Ebox_B.R, &robotarm_student_2021a_Ebox_B.X,
             &robotarm_student_2021a_Ebox_B.Z);
@@ -984,10 +993,14 @@ static void c3_robotarm_student_2021a_Ebox(void)
       break;
 
      case robotarm_student_2_IN_VacuumOff:
-      robotarm_student_2021a_Ebox_DW.is_Robot_Arm =
-        robotarm_s_IN_Start_AboveLabels;
-      robotarm_student_2021a_Ebox_DW.temporalCounter_i2 = 0U;
-      enter_atomic_Start_AboveLabels();
+      if (robotarm_student_2021a_Ebox_DW.temporalCounter_i2 >= (uint32_T)ceil
+          (5.0 * robotarm_student_2021a_Ebox_DW.block_delay / 0.00048828125 -
+           4.8828125E-12)) {
+        robotarm_student_2021a_Ebox_DW.is_Robot_Arm =
+          robotarm_s_IN_Start_AboveLabels;
+        robotarm_student_2021a_Ebox_DW.temporalCounter_i2 = 0U;
+        enter_atomic_Start_AboveLabels();
+      }
       break;
 
      default:
@@ -1000,7 +1013,7 @@ static void c3_robotarm_student_2021a_Ebox(void)
   if (robotarm_student_2021a_Ebox_DW.is_active_Vacuum != 0U) {
     switch (robotarm_student_2021a_Ebox_DW.is_Vacuum) {
      case robotarm_student_20_IN_AirBurst:
-      if (robotarm_student_2021a_Ebox_DW.temporalCounter_i1_ac >= 1024U) {
+      if (robotarm_student_2021a_Ebox_DW.temporalCounter_i1_m >= 1024U) {
         robotarm_student_2021a_Ebox_DW.is_Vacuum =
           robotarm_student__IN_Vacuum_Off;
         robotarm_student_2021a_Ebox_B.Pump = 0.0;
@@ -1021,7 +1034,7 @@ static void c3_robotarm_student_2021a_Ebox(void)
           robotarm_studen_event_VacuumOff) {
         robotarm_student_2021a_Ebox_DW.is_Vacuum =
           robotarm_student_20_IN_AirBurst;
-        robotarm_student_2021a_Ebox_DW.temporalCounter_i1_ac = 0U;
+        robotarm_student_2021a_Ebox_DW.temporalCounter_i1_m = 0U;
         robotarm_student_2021a_Ebox_B.Blow_suck = 1.0;
       } else {
         robotarm_student_2021a_Ebox_B.Blow_suck = 0.0;
@@ -1061,8 +1074,11 @@ void robotarm_student_2021a_Ebox_step(void)
   srClearBC(robotarm_student_2021a_Ebox_DW.EnabledSubsystem_SubsysRanBC);
 
   /* Reset subsysRan breadcrumbs */
+  srClearBC(robotarm_student_2021a_Ebox_DW.IfActionSubsystem_SubsysRanBC_o);
+
+  /* Reset subsysRan breadcrumbs */
   srClearBC
-    (robotarm_student_2021a_Ebox_DW.IfActionSubsystem.IfActionSubsystem_SubsysRanBC);
+    (robotarm_student_2021a_Ebox_DW.IfActionSubsystem1.IfActionSubsystem1_SubsysRanBC);
 
   /* Reset subsysRan breadcrumbs */
   srClearBC(robotarm_student_2021a_Ebox_DW.Controller_SubsysRanBC);
@@ -1190,39 +1206,42 @@ void robotarm_student_2021a_Ebox_step(void)
   /* MATLAB Function: '<S185>/Angle2Z' incorporates:
    *  MATLAB Function: '<S187>/Angle2Z'
    */
-  robotarm_student_2021a_Ebox_B.Diff_h = cos
+  robotarm_student_2021a_Ebox_B.Gain_au = cos
     (-robotarm_student_2021a_Ebox_B.HomingRunningSwitch[1] + 1.3157007486526573)
     * 0.08;
-  robotarm_student_2021a_Ebox_B.Object1 = sin
+  robotarm_student_2021a_Ebox_B.fy1_tmp = sin
     (-robotarm_student_2021a_Ebox_B.HomingRunningSwitch[1] + 1.3157007486526573)
     * 0.08;
-  robotarm_student_2021a_Ebox_B.fy2_tmp = sin
+  robotarm_student_2021a_Ebox_B.PulseGenerator = sin
     (robotarm_student_2021a_Ebox_B.HomingRunningSwitch[2] + 0.615) * 0.13 +
     0.165;
-  robotarm_student_2021a_Ebox_B.d12_tmp = cos
+  robotarm_student_2021a_Ebox_B.Gain3_b = cos
     (robotarm_student_2021a_Ebox_B.HomingRunningSwitch[2] + 0.615) * 0.13 -
-    robotarm_student_2021a_Ebox_B.Diff_h;
-  robotarm_student_2021a_Ebox_B.d13_tmp = robotarm_student_2021a_Ebox_B.fy2_tmp
-    - robotarm_student_2021a_Ebox_B.Object1;
-  robotarm_student_2021a_Ebox_B.d12 = sqrt(robotarm_student_2021a_Ebox_B.d12_tmp
-    * robotarm_student_2021a_Ebox_B.d12_tmp +
+    robotarm_student_2021a_Ebox_B.Gain_au;
+  robotarm_student_2021a_Ebox_B.d13_tmp =
+    robotarm_student_2021a_Ebox_B.PulseGenerator -
+    robotarm_student_2021a_Ebox_B.fy1_tmp;
+  robotarm_student_2021a_Ebox_B.d12 = sqrt(robotarm_student_2021a_Ebox_B.Gain3_b
+    * robotarm_student_2021a_Ebox_B.Gain3_b +
     robotarm_student_2021a_Ebox_B.d13_tmp *
     robotarm_student_2021a_Ebox_B.d13_tmp);
-  robotarm_student_2021a_Ebox_B.Object1 = sqrt((0.165 -
-    robotarm_student_2021a_Ebox_B.Object1) * (0.165 -
-    robotarm_student_2021a_Ebox_B.Object1) +
-    robotarm_student_2021a_Ebox_B.Diff_h * robotarm_student_2021a_Ebox_B.Diff_h);
+  robotarm_student_2021a_Ebox_B.fy1_tmp = sqrt((0.165 -
+    robotarm_student_2021a_Ebox_B.fy1_tmp) * (0.165 -
+    robotarm_student_2021a_Ebox_B.fy1_tmp) +
+    robotarm_student_2021a_Ebox_B.Gain_au *
+    robotarm_student_2021a_Ebox_B.Gain_au);
   robotarm_student_2021a_Ebox_B.Sum1_k = robotarm_student_2021a_Ebox_B.d12 *
     robotarm_student_2021a_Ebox_B.d12;
-  robotarm_student_2021a_Ebox_B.y_j = ((robotarm_student_2021a_Ebox_B.fy2_tmp -
-    sin(((3.1415926535897931 - acos(((robotarm_student_2021a_Ebox_B.Sum1_k +
-    0.016900000000000002) - robotarm_student_2021a_Ebox_B.Object1 *
-    robotarm_student_2021a_Ebox_B.Object1) / (2.0 *
-    robotarm_student_2021a_Ebox_B.d12 * 0.13))) - acos
-         (((robotarm_student_2021a_Ebox_B.Sum1_k + 0.0144) -
-           0.016900000000000002) / (2.0 * robotarm_student_2021a_Ebox_B.d12 *
-    0.12))) - (robotarm_student_2021a_Ebox_B.HomingRunningSwitch[2] + 0.615)) *
-    0.185) - 0.045) + 0.081;
+  robotarm_student_2021a_Ebox_B.y_j =
+    ((robotarm_student_2021a_Ebox_B.PulseGenerator - sin(((3.1415926535897931 -
+         acos(((robotarm_student_2021a_Ebox_B.Sum1_k + 0.016900000000000002) -
+               robotarm_student_2021a_Ebox_B.fy1_tmp *
+               robotarm_student_2021a_Ebox_B.fy1_tmp) / (2.0 *
+           robotarm_student_2021a_Ebox_B.d12 * 0.13))) - acos
+        (((robotarm_student_2021a_Ebox_B.Sum1_k + 0.0144) - 0.016900000000000002)
+         / (2.0 * robotarm_student_2021a_Ebox_B.d12 * 0.12))) -
+       (robotarm_student_2021a_Ebox_B.HomingRunningSwitch[2] + 0.615)) * 0.185)
+     - 0.045) + 0.081;
 
   /* Constant: '<S177>/set_robot_calibration_r' */
   robotarm_student_2021a_Ebox_B.set_robot_calibration_r =
@@ -1665,21 +1684,22 @@ void robotarm_student_2021a_Ebox_step(void)
      robotarm_student_2021a_Ebox_P.Constant_Value_p);
 
   /* MATLAB Function: '<S187>/Angle2Z' */
-  robotarm_student_2021a_Ebox_B.d12 = sqrt(robotarm_student_2021a_Ebox_B.d12_tmp
-    * robotarm_student_2021a_Ebox_B.d12_tmp +
+  robotarm_student_2021a_Ebox_B.d12 = sqrt(robotarm_student_2021a_Ebox_B.Gain3_b
+    * robotarm_student_2021a_Ebox_B.Gain3_b +
     robotarm_student_2021a_Ebox_B.d13_tmp *
     robotarm_student_2021a_Ebox_B.d13_tmp);
-  robotarm_student_2021a_Ebox_B.Diff_h = robotarm_student_2021a_Ebox_B.d12 *
+  robotarm_student_2021a_Ebox_B.Gain_au = robotarm_student_2021a_Ebox_B.d12 *
     robotarm_student_2021a_Ebox_B.d12;
-  robotarm_student_2021a_Ebox_B.y = ((robotarm_student_2021a_Ebox_B.fy2_tmp -
-    sin(((3.1415926535897931 - acos(((robotarm_student_2021a_Ebox_B.Diff_h +
-    0.016900000000000002) - robotarm_student_2021a_Ebox_B.Object1 *
-    robotarm_student_2021a_Ebox_B.Object1) / (2.0 *
-    robotarm_student_2021a_Ebox_B.d12 * 0.13))) - acos
-         (((robotarm_student_2021a_Ebox_B.Diff_h + 0.0144) -
-           0.016900000000000002) / (2.0 * robotarm_student_2021a_Ebox_B.d12 *
-    0.12))) - (robotarm_student_2021a_Ebox_B.HomingRunningSwitch[2] + 0.615)) *
-    0.185) - 0.045) + 0.081;
+  robotarm_student_2021a_Ebox_B.y =
+    ((robotarm_student_2021a_Ebox_B.PulseGenerator - sin(((3.1415926535897931 -
+         acos(((robotarm_student_2021a_Ebox_B.Gain_au + 0.016900000000000002) -
+               robotarm_student_2021a_Ebox_B.fy1_tmp *
+               robotarm_student_2021a_Ebox_B.fy1_tmp) / (2.0 *
+           robotarm_student_2021a_Ebox_B.d12 * 0.13))) - acos
+        (((robotarm_student_2021a_Ebox_B.Gain_au + 0.0144) -
+          0.016900000000000002) / (2.0 * robotarm_student_2021a_Ebox_B.d12 *
+          0.12))) - (robotarm_student_2021a_Ebox_B.HomingRunningSwitch[2] +
+                     0.615)) * 0.185) - 0.045) + 0.081;
 
   /* Constant: '<S177>/set_robot_calibration_z' */
   robotarm_student_2021a_Ebox_B.set_robot_calibration_z =
@@ -1979,21 +1999,21 @@ void robotarm_student_2021a_Ebox_step(void)
   /* End of Chart: '<S188>/Supervisor' */
 
   /* Sum: '<S183>/Add' */
-  robotarm_student_2021a_Ebox_B.fy2_tmp =
+  robotarm_student_2021a_Ebox_B.PulseGenerator =
     ((robotarm_student_2021a_Ebox_B.homingBusy_n +
       robotarm_student_2021a_Ebox_B.homingBusy_d) +
      robotarm_student_2021a_Ebox_B.homingBusy_j) +
     robotarm_student_2021a_Ebox_B.homingBusy;
 
   /* Signum: '<S183>/Sign' */
-  if (robotarm_student_2021a_Ebox_B.fy2_tmp < 0.0) {
-    robotarm_student_2021a_Ebox_B.fy2_tmp = -1.0;
-  } else if (robotarm_student_2021a_Ebox_B.fy2_tmp > 0.0) {
-    robotarm_student_2021a_Ebox_B.fy2_tmp = 1.0;
-  } else if (robotarm_student_2021a_Ebox_B.fy2_tmp == 0.0) {
-    robotarm_student_2021a_Ebox_B.fy2_tmp = 0.0;
+  if (robotarm_student_2021a_Ebox_B.PulseGenerator < 0.0) {
+    robotarm_student_2021a_Ebox_B.PulseGenerator = -1.0;
+  } else if (robotarm_student_2021a_Ebox_B.PulseGenerator > 0.0) {
+    robotarm_student_2021a_Ebox_B.PulseGenerator = 1.0;
+  } else if (robotarm_student_2021a_Ebox_B.PulseGenerator == 0.0) {
+    robotarm_student_2021a_Ebox_B.PulseGenerator = 0.0;
   } else {
-    robotarm_student_2021a_Ebox_B.fy2_tmp = (rtNaN);
+    robotarm_student_2021a_Ebox_B.PulseGenerator = (rtNaN);
   }
 
   /* End of Signum: '<S183>/Sign' */
@@ -2003,7 +2023,7 @@ void robotarm_student_2021a_Ebox_step(void)
    */
   robotarm_student_2021a_Ebox_B.Add1 =
     robotarm_student_2021a_Ebox_P.Constant_Value_e -
-    robotarm_student_2021a_Ebox_B.fy2_tmp;
+    robotarm_student_2021a_Ebox_B.PulseGenerator;
 
   /* Outputs for Enabled SubSystem: '<Root>/Controller' incorporates:
    *  EnablePort: '<S1>/Enable '
@@ -2019,6 +2039,96 @@ void robotarm_student_2021a_Ebox_step(void)
   }
 
   if (robotarm_student_2021a_Ebox_DW.Controller_MODE) {
+    /* SignalConversion: '<S1>/Signal Conversion2' */
+    robotarm_student_2021a_Ebox_B.SignalConversion2 =
+      robotarm_student_2021a_Ebox_B.HomingRunningSwitch[0];
+
+    /* SignalConversion: '<S1>/Signal Conversion1' */
+    robotarm_student_2021a_Ebox_B.SignalConversion1 =
+      robotarm_student_2021a_Ebox_B.HomingRunningSwitch[1];
+
+    /* SignalConversion: '<S1>/Signal Conversion' */
+    robotarm_student_2021a_Ebox_B.SignalConversion =
+      robotarm_student_2021a_Ebox_B.HomingRunningSwitch[2];
+
+    /* ManualSwitch: '<S166>/Manual Switch1' */
+    if (robotarm_student_2021a_Ebox_P.ManualSwitch1_CurrentSetting == 1) {
+      /* ManualSwitch: '<S166>/Manual Switch1' incorporates:
+       *  Constant: '<S166>/Constant21'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch1_b =
+        robotarm_student_2021a_Ebox_P.Constant21_Value;
+    } else {
+      /* ManualSwitch: '<S166>/Manual Switch1' incorporates:
+       *  Constant: '<S166>/Constant20'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch1_b =
+        robotarm_student_2021a_Ebox_P.Constant20_Value;
+    }
+
+    /* End of ManualSwitch: '<S166>/Manual Switch1' */
+
+    /* ManualSwitch: '<S166>/Manual Switch2' */
+    if (robotarm_student_2021a_Ebox_P.ManualSwitch2_CurrentSetting == 1) {
+      /* ManualSwitch: '<S166>/Manual Switch2' incorporates:
+       *  Constant: '<S166>/Constant22'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch2 =
+        robotarm_student_2021a_Ebox_P.Constant22_Value;
+    } else {
+      /* ManualSwitch: '<S166>/Manual Switch2' incorporates:
+       *  Constant: '<S166>/Constant20'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch2 =
+        robotarm_student_2021a_Ebox_P.Constant20_Value;
+    }
+
+    /* End of ManualSwitch: '<S166>/Manual Switch2' */
+
+    /* ManualSwitch: '<S166>/Manual Switch3' */
+    if (robotarm_student_2021a_Ebox_P.ManualSwitch3_CurrentSetting == 1) {
+      /* ManualSwitch: '<S166>/Manual Switch3' incorporates:
+       *  Constant: '<S166>/Constant23'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch3 =
+        robotarm_student_2021a_Ebox_P.Constant23_Value;
+    } else {
+      /* ManualSwitch: '<S166>/Manual Switch3' incorporates:
+       *  Constant: '<S166>/Constant20'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch3 =
+        robotarm_student_2021a_Ebox_P.Constant20_Value;
+    }
+
+    /* End of ManualSwitch: '<S166>/Manual Switch3' */
+
+    /* ManualSwitch: '<S166>/Manual Switch4' */
+    if (robotarm_student_2021a_Ebox_P.ManualSwitch4_CurrentSetting == 1) {
+      /* ManualSwitch: '<S166>/Manual Switch4' incorporates:
+       *  Constant: '<S166>/Constant24'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch4 =
+        robotarm_student_2021a_Ebox_P.Constant24_Value;
+    } else {
+      /* ManualSwitch: '<S166>/Manual Switch4' incorporates:
+       *  Constant: '<S166>/Constant20'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch4 =
+        robotarm_student_2021a_Ebox_P.Constant20_Value;
+    }
+
+    /* End of ManualSwitch: '<S166>/Manual Switch4' */
+
+    /* Sum: '<S166>/Add' */
+    robotarm_student_2021a_Ebox_B.Add =
+      ((robotarm_student_2021a_Ebox_B.ManualSwitch1_b +
+        robotarm_student_2021a_Ebox_B.ManualSwitch2) +
+       robotarm_student_2021a_Ebox_B.ManualSwitch3) +
+      robotarm_student_2021a_Ebox_B.ManualSwitch4;
+
+    /* S-Function (getSystemClockTimeval): '<S166>/S-Function Builder' */
+    getSystemClockTimeval_Outputs_wrapper
+      (&robotarm_student_2021a_Ebox_B.SFunctionBuilder);
     for (robotarm_student_2021a_Ebox_B.i = 0; robotarm_student_2021a_Ebox_B.i <
          12; robotarm_student_2021a_Ebox_B.i++) {
       /* RelationalOperator: '<S167>/FixPt Relational Operator' incorporates:
@@ -2031,10 +2141,6 @@ void robotarm_student_2021a_Ebox_step(void)
          !=
          robotarm_student_2021a_Ebox_DW.DelayInput1_DSTATE[robotarm_student_2021a_Ebox_B.i]);
     }
-
-    /* S-Function (getSystemClockTimeval): '<S166>/S-Function Builder' */
-    getSystemClockTimeval_Outputs_wrapper
-      (&robotarm_student_2021a_Ebox_B.SFunctionBuilder);
 
     /* Outputs for Enabled SubSystem: '<S166>/Enabled Subsystem' incorporates:
      *  EnablePort: '<S168>/Enable'
@@ -2055,14 +2161,43 @@ void robotarm_student_2021a_Ebox_step(void)
        robotarm_student_2021a_Ebox_B.FixPtRelationalOperator[11]);
     if (robotarm_student_2021a_Ebox_DW.EnabledSubsystem_MODE) {
       /* Inport: '<S168>/In1' */
-      robotarm_student_2021a_Ebox_B.In1 =
+      robotarm_student_2021a_Ebox_B.In1_c =
         robotarm_student_2021a_Ebox_B.SFunctionBuilder;
       srUpdateBC(robotarm_student_2021a_Ebox_DW.EnabledSubsystem_SubsysRanBC);
     }
 
     /* End of Outputs for SubSystem: '<S166>/Enabled Subsystem' */
+
+    /* Selector: '<S166>/Selector3' incorporates:
+     *  Constant: '<S166>/Object detection matrix'
+     */
+    robotarm_student_2021a_Ebox_B.Selector3 =
+      robotarm_student_2021a_Ebox_P.Objectdetectionmatrix_Value[9];
+
+    /* Sum: '<S166>/Sum' */
+    robotarm_student_2021a_Ebox_B.Sum = robotarm_student_2021a_Ebox_B.In1_c -
+      robotarm_student_2021a_Ebox_B.Selector3;
+
+    /* Constant: '<S1>/Constant' */
+    robotarm_student_2021a_Ebox_B.Constant =
+      robotarm_student_2021a_Ebox_P.Constant_Value_j;
     for (robotarm_student_2021a_Ebox_B.i = 0; robotarm_student_2021a_Ebox_B.i <
          3; robotarm_student_2021a_Ebox_B.i++) {
+      /* Selector: '<S166>/Selector' incorporates:
+       *  Constant: '<S166>/Object detection matrix'
+       *  Selector: '<S166>/Selector2'
+       */
+      robotarm_student_2021a_Ebox_B.Selector_tmp = 3 *
+        robotarm_student_2021a_Ebox_B.i + 2;
+      robotarm_student_2021a_Ebox_B.PulseGenerator =
+        robotarm_student_2021a_Ebox_P.Objectdetectionmatrix_Value[robotarm_student_2021a_Ebox_B.Selector_tmp];
+
+      /* Selector: '<S166>/Selector' incorporates:
+       *  Constant: '<S166>/Object detection matrix'
+       */
+      robotarm_student_2021a_Ebox_B.Selector[robotarm_student_2021a_Ebox_B.i] =
+        robotarm_student_2021a_Ebox_B.PulseGenerator;
+
       /* Selector: '<S166>/Selector2' incorporates:
        *  Constant: '<S166>/Object detection matrix'
        */
@@ -2083,300 +2218,14 @@ void robotarm_student_2021a_Ebox_step(void)
       robotarm_student_2021a_Ebox_B.Selector2[robotarm_student_2021a_Ebox_B.Selector2_tmp]
         =
         robotarm_student_2021a_Ebox_P.Objectdetectionmatrix_Value[robotarm_student_2021a_Ebox_B.Selector2_tmp];
-
-      /* Selector: '<S166>/Selector2' incorporates:
-       *  Constant: '<S166>/Object detection matrix'
-       *  Selector: '<S166>/Selector'
-       */
-      robotarm_student_2021a_Ebox_B.Selector2_tmp = 3 *
-        robotarm_student_2021a_Ebox_B.i + 2;
-      robotarm_student_2021a_Ebox_B.fy2_tmp =
-        robotarm_student_2021a_Ebox_P.Objectdetectionmatrix_Value[robotarm_student_2021a_Ebox_B.Selector2_tmp];
-
-      /* Selector: '<S166>/Selector2' incorporates:
-       *  Constant: '<S166>/Object detection matrix'
-       */
-      robotarm_student_2021a_Ebox_B.Selector2[robotarm_student_2021a_Ebox_B.Selector2_tmp]
-        = robotarm_student_2021a_Ebox_B.fy2_tmp;
-
-      /* Selector: '<S166>/Selector' */
-      robotarm_student_2021a_Ebox_B.Selector[robotarm_student_2021a_Ebox_B.i] =
-        robotarm_student_2021a_Ebox_B.fy2_tmp;
+      robotarm_student_2021a_Ebox_B.Selector2[robotarm_student_2021a_Ebox_B.Selector_tmp]
+        = robotarm_student_2021a_Ebox_B.PulseGenerator;
     }
-
-    /* DiscretePulseGenerator: '<S166>/Pulse Generator1' */
-    robotarm_student_2021a_Ebox_B.Diff_h =
-      (robotarm_student_2021a_Ebox_DW.clockTickCounter <
-       robotarm_student_2021a_Ebox_P.PulseGenerator1_Duty) &&
-      (robotarm_student_2021a_Ebox_DW.clockTickCounter >= 0) ?
-      robotarm_student_2021a_Ebox_P.PulseGenerator1_Amp : 0.0;
-    if (robotarm_student_2021a_Ebox_DW.clockTickCounter >=
-        robotarm_student_2021a_Ebox_P.PulseGenerator1_Period - 1.0) {
-      robotarm_student_2021a_Ebox_DW.clockTickCounter = 0;
-    } else {
-      robotarm_student_2021a_Ebox_DW.clockTickCounter++;
-    }
-
-    /* End of DiscretePulseGenerator: '<S166>/Pulse Generator1' */
-
-    /* If: '<S166>/If1' incorporates:
-     *  Constant: '<S166>/Constant13'
-     */
-    if ((robotarm_student_2021a_Ebox_B.Diff_h == 1.0) &&
-        (robotarm_student_2021a_Ebox_B.Selector[0] > 50000.0)) {
-      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem1' incorporates:
-       *  ActionPort: '<S170>/Action Port'
-       */
-      robotarm_stud_IfActionSubsystem
-        (robotarm_student_2021a_Ebox_P.Constant13_Value,
-         &robotarm_student_2021a_Ebox_B.IfActionSubsystem1);
-
-      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem1' */
-    }
-
-    /* End of If: '<S166>/If1' */
-
-    /* DiscretePulseGenerator: '<S166>/Pulse Generator' */
-    robotarm_student_2021a_Ebox_B.Diff_h =
-      (robotarm_student_2021a_Ebox_DW.clockTickCounter_k <
-       robotarm_student_2021a_Ebox_P.PulseGenerator_Duty) &&
-      (robotarm_student_2021a_Ebox_DW.clockTickCounter_k >= 0) ?
-      robotarm_student_2021a_Ebox_P.PulseGenerator_Amp : 0.0;
-    if (robotarm_student_2021a_Ebox_DW.clockTickCounter_k >=
-        robotarm_student_2021a_Ebox_P.PulseGenerator_Period - 1.0) {
-      robotarm_student_2021a_Ebox_DW.clockTickCounter_k = 0;
-    } else {
-      robotarm_student_2021a_Ebox_DW.clockTickCounter_k++;
-    }
-
-    /* End of DiscretePulseGenerator: '<S166>/Pulse Generator' */
-
-    /* If: '<S166>/If' incorporates:
-     *  Constant: '<S166>/Constant12'
-     */
-    if ((robotarm_student_2021a_Ebox_B.Diff_h == 0.0) &&
-        (robotarm_student_2021a_Ebox_B.Selector[0] > 50000.0)) {
-      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem' incorporates:
-       *  ActionPort: '<S169>/Action Port'
-       */
-      robotarm_stud_IfActionSubsystem
-        (robotarm_student_2021a_Ebox_P.Constant12_Value,
-         &robotarm_student_2021a_Ebox_B.IfActionSubsystem);
-
-      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem' */
-    }
-
-    /* End of If: '<S166>/If' */
-
-    /* Switch: '<S166>/Switch1' */
-    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem1.In1 >
-        robotarm_student_2021a_Ebox_P.Switch1_Threshold) {
-      /* Switch: '<S166>/Switch1' incorporates:
-       *  Constant: '<S166>/Constant3'
-       */
-      robotarm_student_2021a_Ebox_B.Switch1 =
-        robotarm_student_2021a_Ebox_P.Constant3_Value;
-    } else {
-      /* Switch: '<S166>/Switch1' incorporates:
-       *  Constant: '<S166>/Constant1'
-       */
-      robotarm_student_2021a_Ebox_B.Switch1 =
-        robotarm_student_2021a_Ebox_P.Constant1_Value;
-    }
-
-    /* End of Switch: '<S166>/Switch1' */
-
-    /* Switch: '<S166>/Switch' */
-    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem.In1 >
-        robotarm_student_2021a_Ebox_P.Switch_Threshold) {
-      /* Switch: '<S166>/Switch' incorporates:
-       *  Constant: '<S166>/Constant'
-       */
-      robotarm_student_2021a_Ebox_B.Switch =
-        robotarm_student_2021a_Ebox_P.Constant_Value;
-    } else {
-      /* Switch: '<S166>/Switch' incorporates:
-       *  Constant: '<S166>/Constant2'
-       */
-      robotarm_student_2021a_Ebox_B.Switch =
-        robotarm_student_2021a_Ebox_P.Constant2_Value;
-    }
-
-    /* End of Switch: '<S166>/Switch' */
-
-    /* Switch: '<S166>/Switch2' */
-    if (0.0 > robotarm_student_2021a_Ebox_P.Switch2_Threshold) {
-      /* Switch: '<S166>/Switch2' */
-      robotarm_student_2021a_Ebox_B.Switch2 =
-        robotarm_student_2021a_Ebox_B.Switch1;
-    } else {
-      /* Switch: '<S166>/Switch2' */
-      robotarm_student_2021a_Ebox_B.Switch2 =
-        robotarm_student_2021a_Ebox_B.Switch;
-    }
-
-    /* End of Switch: '<S166>/Switch2' */
-
-    /* If: '<S166>/If2' incorporates:
-     *  Constant: '<S166>/Constant14'
-     *  Constant: '<S166>/Constant15'
-     *  Constant: '<S166>/Constant18'
-     */
-    if (robotarm_student_2021a_Ebox_B.Switch2 == 0.0) {
-      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem2' incorporates:
-       *  ActionPort: '<S171>/Action Port'
-       */
-      robotarm_stud_IfActionSubsystem
-        (robotarm_student_2021a_Ebox_P.Constant14_Value,
-         &robotarm_student_2021a_Ebox_B.IfActionSubsystem2);
-
-      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem2' */
-    } else if ((robotarm_student_2021a_Ebox_B.Switch2 == 0.0) &&
-               (robotarm_student_2021a_Ebox_B.Selector[0] > 85000.0)) {
-      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem3' incorporates:
-       *  ActionPort: '<S172>/Action Port'
-       */
-      robotarm_stud_IfActionSubsystem
-        (robotarm_student_2021a_Ebox_P.Constant15_Value,
-         &robotarm_student_2021a_Ebox_B.IfActionSubsystem3);
-
-      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem3' */
-    } else {
-      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem6' incorporates:
-       *  ActionPort: '<S175>/Action Port'
-       */
-      robotarm_stud_IfActionSubsystem
-        (robotarm_student_2021a_Ebox_P.Constant18_Value,
-         &robotarm_student_2021a_Ebox_B.IfActionSubsystem6);
-
-      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem6' */
-    }
-
-    /* End of If: '<S166>/If2' */
-
-    /* If: '<S166>/If3' incorporates:
-     *  Constant: '<S166>/Constant16'
-     *  Constant: '<S166>/Constant17'
-     */
-    if (robotarm_student_2021a_Ebox_B.Switch2 == 1.0) {
-      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem4' incorporates:
-       *  ActionPort: '<S173>/Action Port'
-       */
-      robotarm_stud_IfActionSubsystem
-        (robotarm_student_2021a_Ebox_P.Constant16_Value,
-         &robotarm_student_2021a_Ebox_B.IfActionSubsystem4);
-
-      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem4' */
-    } else if ((robotarm_student_2021a_Ebox_B.Switch2 == 1.0) &&
-               (robotarm_student_2021a_Ebox_B.Selector[0] > 85000.0)) {
-      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem5' incorporates:
-       *  ActionPort: '<S174>/Action Port'
-       */
-      robotarm_stud_IfActionSubsystem
-        (robotarm_student_2021a_Ebox_P.Constant17_Value,
-         &robotarm_student_2021a_Ebox_B.IfActionSubsystem5);
-
-      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem5' */
-    }
-
-    /* End of If: '<S166>/If3' */
-
-    /* Switch: '<S166>/Switch5' */
-    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem4.In1 >
-        robotarm_student_2021a_Ebox_P.Switch5_Threshold) {
-      /* Switch: '<S166>/Switch5' incorporates:
-       *  Constant: '<S166>/Constant9'
-       */
-      robotarm_student_2021a_Ebox_B.Switch5 =
-        robotarm_student_2021a_Ebox_P.Constant9_Value;
-    } else {
-      /* Switch: '<S166>/Switch5' incorporates:
-       *  Constant: '<S166>/Constant8'
-       */
-      robotarm_student_2021a_Ebox_B.Switch5 =
-        robotarm_student_2021a_Ebox_P.Constant8_Value;
-    }
-
-    /* End of Switch: '<S166>/Switch5' */
-
-    /* Switch: '<S166>/Switch3' */
-    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem2.In1 >
-        robotarm_student_2021a_Ebox_P.Switch3_Threshold) {
-      /* Switch: '<S166>/Switch3' incorporates:
-       *  Constant: '<S166>/Constant5'
-       */
-      robotarm_student_2021a_Ebox_B.Switch3 =
-        robotarm_student_2021a_Ebox_P.Constant5_Value;
-    } else {
-      /* Switch: '<S166>/Switch3' incorporates:
-       *  Constant: '<S166>/Constant4'
-       */
-      robotarm_student_2021a_Ebox_B.Switch3 =
-        robotarm_student_2021a_Ebox_P.Constant4_Value;
-    }
-
-    /* End of Switch: '<S166>/Switch3' */
-
-    /* Switch: '<S166>/Switch4' */
-    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem3.In1 >
-        robotarm_student_2021a_Ebox_P.Switch4_Threshold) {
-      /* Switch: '<S166>/Switch4' incorporates:
-       *  Constant: '<S166>/Constant7'
-       */
-      robotarm_student_2021a_Ebox_B.Switch4 =
-        robotarm_student_2021a_Ebox_P.Constant7_Value;
-    } else {
-      /* Switch: '<S166>/Switch4' incorporates:
-       *  Constant: '<S166>/Constant6'
-       */
-      robotarm_student_2021a_Ebox_B.Switch4 =
-        robotarm_student_2021a_Ebox_P.Constant6_Value;
-    }
-
-    /* End of Switch: '<S166>/Switch4' */
-
-    /* Switch: '<S166>/Switch6' */
-    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem5.In1 >
-        robotarm_student_2021a_Ebox_P.Switch6_Threshold) {
-      /* Switch: '<S166>/Switch6' incorporates:
-       *  Constant: '<S166>/Constant11'
-       */
-      robotarm_student_2021a_Ebox_B.Switch6 =
-        robotarm_student_2021a_Ebox_P.Constant11_Value;
-    } else {
-      /* Switch: '<S166>/Switch6' incorporates:
-       *  Constant: '<S166>/Constant10'
-       */
-      robotarm_student_2021a_Ebox_B.Switch6 =
-        robotarm_student_2021a_Ebox_P.Constant10_Value;
-    }
-
-    /* End of Switch: '<S166>/Switch6' */
-
-    /* Sum: '<S166>/Add' */
-    robotarm_student_2021a_Ebox_B.Add = ((robotarm_student_2021a_Ebox_B.Switch3
-      + robotarm_student_2021a_Ebox_B.Switch4) +
-      robotarm_student_2021a_Ebox_B.Switch5) +
-      robotarm_student_2021a_Ebox_B.Switch6;
-
-    /* Selector: '<S166>/Selector3' incorporates:
-     *  Constant: '<S166>/Object detection matrix'
-     */
-    robotarm_student_2021a_Ebox_B.Selector3 =
-      robotarm_student_2021a_Ebox_P.Objectdetectionmatrix_Value[9];
-
-    /* Sum: '<S166>/Sum' */
-    robotarm_student_2021a_Ebox_B.Sum = robotarm_student_2021a_Ebox_B.In1 -
-      robotarm_student_2021a_Ebox_B.Selector3;
-
-    /* Constant: '<S1>/Constant' */
-    robotarm_student_2021a_Ebox_B.Constant =
-      robotarm_student_2021a_Ebox_P.Constant_Value_j;
 
     /* Chart: '<S1>/Stateflow ' */
     if (robotarm_student_2021a_Ebox_DW.isNotInit) {
-      if (robotarm_student_2021a_Ebox_DW.temporalCounter_i1_ac < 2047U) {
-        robotarm_student_2021a_Ebox_DW.temporalCounter_i1_ac++;
+      if (robotarm_student_2021a_Ebox_DW.temporalCounter_i1_m < 2047U) {
+        robotarm_student_2021a_Ebox_DW.temporalCounter_i1_m++;
       }
 
       if (robotarm_student_2021a_Ebox_DW.temporalCounter_i2 < MAX_uint32_T) {
@@ -2394,16 +2243,26 @@ void robotarm_student_2021a_Ebox_step(void)
 
     /* End of Chart: '<S1>/Stateflow ' */
 
-    /* SignalConversion: '<S1>/Signal Conversion2' */
-    robotarm_student_2021a_Ebox_B.SignalConversion2 =
-      robotarm_student_2021a_Ebox_B.HomingRunningSwitch[0];
-
     /* MATLAB Function: '<S1>/quintic trajectory time3' */
     robotarm_quintictrajectorytime3(robotarm_student_2021a_Ebox_B.R,
       robotarm_student_2021a_Ebox_B.t,
       robotarm_student_2021a_Ebox_B.SignalConversion2,
       &robotarm_student_2021a_Ebox_B.sf_quintictrajectorytime3,
       &robotarm_student_2021a_Ebox_DW.sf_quintictrajectorytime3);
+
+    /* MATLAB Function: '<S1>/quintic trajectory time4' */
+    robotarm_quintictrajectorytime3(robotarm_student_2021a_Ebox_B.X,
+      robotarm_student_2021a_Ebox_B.t,
+      robotarm_student_2021a_Ebox_B.SignalConversion1,
+      &robotarm_student_2021a_Ebox_B.sf_quintictrajectorytime4,
+      &robotarm_student_2021a_Ebox_DW.sf_quintictrajectorytime4);
+
+    /* MATLAB Function: '<S1>/quintic trajectory time5' */
+    robotarm_quintictrajectorytime3(robotarm_student_2021a_Ebox_B.Z,
+      robotarm_student_2021a_Ebox_B.t,
+      robotarm_student_2021a_Ebox_B.SignalConversion,
+      &robotarm_student_2021a_Ebox_B.sf_quintictrajectorytime5,
+      &robotarm_student_2021a_Ebox_DW.sf_quintictrajectorytime5);
 
     /* SampleTimeMath: '<S9>/TSamp'
      *
@@ -2414,19 +2273,109 @@ void robotarm_student_2021a_Ebox_step(void)
       robotarm_student_2021a_Ebox_B.sf_quintictrajectorytime3.path *
       robotarm_student_2021a_Ebox_P.TSamp_WtEt;
 
-    /* Sum: '<S9>/Diff' incorporates:
+    /* Sum: '<S219>/Diff' incorporates:
+     *  Sum: '<S9>/Diff'
      *  UnitDelay: '<S9>/UD'
      */
-    robotarm_student_2021a_Ebox_B.Diff_h = robotarm_student_2021a_Ebox_B.TSamp_l
-      - robotarm_student_2021a_Ebox_DW.UD_DSTATE_g;
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
+      robotarm_student_2021a_Ebox_B.TSamp_l -
+      robotarm_student_2021a_Ebox_DW.UD_DSTATE_g;
+
+    /* Signum: '<S1>/Sign' */
+    if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b < 0.0) {
+      robotarm_student_2021a_Ebox_B.PulseGenerator = -1.0;
+    } else if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b > 0.0) {
+      robotarm_student_2021a_Ebox_B.PulseGenerator = 1.0;
+    } else if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b == 0.0) {
+      robotarm_student_2021a_Ebox_B.PulseGenerator = 0.0;
+    } else {
+      robotarm_student_2021a_Ebox_B.PulseGenerator = (rtNaN);
+    }
+
+    /* End of Signum: '<S1>/Sign' */
+
+    /* Gain: '<S1>/Gain' */
+    robotarm_student_2021a_Ebox_B.d12 = robotarm_student_2021a_Ebox_P.Gain_Gain *
+      robotarm_student_2021a_Ebox_B.LimitAcceleration_b;
 
     /* SampleTimeMath: '<S8>/TSamp'
      *
      * About '<S8>/TSamp':
      *  y = u * K where K = 1 / ( w * Ts )
      */
-    robotarm_student_2021a_Ebox_B.TSamp_i = robotarm_student_2021a_Ebox_B.Diff_h
-      * robotarm_student_2021a_Ebox_P.TSamp_WtEt_n;
+    robotarm_student_2021a_Ebox_B.TSamp_i =
+      robotarm_student_2021a_Ebox_B.LimitAcceleration_b *
+      robotarm_student_2021a_Ebox_P.TSamp_WtEt_n;
+
+    /* SampleTimeMath: '<S10>/TSamp'
+     *
+     * About '<S10>/TSamp':
+     *  y = u * K where K = 1 / ( w * Ts )
+     */
+    robotarm_student_2021a_Ebox_B.TSamp_n =
+      robotarm_student_2021a_Ebox_B.sf_quintictrajectorytime4.path *
+      robotarm_student_2021a_Ebox_P.TSamp_WtEt_o;
+
+    /* Sum: '<S219>/Diff' incorporates:
+     *  Sum: '<S10>/Diff'
+     *  UnitDelay: '<S10>/UD'
+     */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
+      robotarm_student_2021a_Ebox_B.TSamp_n -
+      robotarm_student_2021a_Ebox_DW.UD_DSTATE_m;
+
+    /* Signum: '<S1>/Sign1' */
+    if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b < 0.0) {
+      robotarm_student_2021a_Ebox_B.fy1_tmp = -1.0;
+    } else if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b > 0.0) {
+      robotarm_student_2021a_Ebox_B.fy1_tmp = 1.0;
+    } else if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b == 0.0) {
+      robotarm_student_2021a_Ebox_B.fy1_tmp = 0.0;
+    } else {
+      robotarm_student_2021a_Ebox_B.fy1_tmp = (rtNaN);
+    }
+
+    /* End of Signum: '<S1>/Sign1' */
+
+    /* Gain: '<S1>/Gain3' */
+    robotarm_student_2021a_Ebox_B.Gain3_b =
+      robotarm_student_2021a_Ebox_P.Gain3_Gain *
+      robotarm_student_2021a_Ebox_B.LimitAcceleration_b;
+
+    /* SampleTimeMath: '<S11>/TSamp'
+     *
+     * About '<S11>/TSamp':
+     *  y = u * K where K = 1 / ( w * Ts )
+     */
+    robotarm_student_2021a_Ebox_B.TSamp_mq =
+      robotarm_student_2021a_Ebox_B.LimitAcceleration_b *
+      robotarm_student_2021a_Ebox_P.TSamp_WtEt_na;
+
+    /* SampleTimeMath: '<S12>/TSamp'
+     *
+     * About '<S12>/TSamp':
+     *  y = u * K where K = 1 / ( w * Ts )
+     */
+    robotarm_student_2021a_Ebox_B.TSamp_p =
+      robotarm_student_2021a_Ebox_B.sf_quintictrajectorytime5.path *
+      robotarm_student_2021a_Ebox_P.TSamp_WtEt_g;
+
+    /* Sum: '<S219>/Diff' incorporates:
+     *  Sum: '<S12>/Diff'
+     *  UnitDelay: '<S12>/UD'
+     */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
+      robotarm_student_2021a_Ebox_B.TSamp_p -
+      robotarm_student_2021a_Ebox_DW.UD_DSTATE_d;
+
+    /* SampleTimeMath: '<S13>/TSamp'
+     *
+     * About '<S13>/TSamp':
+     *  y = u * K where K = 1 / ( w * Ts )
+     */
+    robotarm_student_2021a_Ebox_B.TSamp_d =
+      robotarm_student_2021a_Ebox_B.LimitAcceleration_b *
+      robotarm_student_2021a_Ebox_P.TSamp_WtEt_b;
 
     /* Gain: '<S3>/Gain1' incorporates:
      *  DiscreteIntegrator: '<S1>/Discrete  integrator'
@@ -2511,58 +2460,17 @@ void robotarm_student_2021a_Ebox_step(void)
       sfcnOutputs(rts,0);
     }
 
-    /* Signum: '<S1>/Sign' */
-    if (robotarm_student_2021a_Ebox_B.Diff_h < 0.0) {
-      robotarm_student_2021a_Ebox_B.Object1 = -1.0;
-    } else if (robotarm_student_2021a_Ebox_B.Diff_h > 0.0) {
-      robotarm_student_2021a_Ebox_B.Object1 = 1.0;
-    } else if (robotarm_student_2021a_Ebox_B.Diff_h == 0.0) {
-      robotarm_student_2021a_Ebox_B.Object1 = 0.0;
-    } else {
-      robotarm_student_2021a_Ebox_B.Object1 = (rtNaN);
-    }
+    /* Gain: '<S48>/Integral Gain' */
+    robotarm_student_2021a_Ebox_B.IntegralGain =
+      robotarm_student_2021a_Ebox_P.PIDController_I *
+      robotarm_student_2021a_Ebox_B.Sum2;
 
-    /* End of Signum: '<S1>/Sign' */
-
-    /* ManualSwitch: '<S4>/Manual Switch' */
-    if (robotarm_student_2021a_Ebox_P.ManualSwitch_CurrentSetting == 1) {
-      robotarm_student_2021a_Ebox_B.fy2_tmp =
-        robotarm_student_2021a_Ebox_B.Dctintegrator_o;
-    } else {
-      robotarm_student_2021a_Ebox_B.fy2_tmp =
-        robotarm_student_2021a_Ebox_B.Dctnotch;
-    }
-
-    /* End of ManualSwitch: '<S4>/Manual Switch' */
-
-    /* Sum: '<S1>/Sum4' incorporates:
-     *  Gain: '<S1>/Gain'
-     *  Gain: '<S1>/Gain1'
-     *  Gain: '<S1>/Gain2'
-     *  Sum: '<S1>/Add'
-     *  Sum: '<S8>/Diff'
-     *  UnitDelay: '<S8>/UD'
+    /* Gain: '<S5>/Gain1' incorporates:
+     *  Sum: '<S1>/Sum9'
      */
-    robotarm_student_2021a_Ebox_B.Sum4 =
-      ((robotarm_student_2021a_Ebox_P.Gain2_Gain *
-        robotarm_student_2021a_Ebox_B.Object1 +
-        robotarm_student_2021a_Ebox_P.Gain_Gain *
-        robotarm_student_2021a_Ebox_B.Diff_h) +
-       (robotarm_student_2021a_Ebox_B.TSamp_i -
-        robotarm_student_2021a_Ebox_DW.UD_DSTATE_c) *
-       robotarm_student_2021a_Ebox_P.Gain1_Gain) +
-      robotarm_student_2021a_Ebox_B.fy2_tmp;
-
-    /* SignalConversion: '<S1>/Signal Conversion1' */
-    robotarm_student_2021a_Ebox_B.SignalConversion1 =
-      robotarm_student_2021a_Ebox_B.HomingRunningSwitch[1];
-
-    /* MATLAB Function: '<S1>/quintic trajectory time4' */
-    robotarm_quintictrajectorytime3(robotarm_student_2021a_Ebox_B.X,
-      robotarm_student_2021a_Ebox_B.t,
-      robotarm_student_2021a_Ebox_B.SignalConversion1,
-      &robotarm_student_2021a_Ebox_B.sf_quintictrajectorytime4,
-      &robotarm_student_2021a_Ebox_DW.sf_quintictrajectorytime4);
+    robotarm_student_2021a_Ebox_B.Gain1_o = (robotarm_student_2021a_Ebox_B.Pump
+      - robotarm_student_2021a_Ebox_B.Gain6) *
+      robotarm_student_2021a_Ebox_P.Gain1_Gain_b;
 
     /* Sum: '<S1>/Sum1' */
     robotarm_student_2021a_Ebox_B.Sum1 =
@@ -2614,16 +2522,10 @@ void robotarm_student_2021a_Ebox_step(void)
       sfcnOutputs(rts,0);
     }
 
-    /* SignalConversion: '<S1>/Signal Conversion' */
-    robotarm_student_2021a_Ebox_B.SignalConversion =
-      robotarm_student_2021a_Ebox_B.HomingRunningSwitch[2];
-
-    /* MATLAB Function: '<S1>/quintic trajectory time5' */
-    robotarm_quintictrajectorytime3(robotarm_student_2021a_Ebox_B.Z,
-      robotarm_student_2021a_Ebox_B.t,
-      robotarm_student_2021a_Ebox_B.SignalConversion,
-      &robotarm_student_2021a_Ebox_B.sf_quintictrajectorytime5,
-      &robotarm_student_2021a_Ebox_DW.sf_quintictrajectorytime5);
+    /* Gain: '<S97>/Integral Gain' */
+    robotarm_student_2021a_Ebox_B.IntegralGain_m =
+      robotarm_student_2021a_Ebox_P.PIDController1_I *
+      robotarm_student_2021a_Ebox_B.Sum1;
 
     /* Sum: '<S1>/Sum7' */
     robotarm_student_2021a_Ebox_B.Sum7 =
@@ -2647,7 +2549,7 @@ void robotarm_student_2021a_Ebox_step(void)
     }
 
     /* Gain: '<S7>/Gain' */
-    robotarm_student_2021a_Ebox_B.Diff_h =
+    robotarm_student_2021a_Ebox_B.Gain_au =
       robotarm_student_2021a_Ebox_P.Gain_Gain_n *
       robotarm_student_2021a_Ebox_B.Sum7;
 
@@ -2658,7 +2560,7 @@ void robotarm_student_2021a_Ebox_step(void)
      */
     robotarm_student_2021a_Ebox_B.FilterCoefficient_n4 =
       (robotarm_student_2021a_Ebox_P.PIDController_D_l *
-       robotarm_student_2021a_Ebox_B.Diff_h -
+       robotarm_student_2021a_Ebox_B.Gain_au -
        robotarm_student_2021a_Ebox_DW.Filter_DSTATE_l) *
       robotarm_student_2021a_Ebox_P.PIDController_N_a;
 
@@ -2668,7 +2570,7 @@ void robotarm_student_2021a_Ebox_step(void)
      */
     robotarm_student_2021a_Ebox_B.Sum_m =
       (robotarm_student_2021a_Ebox_P.PIDController_P_d *
-       robotarm_student_2021a_Ebox_B.Diff_h +
+       robotarm_student_2021a_Ebox_B.Gain_au +
        robotarm_student_2021a_Ebox_DW.Integrator_DSTATE_c) +
       robotarm_student_2021a_Ebox_B.FilterCoefficient_n4;
 
@@ -2680,160 +2582,10 @@ void robotarm_student_2021a_Ebox_step(void)
       sfcnOutputs(rts,0);
     }
 
-    /* SampleTimeMath: '<S12>/TSamp'
-     *
-     * About '<S12>/TSamp':
-     *  y = u * K where K = 1 / ( w * Ts )
-     */
-    robotarm_student_2021a_Ebox_B.TSamp_p =
-      robotarm_student_2021a_Ebox_B.sf_quintictrajectorytime5.path *
-      robotarm_student_2021a_Ebox_P.TSamp_WtEt_g;
-
-    /* Sum: '<S12>/Diff' incorporates:
-     *  UnitDelay: '<S12>/UD'
-     */
-    robotarm_student_2021a_Ebox_B.Object1 =
-      robotarm_student_2021a_Ebox_B.TSamp_p -
-      robotarm_student_2021a_Ebox_DW.UD_DSTATE_d;
-
-    /* SampleTimeMath: '<S13>/TSamp'
-     *
-     * About '<S13>/TSamp':
-     *  y = u * K where K = 1 / ( w * Ts )
-     */
-    robotarm_student_2021a_Ebox_B.TSamp_d =
-      robotarm_student_2021a_Ebox_B.Object1 *
-      robotarm_student_2021a_Ebox_P.TSamp_WtEt_b;
-
-    /* Signum: '<S1>/Sign2' */
-    if (robotarm_student_2021a_Ebox_B.Object1 < 0.0) {
-      robotarm_student_2021a_Ebox_B.d12_tmp = -1.0;
-    } else if (robotarm_student_2021a_Ebox_B.Object1 > 0.0) {
-      robotarm_student_2021a_Ebox_B.d12_tmp = 1.0;
-    } else if (robotarm_student_2021a_Ebox_B.Object1 == 0.0) {
-      robotarm_student_2021a_Ebox_B.d12_tmp = 0.0;
-    } else {
-      robotarm_student_2021a_Ebox_B.d12_tmp = (rtNaN);
-    }
-
-    /* End of Signum: '<S1>/Sign2' */
-
-    /* ManualSwitch: '<S7>/Manual Switch' */
-    if (robotarm_student_2021a_Ebox_P.ManualSwitch_CurrentSetting_d == 1) {
-      robotarm_student_2021a_Ebox_B.fy2_tmp =
-        robotarm_student_2021a_Ebox_B.Dctintegrator_f;
-    } else {
-      robotarm_student_2021a_Ebox_B.fy2_tmp =
-        robotarm_student_2021a_Ebox_B.Dctnotch_d;
-    }
-
-    /* End of ManualSwitch: '<S7>/Manual Switch' */
-
-    /* Sum: '<S1>/Sum6' incorporates:
-     *  Gain: '<S1>/Gain6'
-     *  Gain: '<S1>/Gain7'
-     *  Gain: '<S1>/Gain8'
-     *  Sum: '<S13>/Diff'
-     *  Sum: '<S1>/Add2'
-     *  UnitDelay: '<S13>/UD'
-     */
-    robotarm_student_2021a_Ebox_B.Sum6 =
-      ((robotarm_student_2021a_Ebox_P.Gain8_Gain *
-        robotarm_student_2021a_Ebox_B.d12_tmp +
-        robotarm_student_2021a_Ebox_P.Gain6_Gain *
-        robotarm_student_2021a_Ebox_B.Object1) +
-       (robotarm_student_2021a_Ebox_B.TSamp_d -
-        robotarm_student_2021a_Ebox_DW.UD_DSTATE_a) *
-       robotarm_student_2021a_Ebox_P.Gain7_Gain) +
-      robotarm_student_2021a_Ebox_B.fy2_tmp;
-
     /* Gain: '<S146>/Integral Gain' */
-    robotarm_student_2021a_Ebox_B.IntegralGain =
-      robotarm_student_2021a_Ebox_P.PIDController_I *
-      robotarm_student_2021a_Ebox_B.Diff_h;
-
-    /* SampleTimeMath: '<S10>/TSamp'
-     *
-     * About '<S10>/TSamp':
-     *  y = u * K where K = 1 / ( w * Ts )
-     */
-    robotarm_student_2021a_Ebox_B.TSamp_n =
-      robotarm_student_2021a_Ebox_B.sf_quintictrajectorytime4.path *
-      robotarm_student_2021a_Ebox_P.TSamp_WtEt_o;
-
-    /* Sum: '<S10>/Diff' incorporates:
-     *  UnitDelay: '<S10>/UD'
-     */
-    robotarm_student_2021a_Ebox_B.Diff_h = robotarm_student_2021a_Ebox_B.TSamp_n
-      - robotarm_student_2021a_Ebox_DW.UD_DSTATE_m;
-
-    /* SampleTimeMath: '<S11>/TSamp'
-     *
-     * About '<S11>/TSamp':
-     *  y = u * K where K = 1 / ( w * Ts )
-     */
-    robotarm_student_2021a_Ebox_B.TSamp_mq =
-      robotarm_student_2021a_Ebox_B.Diff_h *
-      robotarm_student_2021a_Ebox_P.TSamp_WtEt_na;
-
-    /* Signum: '<S1>/Sign1' */
-    if (robotarm_student_2021a_Ebox_B.Diff_h < 0.0) {
-      robotarm_student_2021a_Ebox_B.Object1 = -1.0;
-    } else if (robotarm_student_2021a_Ebox_B.Diff_h > 0.0) {
-      robotarm_student_2021a_Ebox_B.Object1 = 1.0;
-    } else if (robotarm_student_2021a_Ebox_B.Diff_h == 0.0) {
-      robotarm_student_2021a_Ebox_B.Object1 = 0.0;
-    } else {
-      robotarm_student_2021a_Ebox_B.Object1 = (rtNaN);
-    }
-
-    /* End of Signum: '<S1>/Sign1' */
-
-    /* ManualSwitch: '<S6>/Manual Switch' */
-    if (robotarm_student_2021a_Ebox_P.ManualSwitch_CurrentSetting_e == 1) {
-      robotarm_student_2021a_Ebox_B.fy2_tmp =
-        robotarm_student_2021a_Ebox_B.Dctintegrator_or;
-    } else {
-      robotarm_student_2021a_Ebox_B.fy2_tmp =
-        robotarm_student_2021a_Ebox_B.Dctnotch_p;
-    }
-
-    /* End of ManualSwitch: '<S6>/Manual Switch' */
-
-    /* Sum: '<S1>/Sum5' incorporates:
-     *  Gain: '<S1>/Gain3'
-     *  Gain: '<S1>/Gain4'
-     *  Gain: '<S1>/Gain5'
-     *  Sum: '<S11>/Diff'
-     *  Sum: '<S1>/Add1'
-     *  UnitDelay: '<S11>/UD'
-     */
-    robotarm_student_2021a_Ebox_B.Sum5 =
-      ((robotarm_student_2021a_Ebox_P.Gain5_Gain *
-        robotarm_student_2021a_Ebox_B.Object1 +
-        robotarm_student_2021a_Ebox_P.Gain3_Gain *
-        robotarm_student_2021a_Ebox_B.Diff_h) +
-       (robotarm_student_2021a_Ebox_B.TSamp_mq -
-        robotarm_student_2021a_Ebox_DW.UD_DSTATE_m3) *
-       robotarm_student_2021a_Ebox_P.Gain4_Gain) +
-      robotarm_student_2021a_Ebox_B.fy2_tmp;
-
-    /* Gain: '<S97>/Integral Gain' */
-    robotarm_student_2021a_Ebox_B.IntegralGain_m =
-      robotarm_student_2021a_Ebox_P.PIDController1_I *
-      robotarm_student_2021a_Ebox_B.Sum1;
-
-    /* Gain: '<S48>/Integral Gain' */
-    robotarm_student_2021a_Ebox_B.IntegralGain_m2 =
-      robotarm_student_2021a_Ebox_P.PIDController_I_a *
-      robotarm_student_2021a_Ebox_B.Sum2;
-
-    /* Gain: '<S5>/Gain1' incorporates:
-     *  Sum: '<S1>/Sum9'
-     */
-    robotarm_student_2021a_Ebox_B.Gain1_o = (robotarm_student_2021a_Ebox_B.Pump
-      - robotarm_student_2021a_Ebox_B.Gain6) *
-      robotarm_student_2021a_Ebox_P.Gain1_Gain_b;
+    robotarm_student_2021a_Ebox_B.IntegralGain_k =
+      robotarm_student_2021a_Ebox_P.PIDController_I_m *
+      robotarm_student_2021a_Ebox_B.Gain_au;
 
     /* Saturate: '<S1>/Saturation ' */
     if (robotarm_student_2021a_Ebox_B.Conveyor >
@@ -2854,18 +2606,114 @@ void robotarm_student_2021a_Ebox_step(void)
 
     /* End of Saturate: '<S1>/Saturation ' */
 
-    /* ManualSwitch: '<S15>/Manual Switch1' incorporates:
-     *  StringConstant: '<S15>/Color; set with string; black or white'
-     *  StringConstant: '<S15>/Color; specified in 6 hex digits, rrggbb'
+    /* ManualSwitch: '<S4>/Manual Switch' */
+    if (robotarm_student_2021a_Ebox_P.ManualSwitch_CurrentSetting == 1) {
+      robotarm_student_2021a_Ebox_B.Gain_au =
+        robotarm_student_2021a_Ebox_B.Dctintegrator_o;
+    } else {
+      robotarm_student_2021a_Ebox_B.Gain_au =
+        robotarm_student_2021a_Ebox_B.Dctnotch;
+    }
+
+    /* End of ManualSwitch: '<S4>/Manual Switch' */
+
+    /* Sum: '<S1>/Sum4' incorporates:
+     *  Gain: '<S1>/Gain1'
+     *  Gain: '<S1>/Gain2'
+     *  Sum: '<S1>/Add'
+     *  Sum: '<S8>/Diff'
+     *  UnitDelay: '<S8>/UD'
      */
-    if (robotarm_student_2021a_Ebox_P.ManualSwitch1_CurrentSetting == 1) {
+    robotarm_student_2021a_Ebox_B.Sum4 =
+      ((robotarm_student_2021a_Ebox_P.Gain2_Gain *
+        robotarm_student_2021a_Ebox_B.PulseGenerator +
+        robotarm_student_2021a_Ebox_B.d12) +
+       (robotarm_student_2021a_Ebox_B.TSamp_i -
+        robotarm_student_2021a_Ebox_DW.UD_DSTATE_c) *
+       robotarm_student_2021a_Ebox_P.Gain1_Gain) +
+      robotarm_student_2021a_Ebox_B.Gain_au;
+
+    /* ManualSwitch: '<S6>/Manual Switch' */
+    if (robotarm_student_2021a_Ebox_P.ManualSwitch_CurrentSetting_e == 1) {
+      robotarm_student_2021a_Ebox_B.Gain_au =
+        robotarm_student_2021a_Ebox_B.Dctintegrator_or;
+    } else {
+      robotarm_student_2021a_Ebox_B.Gain_au =
+        robotarm_student_2021a_Ebox_B.Dctnotch_p;
+    }
+
+    /* End of ManualSwitch: '<S6>/Manual Switch' */
+
+    /* Sum: '<S1>/Sum5' incorporates:
+     *  Gain: '<S1>/Gain4'
+     *  Gain: '<S1>/Gain5'
+     *  Sum: '<S11>/Diff'
+     *  Sum: '<S1>/Add1'
+     *  UnitDelay: '<S11>/UD'
+     */
+    robotarm_student_2021a_Ebox_B.Sum5 =
+      ((robotarm_student_2021a_Ebox_P.Gain5_Gain *
+        robotarm_student_2021a_Ebox_B.fy1_tmp +
+        robotarm_student_2021a_Ebox_B.Gain3_b) +
+       (robotarm_student_2021a_Ebox_B.TSamp_mq -
+        robotarm_student_2021a_Ebox_DW.UD_DSTATE_m3) *
+       robotarm_student_2021a_Ebox_P.Gain4_Gain) +
+      robotarm_student_2021a_Ebox_B.Gain_au;
+
+    /* Signum: '<S1>/Sign2' */
+    if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b < 0.0) {
+      robotarm_student_2021a_Ebox_B.PulseGenerator = -1.0;
+    } else if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b > 0.0) {
+      robotarm_student_2021a_Ebox_B.PulseGenerator = 1.0;
+    } else if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b == 0.0) {
+      robotarm_student_2021a_Ebox_B.PulseGenerator = 0.0;
+    } else {
+      robotarm_student_2021a_Ebox_B.PulseGenerator = (rtNaN);
+    }
+
+    /* End of Signum: '<S1>/Sign2' */
+
+    /* ManualSwitch: '<S7>/Manual Switch' */
+    if (robotarm_student_2021a_Ebox_P.ManualSwitch_CurrentSetting_d == 1) {
+      robotarm_student_2021a_Ebox_B.Gain_au =
+        robotarm_student_2021a_Ebox_B.Dctintegrator_f;
+    } else {
+      robotarm_student_2021a_Ebox_B.Gain_au =
+        robotarm_student_2021a_Ebox_B.Dctnotch_d;
+    }
+
+    /* End of ManualSwitch: '<S7>/Manual Switch' */
+
+    /* Sum: '<S1>/Sum6' incorporates:
+     *  Gain: '<S1>/Gain6'
+     *  Gain: '<S1>/Gain7'
+     *  Gain: '<S1>/Gain8'
+     *  Sum: '<S13>/Diff'
+     *  Sum: '<S1>/Add2'
+     *  UnitDelay: '<S13>/UD'
+     */
+    robotarm_student_2021a_Ebox_B.Sum6 =
+      ((robotarm_student_2021a_Ebox_P.Gain8_Gain *
+        robotarm_student_2021a_Ebox_B.PulseGenerator +
+        robotarm_student_2021a_Ebox_P.Gain6_Gain *
+        robotarm_student_2021a_Ebox_B.LimitAcceleration_b) +
+       (robotarm_student_2021a_Ebox_B.TSamp_d -
+        robotarm_student_2021a_Ebox_DW.UD_DSTATE_a) *
+       robotarm_student_2021a_Ebox_P.Gain7_Gain) +
+      robotarm_student_2021a_Ebox_B.Gain_au;
+
+    /* ManualSwitch: '<S15>/Manual Switch1' incorporates:
+     *  StringConstant: '<S15>/Color; specified in 6 hex digits, rrggbb'
+     *  StringConstant: '<S15>/Color; specified in 6 hex digits, rrggbb1'
+     */
+    if (robotarm_student_2021a_Ebox_P.ManualSwitch1_CurrentSetting_b == 1) {
       strncpy(&robotarm_student_2021a_Ebox_B.ManualSwitch1[0],
               &robotarm_student_2021a_Ebox_P.Colorspecifiedin6hexdigitsrrggb[0],
               255U);
       robotarm_student_2021a_Ebox_B.ManualSwitch1[255] = '\x00';
     } else {
       strncpy(&robotarm_student_2021a_Ebox_B.ManualSwitch1[0],
-              &robotarm_student_2021a_Ebox_P.Colorsetwithstringblackorwhite_[0],
+              &robotarm_student_2021a_Ebox_P.Colorspecifiedin6hexdigitsrrg_n[0],
               255U);
       robotarm_student_2021a_Ebox_B.ManualSwitch1[255] = '\x00';
     }
@@ -2873,24 +2721,221 @@ void robotarm_student_2021a_Ebox_step(void)
     /* End of ManualSwitch: '<S15>/Manual Switch1' */
 
     /* DiscretePulseGenerator: '<S15>/Object1' */
-    robotarm_student_2021a_Ebox_B.Object1 =
-      (robotarm_student_2021a_Ebox_DW.clockTickCounter_j <
+    robotarm_student_2021a_Ebox_B.PulseGenerator =
+      (robotarm_student_2021a_Ebox_DW.clockTickCounter <
        robotarm_student_2021a_Ebox_P.Object1_Duty) &&
-      (robotarm_student_2021a_Ebox_DW.clockTickCounter_j >= 0) ?
+      (robotarm_student_2021a_Ebox_DW.clockTickCounter >= 0) ?
       robotarm_student_2021a_Ebox_P.Object1_Amp : 0.0;
-    if (robotarm_student_2021a_Ebox_DW.clockTickCounter_j >=
+    if (robotarm_student_2021a_Ebox_DW.clockTickCounter >=
         robotarm_student_2021a_Ebox_P.Object1_Period - 1.0) {
-      robotarm_student_2021a_Ebox_DW.clockTickCounter_j = 0;
+      robotarm_student_2021a_Ebox_DW.clockTickCounter = 0;
     } else {
-      robotarm_student_2021a_Ebox_DW.clockTickCounter_j++;
+      robotarm_student_2021a_Ebox_DW.clockTickCounter++;
     }
 
     /* End of DiscretePulseGenerator: '<S15>/Object1' */
 
     /* Bias: '<S15>/Add Constant' */
     robotarm_student_2021a_Ebox_B.AddConstant =
-      robotarm_student_2021a_Ebox_B.Object1 +
+      robotarm_student_2021a_Ebox_B.PulseGenerator +
       robotarm_student_2021a_Ebox_P.AddConstant_Bias;
+
+    /* DiscretePulseGenerator: '<S166>/Pulse Generator1' */
+    robotarm_student_2021a_Ebox_B.PulseGenerator =
+      (robotarm_student_2021a_Ebox_DW.clockTickCounter_p <
+       robotarm_student_2021a_Ebox_P.PulseGenerator1_Duty) &&
+      (robotarm_student_2021a_Ebox_DW.clockTickCounter_p >= 0) ?
+      robotarm_student_2021a_Ebox_P.PulseGenerator1_Amp : 0.0;
+    if (robotarm_student_2021a_Ebox_DW.clockTickCounter_p >=
+        robotarm_student_2021a_Ebox_P.PulseGenerator1_Period - 1.0) {
+      robotarm_student_2021a_Ebox_DW.clockTickCounter_p = 0;
+    } else {
+      robotarm_student_2021a_Ebox_DW.clockTickCounter_p++;
+    }
+
+    /* End of DiscretePulseGenerator: '<S166>/Pulse Generator1' */
+
+    /* If: '<S166>/If1' incorporates:
+     *  Constant: '<S166>/Constant13'
+     */
+    if ((robotarm_student_2021a_Ebox_B.PulseGenerator == 1.0) &&
+        (robotarm_student_2021a_Ebox_B.Selector[0] > 75000.0)) {
+      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S170>/Action Port'
+       */
+      robotarm_stu_IfActionSubsystem1
+        (robotarm_student_2021a_Ebox_P.Constant13_Value,
+         &robotarm_student_2021a_Ebox_B.IfActionSubsystem1);
+
+      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem1' */
+    }
+
+    /* End of If: '<S166>/If1' */
+
+    /* Switch: '<S166>/Switch1' */
+    if (robotarm_student_2021a_Ebox_B.IfActionSubsystem1.In1 >
+        robotarm_student_2021a_Ebox_P.Switch1_Threshold) {
+      /* Switch: '<S166>/Switch1' incorporates:
+       *  Constant: '<S166>/Constant3'
+       */
+      robotarm_student_2021a_Ebox_B.Switch1 =
+        robotarm_student_2021a_Ebox_P.Constant3_Value;
+    } else {
+      /* Switch: '<S166>/Switch1' incorporates:
+       *  Constant: '<S166>/Constant1'
+       */
+      robotarm_student_2021a_Ebox_B.Switch1 =
+        robotarm_student_2021a_Ebox_P.Constant1_Value;
+    }
+
+    /* End of Switch: '<S166>/Switch1' */
+
+    /* DiscretePulseGenerator: '<S166>/Pulse Generator' */
+    robotarm_student_2021a_Ebox_B.PulseGenerator =
+      (robotarm_student_2021a_Ebox_DW.clockTickCounter_k <
+       robotarm_student_2021a_Ebox_P.PulseGenerator_Duty) &&
+      (robotarm_student_2021a_Ebox_DW.clockTickCounter_k >= 0) ?
+      robotarm_student_2021a_Ebox_P.PulseGenerator_Amp : 0.0;
+    if (robotarm_student_2021a_Ebox_DW.clockTickCounter_k >=
+        robotarm_student_2021a_Ebox_P.PulseGenerator_Period - 1.0) {
+      robotarm_student_2021a_Ebox_DW.clockTickCounter_k = 0;
+    } else {
+      robotarm_student_2021a_Ebox_DW.clockTickCounter_k++;
+    }
+
+    /* End of DiscretePulseGenerator: '<S166>/Pulse Generator' */
+
+    /* If: '<S166>/If' incorporates:
+     *  Constant: '<S166>/Constant12'
+     *  Inport: '<S169>/In1'
+     */
+    if ((robotarm_student_2021a_Ebox_B.PulseGenerator == 0.0) &&
+        (robotarm_student_2021a_Ebox_B.Selector[0] > 75000.0)) {
+      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem' incorporates:
+       *  ActionPort: '<S169>/Action Port'
+       */
+      robotarm_student_2021a_Ebox_B.In1 =
+        robotarm_student_2021a_Ebox_P.Constant12_Value;
+
+      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem' */
+
+      /* Update for IfAction SubSystem: '<S166>/If Action Subsystem' incorporates:
+       *  ActionPort: '<S169>/Action Port'
+       */
+      /* Update for If: '<S166>/If' incorporates:
+       *  Constant: '<S166>/Constant12'
+       *  Inport: '<S169>/In1'
+       */
+      srUpdateBC(robotarm_student_2021a_Ebox_DW.IfActionSubsystem_SubsysRanBC_o);
+
+      /* End of Update for SubSystem: '<S166>/If Action Subsystem' */
+    }
+
+    /* End of If: '<S166>/If' */
+
+    /* ManualSwitch: '<S166>/Manual Switch' incorporates:
+     *  Switch: '<S166>/Switch'
+     */
+    if (robotarm_student_2021a_Ebox_P.ManualSwitch_CurrentSetting_c == 1) {
+      /* ManualSwitch: '<S166>/Manual Switch' incorporates:
+       *  Constant: '<S166>/Constant19'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch =
+        robotarm_student_2021a_Ebox_P.Constant19_Value;
+    } else if (robotarm_student_2021a_Ebox_B.In1 >
+               robotarm_student_2021a_Ebox_P.Switch_Threshold) {
+      /* Switch: '<S166>/Switch' incorporates:
+       *  Constant: '<S166>/Constant'
+       *  ManualSwitch: '<S166>/Manual Switch'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch =
+        robotarm_student_2021a_Ebox_P.Constant_Value;
+    } else {
+      /* ManualSwitch: '<S166>/Manual Switch' incorporates:
+       *  Constant: '<S166>/Constant2'
+       */
+      robotarm_student_2021a_Ebox_B.ManualSwitch =
+        robotarm_student_2021a_Ebox_P.Constant2_Value;
+    }
+
+    /* End of ManualSwitch: '<S166>/Manual Switch' */
+
+    /* Switch: '<S166>/Switch2' */
+    if (0.0 > robotarm_student_2021a_Ebox_P.Switch2_Threshold) {
+      /* Switch: '<S166>/Switch2' */
+      robotarm_student_2021a_Ebox_B.Switch2 =
+        robotarm_student_2021a_Ebox_B.Switch1;
+    } else {
+      /* Switch: '<S166>/Switch2' */
+      robotarm_student_2021a_Ebox_B.Switch2 =
+        robotarm_student_2021a_Ebox_B.ManualSwitch;
+    }
+
+    /* End of Switch: '<S166>/Switch2' */
+
+    /* If: '<S166>/If2' incorporates:
+     *  Constant: '<S166>/Constant14'
+     *  Constant: '<S166>/Constant15'
+     *  Constant: '<S166>/Constant18'
+     */
+    if (robotarm_student_2021a_Ebox_B.Switch2 == 0.0) {
+      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem2' incorporates:
+       *  ActionPort: '<S171>/Action Port'
+       */
+      robotarm_stu_IfActionSubsystem1
+        (robotarm_student_2021a_Ebox_P.Constant14_Value,
+         &robotarm_student_2021a_Ebox_B.IfActionSubsystem2);
+
+      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem2' */
+    } else if ((robotarm_student_2021a_Ebox_B.Switch2 == 0.0) &&
+               (robotarm_student_2021a_Ebox_B.Selector[0] > 85000.0)) {
+      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem3' incorporates:
+       *  ActionPort: '<S172>/Action Port'
+       */
+      robotarm_stu_IfActionSubsystem1
+        (robotarm_student_2021a_Ebox_P.Constant15_Value,
+         &robotarm_student_2021a_Ebox_B.IfActionSubsystem3);
+
+      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem3' */
+    } else {
+      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem6' incorporates:
+       *  ActionPort: '<S175>/Action Port'
+       */
+      robotarm_stu_IfActionSubsystem1
+        (robotarm_student_2021a_Ebox_P.Constant18_Value,
+         &robotarm_student_2021a_Ebox_B.IfActionSubsystem6);
+
+      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem6' */
+    }
+
+    /* End of If: '<S166>/If2' */
+
+    /* If: '<S166>/If3' incorporates:
+     *  Constant: '<S166>/Constant16'
+     *  Constant: '<S166>/Constant17'
+     */
+    if (robotarm_student_2021a_Ebox_B.Switch2 == 1.0) {
+      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem4' incorporates:
+       *  ActionPort: '<S173>/Action Port'
+       */
+      robotarm_stu_IfActionSubsystem1
+        (robotarm_student_2021a_Ebox_P.Constant16_Value,
+         &robotarm_student_2021a_Ebox_B.IfActionSubsystem4);
+
+      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem4' */
+    } else if ((robotarm_student_2021a_Ebox_B.Switch2 == 1.0) &&
+               (robotarm_student_2021a_Ebox_B.Selector[0] > 85000.0)) {
+      /* Outputs for IfAction SubSystem: '<S166>/If Action Subsystem5' incorporates:
+       *  ActionPort: '<S174>/Action Port'
+       */
+      robotarm_stu_IfActionSubsystem1
+        (robotarm_student_2021a_Ebox_P.Constant17_Value,
+         &robotarm_student_2021a_Ebox_B.IfActionSubsystem5);
+
+      /* End of Outputs for SubSystem: '<S166>/If Action Subsystem5' */
+    }
+
+    /* End of If: '<S166>/If3' */
 
     /* Constant: '<S15>/Plot' */
     robotarm_student_2021a_Ebox_B.Plot =
@@ -2981,40 +3026,49 @@ void robotarm_student_2021a_Ebox_step(void)
     /* Switch: '<S185>/Homing Running Switch' */
     if (robotarm_student_2021a_Ebox_B.homingBusy_n >=
         robotarm_student_2021a_Ebox_P.HomingRunningSwitch_Threshold) {
-      /* Product: '<S185>/Product' */
-      robotarm_student_2021a_Ebox_B.Diff_h =
+      /* Sum: '<S219>/Diff' incorporates:
+       *  Product: '<S185>/Product'
+       */
+      robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
         robotarm_student_2021a_Ebox_B.Dct1lowpass *
         robotarm_student_2021a_Ebox_B.homeControllerEnabled_i;
 
       /* Saturate: '<S185>/Saturation' */
-      if (robotarm_student_2021a_Ebox_B.Diff_h >
+      if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b >
           robotarm_student_2021a_Ebox_P.Saturation_UpperSat_i) {
-        robotarm_student_2021a_Ebox_B.Diff_h =
+        /* Sum: '<S219>/Diff' */
+        robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
           robotarm_student_2021a_Ebox_P.Saturation_UpperSat_i;
-      } else if (robotarm_student_2021a_Ebox_B.Diff_h <
+      } else if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b <
                  robotarm_student_2021a_Ebox_P.Saturation_LowerSat_m) {
-        robotarm_student_2021a_Ebox_B.Diff_h =
+        /* Sum: '<S219>/Diff' */
+        robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
           robotarm_student_2021a_Ebox_P.Saturation_LowerSat_m;
       }
 
       /* End of Saturate: '<S185>/Saturation' */
     } else {
-      robotarm_student_2021a_Ebox_B.Diff_h = robotarm_student_2021a_Ebox_B.Sum4;
+      /* Sum: '<S219>/Diff' */
+      robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
+        robotarm_student_2021a_Ebox_B.Sum4;
     }
 
     /* End of Switch: '<S185>/Homing Running Switch' */
   } else {
-    robotarm_student_2021a_Ebox_B.Diff_h =
+    /* Sum: '<S219>/Diff' */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_B.Dct1lowpass_n;
   }
 
   /* End of Switch: '<S185>/AirbagSwitch' */
 
-  /* Sum: '<S176>/Sum3' incorporates:
+  /* Sum: '<S219>/Diff' incorporates:
    *  Constant: '<S176>/Voltage middle'
    *  Product: '<S185>/Product1'
+   *  Sum: '<S176>/Sum3'
    */
-  robotarm_student_2021a_Ebox_B.Diff_h = robotarm_student_2021a_Ebox_B.Diff_h *
+  robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b *
     robotarm_student_2021a_Ebox_B.controlEnabled_e +
     robotarm_student_2021a_Ebox_P.Voltagemiddle_Value;
 
@@ -3072,23 +3126,25 @@ void robotarm_student_2021a_Ebox_step(void)
   }
 
   /* Saturate: '<S176>/Saturation' */
-  if (robotarm_student_2021a_Ebox_B.Diff_h >
+  if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b >
       robotarm_student_2021a_Ebox_P.Saturation_UpperSat_k) {
-    robotarm_student_2021a_Ebox_B.Diff_h =
+    /* Sum: '<S219>/Diff' */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_P.Saturation_UpperSat_k;
-  } else if (robotarm_student_2021a_Ebox_B.Diff_h <
+  } else if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b <
              robotarm_student_2021a_Ebox_P.Saturation_LowerSat_i) {
-    robotarm_student_2021a_Ebox_B.Diff_h =
+    /* Sum: '<S219>/Diff' */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_P.Saturation_LowerSat_i;
   }
 
   /* Saturate: '<S178>/Saturation' */
-  if (robotarm_student_2021a_Ebox_B.Diff_h >
+  if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b >
       robotarm_student_2021a_Ebox_P.Saturation_UpperSat_j) {
     /* Saturate: '<S178>/Saturation' */
     robotarm_student_2021a_Ebox_B.Saturation[0] =
       robotarm_student_2021a_Ebox_P.Saturation_UpperSat_j;
-  } else if (robotarm_student_2021a_Ebox_B.Diff_h <
+  } else if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b <
              robotarm_student_2021a_Ebox_P.Saturation_LowerSat_f) {
     /* Saturate: '<S178>/Saturation' */
     robotarm_student_2021a_Ebox_B.Saturation[0] =
@@ -3096,7 +3152,7 @@ void robotarm_student_2021a_Ebox_step(void)
   } else {
     /* Saturate: '<S178>/Saturation' */
     robotarm_student_2021a_Ebox_B.Saturation[0] =
-      robotarm_student_2021a_Ebox_B.Diff_h;
+      robotarm_student_2021a_Ebox_B.LimitAcceleration_b;
   }
 
   /* Switch: '<S186>/AirbagSwitch' incorporates:
@@ -3108,16 +3164,16 @@ void robotarm_student_2021a_Ebox_step(void)
      */
     if (robotarm_student_2021a_Ebox_B.homingBusy_d >=
         robotarm_student_2021a_Ebox_P.HomingRunningSwitch_Threshold_o) {
-      robotarm_student_2021a_Ebox_B.fy2_tmp =
+      robotarm_student_2021a_Ebox_B.Gain_au =
         robotarm_student_2021a_Ebox_B.Dct1lowpass_f *
         robotarm_student_2021a_Ebox_B.homeControllerEnabled_f;
     } else {
-      robotarm_student_2021a_Ebox_B.fy2_tmp = robotarm_student_2021a_Ebox_B.Sum5;
+      robotarm_student_2021a_Ebox_B.Gain_au = robotarm_student_2021a_Ebox_B.Sum5;
     }
 
     /* End of Switch: '<S186>/Homing Running Switch' */
   } else {
-    robotarm_student_2021a_Ebox_B.fy2_tmp =
+    robotarm_student_2021a_Ebox_B.Gain_au =
       robotarm_student_2021a_Ebox_B.Dct1lowpass_o;
   }
 
@@ -3129,7 +3185,7 @@ void robotarm_student_2021a_Ebox_step(void)
    */
   robotarm_student_2021a_Ebox_B.Sum2_k =
     robotarm_student_2021a_Ebox_P.Voltagemiddle_Value -
-    robotarm_student_2021a_Ebox_B.fy2_tmp *
+    robotarm_student_2021a_Ebox_B.Gain_au *
     robotarm_student_2021a_Ebox_B.controlEnabled_b;
 
   /* Saturate: '<S176>/Saturation' */
@@ -3228,26 +3284,28 @@ void robotarm_student_2021a_Ebox_step(void)
      */
     if (robotarm_student_2021a_Ebox_B.homingBusy_j >=
         robotarm_student_2021a_Ebox_P.HomingRunningSwitch_Threshold_j) {
-      robotarm_student_2021a_Ebox_B.fy2_tmp =
+      robotarm_student_2021a_Ebox_B.Gain_au =
         robotarm_student_2021a_Ebox_B.Dct1lowpass_ft *
         robotarm_student_2021a_Ebox_B.homeControllerEnabled_j;
     } else {
-      robotarm_student_2021a_Ebox_B.fy2_tmp = robotarm_student_2021a_Ebox_B.Sum6;
+      robotarm_student_2021a_Ebox_B.Gain_au = robotarm_student_2021a_Ebox_B.Sum6;
     }
 
     /* End of Switch: '<S187>/Homing Running Switch' */
   } else {
-    robotarm_student_2021a_Ebox_B.fy2_tmp =
+    robotarm_student_2021a_Ebox_B.Gain_au =
       robotarm_student_2021a_Ebox_B.Dct1lowpass_a;
   }
 
   /* End of Switch: '<S187>/AirbagSwitch' */
 
-  /* Sum: '<S176>/Sum5' incorporates:
+  /* Sum: '<S219>/Diff' incorporates:
    *  Constant: '<S176>/Voltage middle'
    *  Product: '<S187>/Product1'
+   *  Sum: '<S176>/Sum5'
    */
-  robotarm_student_2021a_Ebox_B.Diff_h = robotarm_student_2021a_Ebox_B.fy2_tmp *
+  robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
+    robotarm_student_2021a_Ebox_B.Gain_au *
     robotarm_student_2021a_Ebox_B.controlEnabled +
     robotarm_student_2021a_Ebox_P.Voltagemiddle_Value;
 
@@ -3285,23 +3343,25 @@ void robotarm_student_2021a_Ebox_step(void)
   }
 
   /* Saturate: '<S176>/Saturation1' */
-  if (robotarm_student_2021a_Ebox_B.Diff_h >
+  if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b >
       robotarm_student_2021a_Ebox_P.Saturation1_UpperSat) {
-    robotarm_student_2021a_Ebox_B.Diff_h =
+    /* Sum: '<S219>/Diff' */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_P.Saturation1_UpperSat;
-  } else if (robotarm_student_2021a_Ebox_B.Diff_h <
+  } else if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b <
              robotarm_student_2021a_Ebox_P.Saturation1_LowerSat) {
-    robotarm_student_2021a_Ebox_B.Diff_h =
+    /* Sum: '<S219>/Diff' */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_P.Saturation1_LowerSat;
   }
 
   /* Saturate: '<S179>/Saturation' */
-  if (robotarm_student_2021a_Ebox_B.Diff_h >
+  if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b >
       robotarm_student_2021a_Ebox_P.Saturation_UpperSat_e) {
     /* Saturate: '<S179>/Saturation' */
     robotarm_student_2021a_Ebox_B.Saturation_f[0] =
       robotarm_student_2021a_Ebox_P.Saturation_UpperSat_e;
-  } else if (robotarm_student_2021a_Ebox_B.Diff_h <
+  } else if (robotarm_student_2021a_Ebox_B.LimitAcceleration_b <
              robotarm_student_2021a_Ebox_P.Saturation_LowerSat_o) {
     /* Saturate: '<S179>/Saturation' */
     robotarm_student_2021a_Ebox_B.Saturation_f[0] =
@@ -3309,7 +3369,7 @@ void robotarm_student_2021a_Ebox_step(void)
   } else {
     /* Saturate: '<S179>/Saturation' */
     robotarm_student_2021a_Ebox_B.Saturation_f[0] =
-      robotarm_student_2021a_Ebox_B.Diff_h;
+      robotarm_student_2021a_Ebox_B.LimitAcceleration_b;
   }
 
   /* Switch: '<S188>/Homing Running Switch' incorporates:
@@ -3317,11 +3377,11 @@ void robotarm_student_2021a_Ebox_step(void)
    */
   if (robotarm_student_2021a_Ebox_B.homingBusy >=
       robotarm_student_2021a_Ebox_P.HomingRunningSwitch_Threshold_c) {
-    robotarm_student_2021a_Ebox_B.fy2_tmp =
+    robotarm_student_2021a_Ebox_B.Gain_au =
       robotarm_student_2021a_Ebox_B.Dctleadlag_f *
       robotarm_student_2021a_Ebox_B.homeControllerEnabled;
   } else {
-    robotarm_student_2021a_Ebox_B.fy2_tmp =
+    robotarm_student_2021a_Ebox_B.Gain_au =
       robotarm_student_2021a_Ebox_B.Dctleadlag_d;
   }
 
@@ -3333,7 +3393,7 @@ void robotarm_student_2021a_Ebox_step(void)
    */
   robotarm_student_2021a_Ebox_B.Sum2_k =
     robotarm_student_2021a_Ebox_P.Gain4_Gain_b *
-    robotarm_student_2021a_Ebox_B.fy2_tmp +
+    robotarm_student_2021a_Ebox_B.Gain_au +
     robotarm_student_2021a_Ebox_P.Voltagemiddle_Value;
 
   /* Saturate: '<S176>/Saturation1' */
@@ -3375,32 +3435,33 @@ void robotarm_student_2021a_Ebox_step(void)
    */
   if (robotarm_student_2021a_Ebox_B.Blow_suck >=
       robotarm_student_2021a_Ebox_P.HomingRunningSwitch1_Threshol_k) {
-    robotarm_student_2021a_Ebox_B.Sum2_k =
+    robotarm_student_2021a_Ebox_B.PulseGenerator =
       robotarm_student_2021a_Ebox_P.Constant1_Value_f;
   } else {
-    robotarm_student_2021a_Ebox_B.Sum2_k = robotarm_student_2021a_Ebox_B.Gain1_o;
+    robotarm_student_2021a_Ebox_B.PulseGenerator =
+      robotarm_student_2021a_Ebox_B.Gain1_o;
   }
 
   /* End of Switch: '<S176>/Homing Running Switch1' */
 
   /* Saturate: '<S176>/Saturation2' */
-  if (robotarm_student_2021a_Ebox_B.Sum2_k >
+  if (robotarm_student_2021a_Ebox_B.PulseGenerator >
       robotarm_student_2021a_Ebox_P.Saturation2_UpperSat) {
-    robotarm_student_2021a_Ebox_B.Sum2_k =
+    robotarm_student_2021a_Ebox_B.PulseGenerator =
       robotarm_student_2021a_Ebox_P.Saturation2_UpperSat;
-  } else if (robotarm_student_2021a_Ebox_B.Sum2_k <
+  } else if (robotarm_student_2021a_Ebox_B.PulseGenerator <
              robotarm_student_2021a_Ebox_P.Saturation2_LowerSat) {
-    robotarm_student_2021a_Ebox_B.Sum2_k =
+    robotarm_student_2021a_Ebox_B.PulseGenerator =
       robotarm_student_2021a_Ebox_P.Saturation2_LowerSat;
   }
 
   /* Saturate: '<S180>/Saturation' */
-  if (robotarm_student_2021a_Ebox_B.Sum2_k >
+  if (robotarm_student_2021a_Ebox_B.PulseGenerator >
       robotarm_student_2021a_Ebox_P.Saturation_UpperSat_g) {
     /* Saturate: '<S180>/Saturation' */
     robotarm_student_2021a_Ebox_B.Saturation_h[0] =
       robotarm_student_2021a_Ebox_P.Saturation_UpperSat_g;
-  } else if (robotarm_student_2021a_Ebox_B.Sum2_k <
+  } else if (robotarm_student_2021a_Ebox_B.PulseGenerator <
              robotarm_student_2021a_Ebox_P.Saturation_LowerSat_k) {
     /* Saturate: '<S180>/Saturation' */
     robotarm_student_2021a_Ebox_B.Saturation_h[0] =
@@ -3408,27 +3469,27 @@ void robotarm_student_2021a_Ebox_step(void)
   } else {
     /* Saturate: '<S180>/Saturation' */
     robotarm_student_2021a_Ebox_B.Saturation_h[0] =
-      robotarm_student_2021a_Ebox_B.Sum2_k;
+      robotarm_student_2021a_Ebox_B.PulseGenerator;
   }
 
   /* Saturate: '<S176>/Saturation2' */
   if (0.0 > robotarm_student_2021a_Ebox_P.Saturation2_UpperSat) {
-    robotarm_student_2021a_Ebox_B.Sum2_k =
+    robotarm_student_2021a_Ebox_B.PulseGenerator =
       robotarm_student_2021a_Ebox_P.Saturation2_UpperSat;
   } else if (0.0 < robotarm_student_2021a_Ebox_P.Saturation2_LowerSat) {
-    robotarm_student_2021a_Ebox_B.Sum2_k =
+    robotarm_student_2021a_Ebox_B.PulseGenerator =
       robotarm_student_2021a_Ebox_P.Saturation2_LowerSat;
   } else {
-    robotarm_student_2021a_Ebox_B.Sum2_k = 0.0;
+    robotarm_student_2021a_Ebox_B.PulseGenerator = 0.0;
   }
 
   /* Saturate: '<S180>/Saturation' */
-  if (robotarm_student_2021a_Ebox_B.Sum2_k >
+  if (robotarm_student_2021a_Ebox_B.PulseGenerator >
       robotarm_student_2021a_Ebox_P.Saturation_UpperSat_g) {
     /* Saturate: '<S180>/Saturation' */
     robotarm_student_2021a_Ebox_B.Saturation_h[1] =
       robotarm_student_2021a_Ebox_P.Saturation_UpperSat_g;
-  } else if (robotarm_student_2021a_Ebox_B.Sum2_k <
+  } else if (robotarm_student_2021a_Ebox_B.PulseGenerator <
              robotarm_student_2021a_Ebox_P.Saturation_LowerSat_k) {
     /* Saturate: '<S180>/Saturation' */
     robotarm_student_2021a_Ebox_B.Saturation_h[1] =
@@ -3436,7 +3497,7 @@ void robotarm_student_2021a_Ebox_step(void)
   } else {
     /* Saturate: '<S180>/Saturation' */
     robotarm_student_2021a_Ebox_B.Saturation_h[1] =
-      robotarm_student_2021a_Ebox_B.Sum2_k;
+      robotarm_student_2021a_Ebox_B.PulseGenerator;
   }
 
   /* Switch: '<S184>/Homing Running Switch' incorporates:
@@ -3593,7 +3654,7 @@ void robotarm_student_2021a_Ebox_step(void)
   /* End of Outputs for SubSystem: '<S189>/Subsystem3' */
 
   /* Sum: '<S177>/Add' */
-  robotarm_student_2021a_Ebox_B.Add_b = ((robotarm_student_2021a_Ebox_B.Ready_n
+  robotarm_student_2021a_Ebox_B.Add_p = ((robotarm_student_2021a_Ebox_B.Ready_n
     + robotarm_student_2021a_Ebox_B.Ready_l) +
     robotarm_student_2021a_Ebox_B.Ready_c) + robotarm_student_2021a_Ebox_B.Ready;
 
@@ -3601,7 +3662,7 @@ void robotarm_student_2021a_Ebox_step(void)
    *  Gain: '<S177>/Gain'
    *  Logic: '<S177>/NOT'
    */
-  robotarm_student_2021a_Ebox_B.Add1_p =
+  robotarm_student_2021a_Ebox_B.Add1_c =
     (((robotarm_student_2021a_Ebox_P.Gain_Gain_lr *
        robotarm_student_2021a_Ebox_B.airBagEnabled_ab +
        robotarm_student_2021a_Ebox_P.Gain_Gain_lr *
@@ -3626,28 +3687,35 @@ void robotarm_student_2021a_Ebox_step(void)
 
   /* End of Stop: '<S185>/Stop Simulation' */
 
-  /* Sum: '<S197>/Sum' */
-  robotarm_student_2021a_Ebox_B.Diff_h = robotarm_student_2021a_Ebox_B.toPoint_i
-    + robotarm_student_2021a_Ebox_B.Constant1;
+  /* Sum: '<S219>/Diff' incorporates:
+   *  Sum: '<S197>/Sum'
+   */
+  robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
+    robotarm_student_2021a_Ebox_B.toPoint_i +
+    robotarm_student_2021a_Ebox_B.Constant1;
 
   /* RateLimiter: '<S197>/Limit Speed' */
-  robotarm_student_2021a_Ebox_B.Sum2_k = robotarm_student_2021a_Ebox_B.Diff_h -
+  robotarm_student_2021a_Ebox_B.Sum2_k =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b -
     robotarm_student_2021a_Ebox_DW.PrevY;
   if (robotarm_student_2021a_Ebox_B.Sum2_k >
       robotarm_student_2021a_Ebox_P.LimitSpeed_RisingLim *
       robotarm_student_2021a_E_period) {
-    robotarm_student_2021a_Ebox_B.Diff_h =
+    /* Sum: '<S219>/Diff' */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_P.LimitSpeed_RisingLim *
       robotarm_student_2021a_E_period + robotarm_student_2021a_Ebox_DW.PrevY;
   } else if (robotarm_student_2021a_Ebox_B.Sum2_k <
              robotarm_student_2021a_Ebox_P.LimitSpeed_FallingLim *
              robotarm_student_2021a_E_period) {
-    robotarm_student_2021a_Ebox_B.Diff_h =
+    /* Sum: '<S219>/Diff' */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_P.LimitSpeed_FallingLim *
       robotarm_student_2021a_E_period + robotarm_student_2021a_Ebox_DW.PrevY;
   }
 
-  robotarm_student_2021a_Ebox_DW.PrevY = robotarm_student_2021a_Ebox_B.Diff_h;
+  robotarm_student_2021a_Ebox_DW.PrevY =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b;
 
   /* End of RateLimiter: '<S197>/Limit Speed' */
 
@@ -3656,17 +3724,21 @@ void robotarm_student_2021a_Ebox_step(void)
    * About '<S200>/TSamp':
    *  y = u * K where K = 1 / ( w * Ts )
    */
-  robotarm_student_2021a_Ebox_B.TSamp = robotarm_student_2021a_Ebox_B.Diff_h *
+  robotarm_student_2021a_Ebox_B.TSamp =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b *
     robotarm_student_2021a_Ebox_P.TSamp_WtEt_a;
 
-  /* Sum: '<S200>/Diff' incorporates:
+  /* Sum: '<S219>/Diff' incorporates:
+   *  Sum: '<S200>/Diff'
    *  UnitDelay: '<S200>/UD'
    */
-  robotarm_student_2021a_Ebox_B.Diff_h = robotarm_student_2021a_Ebox_B.TSamp -
+  robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
+    robotarm_student_2021a_Ebox_B.TSamp -
     robotarm_student_2021a_Ebox_DW.UD_DSTATE;
 
   /* RateLimiter: '<S197>/Limit Acceleration' */
-  robotarm_student_2021a_Ebox_B.Sum2_k = robotarm_student_2021a_Ebox_B.Diff_h -
+  robotarm_student_2021a_Ebox_B.Sum2_k =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b -
     robotarm_student_2021a_Ebox_DW.PrevY_n;
   if (robotarm_student_2021a_Ebox_B.Sum2_k >
       robotarm_student_2021a_Ebox_P.LimitAcceleration_RisingLim *
@@ -3685,7 +3757,7 @@ void robotarm_student_2021a_Ebox_step(void)
   } else {
     /* RateLimiter: '<S197>/Limit Acceleration' */
     robotarm_student_2021a_Ebox_B.LimitAcceleration =
-      robotarm_student_2021a_Ebox_B.Diff_h;
+      robotarm_student_2021a_Ebox_B.LimitAcceleration_b;
   }
 
   robotarm_student_2021a_Ebox_DW.PrevY_n =
@@ -3708,28 +3780,35 @@ void robotarm_student_2021a_Ebox_step(void)
 
   /* End of Stop: '<S186>/Stop Simulation' */
 
-  /* Sum: '<S203>/Sum' */
-  robotarm_student_2021a_Ebox_B.Diff_h = robotarm_student_2021a_Ebox_B.toPoint_h
-    + robotarm_student_2021a_Ebox_B.Constant1_c;
+  /* Sum: '<S219>/Diff' incorporates:
+   *  Sum: '<S203>/Sum'
+   */
+  robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
+    robotarm_student_2021a_Ebox_B.toPoint_h +
+    robotarm_student_2021a_Ebox_B.Constant1_c;
 
   /* RateLimiter: '<S203>/Limit Speed' */
-  robotarm_student_2021a_Ebox_B.Sum2_k = robotarm_student_2021a_Ebox_B.Diff_h -
+  robotarm_student_2021a_Ebox_B.Sum2_k =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b -
     robotarm_student_2021a_Ebox_DW.PrevY_h;
   if (robotarm_student_2021a_Ebox_B.Sum2_k >
       robotarm_student_2021a_Ebox_P.LimitSpeed_RisingLim_d *
       robotarm_student_2021a_E_period) {
-    robotarm_student_2021a_Ebox_B.Diff_h =
+    /* Sum: '<S219>/Diff' */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_P.LimitSpeed_RisingLim_d *
       robotarm_student_2021a_E_period + robotarm_student_2021a_Ebox_DW.PrevY_h;
   } else if (robotarm_student_2021a_Ebox_B.Sum2_k <
              robotarm_student_2021a_Ebox_P.LimitSpeed_FallingLim_j *
              robotarm_student_2021a_E_period) {
-    robotarm_student_2021a_Ebox_B.Diff_h =
+    /* Sum: '<S219>/Diff' */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_P.LimitSpeed_FallingLim_j *
       robotarm_student_2021a_E_period + robotarm_student_2021a_Ebox_DW.PrevY_h;
   }
 
-  robotarm_student_2021a_Ebox_DW.PrevY_h = robotarm_student_2021a_Ebox_B.Diff_h;
+  robotarm_student_2021a_Ebox_DW.PrevY_h =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b;
 
   /* End of RateLimiter: '<S203>/Limit Speed' */
 
@@ -3738,17 +3817,21 @@ void robotarm_student_2021a_Ebox_step(void)
    * About '<S209>/TSamp':
    *  y = u * K where K = 1 / ( w * Ts )
    */
-  robotarm_student_2021a_Ebox_B.TSamp_m = robotarm_student_2021a_Ebox_B.Diff_h *
+  robotarm_student_2021a_Ebox_B.TSamp_m =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b *
     robotarm_student_2021a_Ebox_P.TSamp_WtEt_h;
 
-  /* Sum: '<S209>/Diff' incorporates:
+  /* Sum: '<S219>/Diff' incorporates:
+   *  Sum: '<S209>/Diff'
    *  UnitDelay: '<S209>/UD'
    */
-  robotarm_student_2021a_Ebox_B.Diff_h = robotarm_student_2021a_Ebox_B.TSamp_m -
+  robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
+    robotarm_student_2021a_Ebox_B.TSamp_m -
     robotarm_student_2021a_Ebox_DW.UD_DSTATE_n;
 
   /* RateLimiter: '<S203>/Limit Acceleration' */
-  robotarm_student_2021a_Ebox_B.Sum2_k = robotarm_student_2021a_Ebox_B.Diff_h -
+  robotarm_student_2021a_Ebox_B.Sum2_k =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b -
     robotarm_student_2021a_Ebox_DW.PrevY_m;
   if (robotarm_student_2021a_Ebox_B.Sum2_k >
       robotarm_student_2021a_Ebox_P.LimitAcceleration_RisingLim_c *
@@ -3767,7 +3850,7 @@ void robotarm_student_2021a_Ebox_step(void)
   } else {
     /* RateLimiter: '<S203>/Limit Acceleration' */
     robotarm_student_2021a_Ebox_B.LimitAcceleration_c =
-      robotarm_student_2021a_Ebox_B.Diff_h;
+      robotarm_student_2021a_Ebox_B.LimitAcceleration_b;
   }
 
   robotarm_student_2021a_Ebox_DW.PrevY_m =
@@ -3790,28 +3873,35 @@ void robotarm_student_2021a_Ebox_step(void)
 
   /* End of Stop: '<S187>/Stop Simulation' */
 
-  /* Sum: '<S213>/Sum' */
-  robotarm_student_2021a_Ebox_B.Diff_h = robotarm_student_2021a_Ebox_B.toPoint +
-    robotarm_student_2021a_Ebox_B.Constant1_k;
+  /* Sum: '<S219>/Diff' incorporates:
+   *  Sum: '<S213>/Sum'
+   */
+  robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
+    robotarm_student_2021a_Ebox_B.toPoint
+    + robotarm_student_2021a_Ebox_B.Constant1_k;
 
   /* RateLimiter: '<S213>/Limit Speed' */
-  robotarm_student_2021a_Ebox_B.Sum2_k = robotarm_student_2021a_Ebox_B.Diff_h -
+  robotarm_student_2021a_Ebox_B.Sum2_k =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b -
     robotarm_student_2021a_Ebox_DW.PrevY_c;
   if (robotarm_student_2021a_Ebox_B.Sum2_k >
       robotarm_student_2021a_Ebox_P.LimitSpeed_RisingLim_m *
       robotarm_student_2021a_E_period) {
-    robotarm_student_2021a_Ebox_B.Diff_h =
+    /* Sum: '<S219>/Diff' */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_P.LimitSpeed_RisingLim_m *
       robotarm_student_2021a_E_period + robotarm_student_2021a_Ebox_DW.PrevY_c;
   } else if (robotarm_student_2021a_Ebox_B.Sum2_k <
              robotarm_student_2021a_Ebox_P.LimitSpeed_FallingLim_jw *
              robotarm_student_2021a_E_period) {
-    robotarm_student_2021a_Ebox_B.Diff_h =
+    /* Sum: '<S219>/Diff' */
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_P.LimitSpeed_FallingLim_jw *
       robotarm_student_2021a_E_period + robotarm_student_2021a_Ebox_DW.PrevY_c;
   }
 
-  robotarm_student_2021a_Ebox_DW.PrevY_c = robotarm_student_2021a_Ebox_B.Diff_h;
+  robotarm_student_2021a_Ebox_DW.PrevY_c =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b;
 
   /* End of RateLimiter: '<S213>/Limit Speed' */
 
@@ -3820,36 +3910,39 @@ void robotarm_student_2021a_Ebox_step(void)
    * About '<S219>/TSamp':
    *  y = u * K where K = 1 / ( w * Ts )
    */
-  robotarm_student_2021a_Ebox_B.TSamp_j = robotarm_student_2021a_Ebox_B.Diff_h *
+  robotarm_student_2021a_Ebox_B.TSamp_j =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b *
     robotarm_student_2021a_Ebox_P.TSamp_WtEt_i;
 
   /* Sum: '<S219>/Diff' incorporates:
    *  UnitDelay: '<S219>/UD'
    */
-  robotarm_student_2021a_Ebox_B.Diff_h = robotarm_student_2021a_Ebox_B.TSamp_j -
+  robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
+    robotarm_student_2021a_Ebox_B.TSamp_j -
     robotarm_student_2021a_Ebox_DW.UD_DSTATE_e;
 
   /* RateLimiter: '<S213>/Limit Acceleration' */
-  robotarm_student_2021a_Ebox_B.Sum2_k = robotarm_student_2021a_Ebox_B.Diff_h -
+  robotarm_student_2021a_Ebox_B.Sum2_k =
+    robotarm_student_2021a_Ebox_B.LimitAcceleration_b -
     robotarm_student_2021a_Ebox_DW.PrevY_mz;
   if (robotarm_student_2021a_Ebox_B.Sum2_k >
       robotarm_student_2021a_Ebox_P.LimitAcceleration_RisingLim_j *
       robotarm_student_2021a_E_period) {
-    /* RateLimiter: '<S213>/Limit Acceleration' */
+    /* Sum: '<S219>/Diff' incorporates:
+     *  RateLimiter: '<S213>/Limit Acceleration'
+     */
     robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_P.LimitAcceleration_RisingLim_j *
       robotarm_student_2021a_E_period + robotarm_student_2021a_Ebox_DW.PrevY_mz;
   } else if (robotarm_student_2021a_Ebox_B.Sum2_k <
              robotarm_student_2021a_Ebox_P.LimitAcceleration_FallingLim_h *
              robotarm_student_2021a_E_period) {
-    /* RateLimiter: '<S213>/Limit Acceleration' */
+    /* Sum: '<S219>/Diff' incorporates:
+     *  RateLimiter: '<S213>/Limit Acceleration'
+     */
     robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
       robotarm_student_2021a_Ebox_P.LimitAcceleration_FallingLim_h *
       robotarm_student_2021a_E_period + robotarm_student_2021a_Ebox_DW.PrevY_mz;
-  } else {
-    /* RateLimiter: '<S213>/Limit Acceleration' */
-    robotarm_student_2021a_Ebox_B.LimitAcceleration_b =
-      robotarm_student_2021a_Ebox_B.Diff_h;
   }
 
   robotarm_student_2021a_Ebox_DW.PrevY_mz =
@@ -3884,7 +3977,7 @@ void robotarm_student_2021a_Ebox_step(void)
 
   /* Update for UnitDelay: '<S177>/Unit Delay' */
   robotarm_student_2021a_Ebox_DW.UnitDelay_DSTATE =
-    robotarm_student_2021a_Ebox_B.Add_b;
+    robotarm_student_2021a_Ebox_B.Add_p;
 
   /* Update for DiscreteIntegrator: '<S186>/Discrete-Time Integrator' */
   robotarm_student_2021a_Ebox_DW.DiscreteTimeIntegrator_DSTATE_p +=
@@ -3925,6 +4018,22 @@ void robotarm_student_2021a_Ebox_step(void)
     robotarm_student_2021a_Ebox_DW.UD_DSTATE_c =
       robotarm_student_2021a_Ebox_B.TSamp_i;
 
+    /* Update for UnitDelay: '<S10>/UD' */
+    robotarm_student_2021a_Ebox_DW.UD_DSTATE_m =
+      robotarm_student_2021a_Ebox_B.TSamp_n;
+
+    /* Update for UnitDelay: '<S11>/UD' */
+    robotarm_student_2021a_Ebox_DW.UD_DSTATE_m3 =
+      robotarm_student_2021a_Ebox_B.TSamp_mq;
+
+    /* Update for UnitDelay: '<S12>/UD' */
+    robotarm_student_2021a_Ebox_DW.UD_DSTATE_d =
+      robotarm_student_2021a_Ebox_B.TSamp_p;
+
+    /* Update for UnitDelay: '<S13>/UD' */
+    robotarm_student_2021a_Ebox_DW.UD_DSTATE_a =
+      robotarm_student_2021a_Ebox_B.TSamp_d;
+
     /* Update for DiscreteIntegrator: '<S1>/Discrete  integrator' */
     robotarm_student_2021a_Ebox_DW.Discreteintegrator_DSTATE +=
       robotarm_student_2021a_Ebox_P.Discreteintegrator_gainval *
@@ -3933,7 +4042,7 @@ void robotarm_student_2021a_Ebox_step(void)
     /* Update for DiscreteIntegrator: '<S51>/Integrator' */
     robotarm_student_2021a_Ebox_DW.Integrator_DSTATE +=
       robotarm_student_2021a_Ebox_P.Integrator_gainval *
-      robotarm_student_2021a_Ebox_B.IntegralGain_m2;
+      robotarm_student_2021a_Ebox_B.IntegralGain;
 
     /* Update for DiscreteIntegrator: '<S46>/Filter' */
     robotarm_student_2021a_Ebox_DW.Filter_DSTATE +=
@@ -3953,28 +4062,12 @@ void robotarm_student_2021a_Ebox_step(void)
     /* Update for DiscreteIntegrator: '<S149>/Integrator' */
     robotarm_student_2021a_Ebox_DW.Integrator_DSTATE_c +=
       robotarm_student_2021a_Ebox_P.Integrator_gainval_f *
-      robotarm_student_2021a_Ebox_B.IntegralGain;
+      robotarm_student_2021a_Ebox_B.IntegralGain_k;
 
     /* Update for DiscreteIntegrator: '<S144>/Filter' */
     robotarm_student_2021a_Ebox_DW.Filter_DSTATE_l +=
       robotarm_student_2021a_Ebox_P.Filter_gainval_g *
       robotarm_student_2021a_Ebox_B.FilterCoefficient_n4;
-
-    /* Update for UnitDelay: '<S12>/UD' */
-    robotarm_student_2021a_Ebox_DW.UD_DSTATE_d =
-      robotarm_student_2021a_Ebox_B.TSamp_p;
-
-    /* Update for UnitDelay: '<S13>/UD' */
-    robotarm_student_2021a_Ebox_DW.UD_DSTATE_a =
-      robotarm_student_2021a_Ebox_B.TSamp_d;
-
-    /* Update for UnitDelay: '<S10>/UD' */
-    robotarm_student_2021a_Ebox_DW.UD_DSTATE_m =
-      robotarm_student_2021a_Ebox_B.TSamp_n;
-
-    /* Update for UnitDelay: '<S11>/UD' */
-    robotarm_student_2021a_Ebox_DW.UD_DSTATE_m3 =
-      robotarm_student_2021a_Ebox_B.TSamp_mq;
   }
 
   /* End of Update for SubSystem: '<Root>/Controller' */
@@ -3986,7 +4079,7 @@ void robotarm_student_2021a_Ebox_step(void)
 
   /* Update for UnitDelay: '<S177>/Unit Delay1' */
   robotarm_student_2021a_Ebox_DW.UnitDelay1_DSTATE =
-    robotarm_student_2021a_Ebox_B.Add1_p;
+    robotarm_student_2021a_Ebox_B.Add1_c;
 
   /* Update for Delay: '<S190>/Delay' */
   strncpy(&robotarm_student_2021a_Ebox_DW.Delay_DSTATE[0],
@@ -4138,15 +4231,15 @@ void robotarm_student_2021a_Ebox_initialize(void)
   robotarm_student_2021a_Ebox_M->Timing.stepSize1 = 0.00048828125;
 
   /* External mode info */
-  robotarm_student_2021a_Ebox_M->Sizes.checksums[0] = (3288525399U);
-  robotarm_student_2021a_Ebox_M->Sizes.checksums[1] = (1253899455U);
-  robotarm_student_2021a_Ebox_M->Sizes.checksums[2] = (327821599U);
-  robotarm_student_2021a_Ebox_M->Sizes.checksums[3] = (93629041U);
+  robotarm_student_2021a_Ebox_M->Sizes.checksums[0] = (4063033002U);
+  robotarm_student_2021a_Ebox_M->Sizes.checksums[1] = (2307034270U);
+  robotarm_student_2021a_Ebox_M->Sizes.checksums[2] = (255227710U);
+  robotarm_student_2021a_Ebox_M->Sizes.checksums[3] = (464157806U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
     static RTWExtModeInfo rt_ExtModeInfo;
-    static const sysRanDType *systemRan[48];
+    static const sysRanDType *systemRan[46];
     robotarm_student_2021a_Ebox_M->extModeInfo = (&rt_ExtModeInfo);
     rteiSetSubSystemActiveVectorAddresses(&rt_ExtModeInfo, systemRan);
     systemRan[0] = &rtAlwaysEnabled;
@@ -4155,19 +4248,19 @@ void robotarm_student_2021a_Ebox_initialize(void)
     systemRan[2] = (sysRanDType *)
       &robotarm_student_2021a_Ebox_DW.EnabledSubsystem_SubsysRanBC;
     systemRan[3] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem.IfActionSubsystem_SubsysRanBC;
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem_SubsysRanBC_o;
     systemRan[4] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem1.IfActionSubsystem_SubsysRanBC;
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem1.IfActionSubsystem1_SubsysRanBC;
     systemRan[5] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem2.IfActionSubsystem_SubsysRanBC;
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem2.IfActionSubsystem1_SubsysRanBC;
     systemRan[6] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem3.IfActionSubsystem_SubsysRanBC;
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem3.IfActionSubsystem1_SubsysRanBC;
     systemRan[7] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem4.IfActionSubsystem_SubsysRanBC;
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem4.IfActionSubsystem1_SubsysRanBC;
     systemRan[8] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem5.IfActionSubsystem_SubsysRanBC;
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem5.IfActionSubsystem1_SubsysRanBC;
     systemRan[9] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem6.IfActionSubsystem_SubsysRanBC;
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem6.IfActionSubsystem1_SubsysRanBC;
     systemRan[10] = (sysRanDType *)
       &robotarm_student_2021a_Ebox_DW.Controller_SubsysRanBC;
     systemRan[11] = (sysRanDType *)
@@ -4196,22 +4289,20 @@ void robotarm_student_2021a_Ebox_initialize(void)
       &robotarm_student_2021a_Ebox_DW.Controller_SubsysRanBC;
     systemRan[23] = (sysRanDType *)
       &robotarm_student_2021a_Ebox_DW.Controller_SubsysRanBC;
-    systemRan[24] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.Controller_SubsysRanBC;
-    systemRan[25] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.Controller_SubsysRanBC;
-    systemRan[26] = &rtAlwaysEnabled;
-    systemRan[27] = &rtAlwaysEnabled;
+    systemRan[24] = &rtAlwaysEnabled;
+    systemRan[25] = &rtAlwaysEnabled;
+    systemRan[26] = (sysRanDType *)
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem_SubsysRanBC;
+    systemRan[27] = (sysRanDType *)
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem_SubsysRanBC;
     systemRan[28] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem_SubsysRanBC;
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem1_SubsysRanBC;
     systemRan[29] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem_SubsysRanBC;
+      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem1_SubsysRanBC;
     systemRan[30] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem1_SubsysRanBC;
-    systemRan[31] = (sysRanDType *)
-      &robotarm_student_2021a_Ebox_DW.IfActionSubsystem1_SubsysRanBC;
-    systemRan[32] = (sysRanDType *)
       &robotarm_student_2021a_Ebox_DW.Subsystem3_SubsysRanBC;
+    systemRan[31] = &rtAlwaysEnabled;
+    systemRan[32] = &rtAlwaysEnabled;
     systemRan[33] = &rtAlwaysEnabled;
     systemRan[34] = &rtAlwaysEnabled;
     systemRan[35] = &rtAlwaysEnabled;
@@ -4225,8 +4316,6 @@ void robotarm_student_2021a_Ebox_initialize(void)
     systemRan[43] = &rtAlwaysEnabled;
     systemRan[44] = &rtAlwaysEnabled;
     systemRan[45] = &rtAlwaysEnabled;
-    systemRan[46] = &rtAlwaysEnabled;
-    systemRan[47] = &rtAlwaysEnabled;
     rteiSetModelMappingInfoPtr(robotarm_student_2021a_Ebox_M->extModeInfo,
       &robotarm_student_2021a_Ebox_M->SpecialInfo.mappingInfo);
     rteiSetChecksumsPtr(robotarm_student_2021a_Ebox_M->extModeInfo,
@@ -10803,6 +10892,10 @@ void robotarm_student_2021a_Ebox_initialize(void)
     }
   }
 
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory' */
+  robotarm_student_2021a_Ebox_DW.new7_define_label_picker =
+    robotarm_student_2021a_Ebox_P.DataStoreMemory_InitialValue;
+
   /* Start for S-Function (ec_Supervisor): '<S181>/S-Function' */
   /* Level2 S-Function Block: '<S181>/S-Function' (ec_Supervisor) */
   {
@@ -10843,12 +10936,6 @@ void robotarm_student_2021a_Ebox_initialize(void)
   robotarm_student_2021a_Ebox_DW.EnabledSubsystem_MODE = false;
 
   /* End of Start for SubSystem: '<S166>/Enabled Subsystem' */
-
-  /* Start for DiscretePulseGenerator: '<S166>/Pulse Generator1' */
-  robotarm_student_2021a_Ebox_DW.clockTickCounter = 0;
-
-  /* Start for DiscretePulseGenerator: '<S166>/Pulse Generator' */
-  robotarm_student_2021a_Ebox_DW.clockTickCounter_k = 0;
 
   /* Start for Constant: '<S1>/Constant' */
   robotarm_student_2021a_Ebox_B.Constant =
@@ -10963,7 +11050,13 @@ void robotarm_student_2021a_Ebox_initialize(void)
   }
 
   /* Start for DiscretePulseGenerator: '<S15>/Object1' */
-  robotarm_student_2021a_Ebox_DW.clockTickCounter_j = 0;
+  robotarm_student_2021a_Ebox_DW.clockTickCounter = 0;
+
+  /* Start for DiscretePulseGenerator: '<S166>/Pulse Generator1' */
+  robotarm_student_2021a_Ebox_DW.clockTickCounter_p = 0;
+
+  /* Start for DiscretePulseGenerator: '<S166>/Pulse Generator' */
+  robotarm_student_2021a_Ebox_DW.clockTickCounter_k = 0;
 
   /* End of Start for SubSystem: '<Root>/Controller' */
 
@@ -11300,6 +11393,22 @@ void robotarm_student_2021a_Ebox_initialize(void)
     robotarm_student_2021a_Ebox_DW.UD_DSTATE_c =
       robotarm_student_2021a_Ebox_P.DiscreteDerivative_ICPrevScaled;
 
+    /* InitializeConditions for UnitDelay: '<S10>/UD' */
+    robotarm_student_2021a_Ebox_DW.UD_DSTATE_m =
+      robotarm_student_2021a_Ebox_P.DiscreteDerivative2_ICPrevScale;
+
+    /* InitializeConditions for UnitDelay: '<S11>/UD' */
+    robotarm_student_2021a_Ebox_DW.UD_DSTATE_m3 =
+      robotarm_student_2021a_Ebox_P.DiscreteDerivative3_ICPrevScale;
+
+    /* InitializeConditions for UnitDelay: '<S12>/UD' */
+    robotarm_student_2021a_Ebox_DW.UD_DSTATE_d =
+      robotarm_student_2021a_Ebox_P.DiscreteDerivative4_ICPrevScale;
+
+    /* InitializeConditions for UnitDelay: '<S13>/UD' */
+    robotarm_student_2021a_Ebox_DW.UD_DSTATE_a =
+      robotarm_student_2021a_Ebox_P.DiscreteDerivative5_ICPrevScale;
+
     /* InitializeConditions for DiscreteIntegrator: '<S1>/Discrete  integrator' */
     robotarm_student_2021a_Ebox_DW.Discreteintegrator_DSTATE =
       robotarm_student_2021a_Ebox_P.Discreteintegrator_IC;
@@ -11328,84 +11437,20 @@ void robotarm_student_2021a_Ebox_initialize(void)
     robotarm_student_2021a_Ebox_DW.Filter_DSTATE_l =
       robotarm_student_2021a_Ebox_P.PIDController_InitialConditio_b;
 
-    /* InitializeConditions for UnitDelay: '<S12>/UD' */
-    robotarm_student_2021a_Ebox_DW.UD_DSTATE_d =
-      robotarm_student_2021a_Ebox_P.DiscreteDerivative4_ICPrevScale;
-
-    /* InitializeConditions for UnitDelay: '<S13>/UD' */
-    robotarm_student_2021a_Ebox_DW.UD_DSTATE_a =
-      robotarm_student_2021a_Ebox_P.DiscreteDerivative5_ICPrevScale;
-
-    /* InitializeConditions for UnitDelay: '<S10>/UD' */
-    robotarm_student_2021a_Ebox_DW.UD_DSTATE_m =
-      robotarm_student_2021a_Ebox_P.DiscreteDerivative2_ICPrevScale;
-
-    /* InitializeConditions for UnitDelay: '<S11>/UD' */
-    robotarm_student_2021a_Ebox_DW.UD_DSTATE_m3 =
-      robotarm_student_2021a_Ebox_P.DiscreteDerivative3_ICPrevScale;
-
     /* SystemInitialize for Enabled SubSystem: '<S166>/Enabled Subsystem' */
     /* SystemInitialize for Outport: '<S168>/Delay [s]' incorporates:
      *  Inport: '<S168>/In1'
      */
-    robotarm_student_2021a_Ebox_B.In1 = robotarm_student_2021a_Ebox_P.Delays_Y0;
+    robotarm_student_2021a_Ebox_B.In1_c =
+      robotarm_student_2021a_Ebox_P.Delays_Y0;
 
     /* End of SystemInitialize for SubSystem: '<S166>/Enabled Subsystem' */
 
-    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem1' */
-    robotarm_IfActionSubsystem_Init
-      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem1,
-       &robotarm_student_2021a_Ebox_P.IfActionSubsystem1);
-
-    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem1' */
-
-    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem' */
-    robotarm_IfActionSubsystem_Init
-      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem,
-       &robotarm_student_2021a_Ebox_P.IfActionSubsystem);
-
-    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem' */
-
-    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem2' */
-    robotarm_IfActionSubsystem_Init
-      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem2,
-       &robotarm_student_2021a_Ebox_P.IfActionSubsystem2);
-
-    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem2' */
-
-    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem3' */
-    robotarm_IfActionSubsystem_Init
-      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem3,
-       &robotarm_student_2021a_Ebox_P.IfActionSubsystem3);
-
-    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem3' */
-
-    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem6' */
-    robotarm_IfActionSubsystem_Init
-      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem6,
-       &robotarm_student_2021a_Ebox_P.IfActionSubsystem6);
-
-    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem6' */
-
-    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem4' */
-    robotarm_IfActionSubsystem_Init
-      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem4,
-       &robotarm_student_2021a_Ebox_P.IfActionSubsystem4);
-
-    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem4' */
-
-    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem5' */
-    robotarm_IfActionSubsystem_Init
-      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem5,
-       &robotarm_student_2021a_Ebox_P.IfActionSubsystem5);
-
-    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem5' */
-
     /* SystemInitialize for Chart: '<S1>/Stateflow ' */
+    robotarm_student_2021a_Ebox_DW.temporalCounter_i3 = 0U;
     robotarm_student_2021a_Ebox_DW.is_active_Vacuum = 0U;
     robotarm_student_2021a_Ebox_DW.is_Vacuum = 0U;
-    robotarm_student_2021a_Ebox_DW.temporalCounter_i1_ac = 0U;
-    robotarm_student_2021a_Ebox_DW.is_active_dataAssign = 0U;
+    robotarm_student_2021a_Ebox_DW.temporalCounter_i1_m = 0U;
     robotarm_student_2021a_Ebox_DW.z = 0.0;
     robotarm_student_2021a_Ebox_DW.y = 0.0;
     robotarm_student_2021a_Ebox_DW.x = 0.0;
@@ -11426,8 +11471,6 @@ void robotarm_student_2021a_Ebox_initialize(void)
     robotarm_student_2021a_Ebox_DW.area[2] = 0.0;
     robotarm_student_2021a_Ebox_DW.Z_in = 0.0;
     robotarm_student_2021a_Ebox_DW.Buffer_Z = 0.0;
-    robotarm_student_2021a_Ebox_DW.label_picker = 0.0;
-    robotarm_student_2021a_Ebox_DW.item_tracker = 0.0;
     robotarm_student_2021a_Ebox_DW.block_delay = 0.0;
     robotarm_student_2021a_Ebox_B.Pump = 0.0;
     robotarm_student_2021a_Ebox_B.Blow_suck = 0.0;
@@ -11444,7 +11487,6 @@ void robotarm_student_2021a_Ebox_initialize(void)
     robotarm_student_2021a_Ebox_DW.is_active_Object_Detection = 1U;
     robotarm_student_2021a_Ebox_DW.is_Object_Detection =
       robotarm_student_202_IN_Seeking;
-    robotarm_student_2021a_Ebox_DW.temporalCounter_i3 = 0U;
     robotarm_student_2021a_Ebox_DW.is_active_Belt = 1U;
     robotarm_student_2021a_Ebox_DW.is_Belt = robotarm_student_2_IN_Belt_Home;
     robotarm_student_2021a_Ebox_DW.is_active_Robot_Arm = 1U;
@@ -11456,7 +11498,6 @@ void robotarm_student_2021a_Ebox_initialize(void)
     robotarm_student_2021a_Ebox_DW.is_Vacuum = robotarm_student__IN_Vacuum_Off;
     robotarm_student_2021a_Ebox_B.Pump = 0.0;
     robotarm_student_2021a_Ebox_B.Blow_suck = 0.0;
-    robotarm_student_2021a_Ebox_DW.is_active_dataAssign = 1U;
 
     /* SystemInitialize for MATLAB Function: '<S1>/quintic trajectory time3' */
     rob_quintictrajectorytime3_Init
@@ -11469,6 +11510,56 @@ void robotarm_student_2021a_Ebox_initialize(void)
     /* SystemInitialize for MATLAB Function: '<S1>/quintic trajectory time5' */
     rob_quintictrajectorytime3_Init
       (&robotarm_student_2021a_Ebox_DW.sf_quintictrajectorytime5);
+
+    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem1' */
+    robotar_IfActionSubsystem1_Init
+      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem1,
+       &robotarm_student_2021a_Ebox_P.IfActionSubsystem1);
+
+    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem1' */
+
+    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem' */
+    /* SystemInitialize for Outport: '<S169>/Out1' incorporates:
+     *  Inport: '<S169>/In1'
+     */
+    robotarm_student_2021a_Ebox_B.In1 = robotarm_student_2021a_Ebox_P.Out1_Y0;
+
+    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem' */
+
+    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem2' */
+    robotar_IfActionSubsystem1_Init
+      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem2,
+       &robotarm_student_2021a_Ebox_P.IfActionSubsystem2);
+
+    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem2' */
+
+    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem3' */
+    robotar_IfActionSubsystem1_Init
+      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem3,
+       &robotarm_student_2021a_Ebox_P.IfActionSubsystem3);
+
+    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem3' */
+
+    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem6' */
+    robotar_IfActionSubsystem1_Init
+      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem6,
+       &robotarm_student_2021a_Ebox_P.IfActionSubsystem6);
+
+    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem6' */
+
+    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem4' */
+    robotar_IfActionSubsystem1_Init
+      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem4,
+       &robotarm_student_2021a_Ebox_P.IfActionSubsystem4);
+
+    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem4' */
+
+    /* SystemInitialize for IfAction SubSystem: '<S166>/If Action Subsystem5' */
+    robotar_IfActionSubsystem1_Init
+      (&robotarm_student_2021a_Ebox_B.IfActionSubsystem5,
+       &robotarm_student_2021a_Ebox_P.IfActionSubsystem5);
+
+    /* End of SystemInitialize for SubSystem: '<S166>/If Action Subsystem5' */
 
     /* SystemInitialize for Sum: '<S1>/Sum4' incorporates:
      *  Outport: '<S1>/Robot [V]'

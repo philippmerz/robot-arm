@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.83
+ * Model version              : 2.125
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Thu Mar 27 12:19:57 2025
+ * C source code generated on : Fri Mar 28 16:12:28 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -39,19 +39,19 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   0.1,
 
   /* Mask Parameter: PIDController_I
-   * Referenced by: '<S146>/Integral Gain'
+   * Referenced by: '<S48>/Integral Gain'
    */
-  10.0,
+  2.0,
 
   /* Mask Parameter: PIDController1_I
    * Referenced by: '<S97>/Integral Gain'
    */
   0.1,
 
-  /* Mask Parameter: PIDController_I_a
-   * Referenced by: '<S48>/Integral Gain'
+  /* Mask Parameter: PIDController_I_m
+   * Referenced by: '<S146>/Integral Gain'
    */
-  2.0,
+  10.0,
 
   /* Mask Parameter: DiscreteDerivative1_ICPrevScale
    * Referenced by: '<S9>/UD'
@@ -63,16 +63,6 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Mask Parameter: DiscreteDerivative4_ICPrevScale
-   * Referenced by: '<S12>/UD'
-   */
-  0.0,
-
-  /* Mask Parameter: DiscreteDerivative5_ICPrevScale
-   * Referenced by: '<S13>/UD'
-   */
-  0.0,
-
   /* Mask Parameter: DiscreteDerivative2_ICPrevScale
    * Referenced by: '<S10>/UD'
    */
@@ -80,6 +70,16 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
 
   /* Mask Parameter: DiscreteDerivative3_ICPrevScale
    * Referenced by: '<S11>/UD'
+   */
+  0.0,
+
+  /* Mask Parameter: DiscreteDerivative4_ICPrevScale
+   * Referenced by: '<S12>/UD'
+   */
+  0.0,
+
+  /* Mask Parameter: DiscreteDerivative5_ICPrevScale
+   * Referenced by: '<S13>/UD'
    */
   0.0,
 
@@ -173,55 +173,35 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Expression: 100
-   * Referenced by: '<S166>/Constant3'
-   */
-  100.0,
-
-  /* Expression: 1
-   * Referenced by: '<S166>/Constant1'
-   */
-  1.0,
-
-  /* Expression: 1
-   * Referenced by: '<S166>/Constant5'
-   */
-  1.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Constant4'
+  /* Computed Parameter: Out1_Y0
+   * Referenced by: '<S169>/Out1'
    */
   0.0,
 
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant21'
+   */
+  1.0,
+
   /* Expression: 2
-   * Referenced by: '<S166>/Constant7'
+   * Referenced by: '<S166>/Constant22'
    */
   2.0,
 
-  /* Expression: 0
-   * Referenced by: '<S166>/Constant6'
-   */
-  0.0,
-
   /* Expression: 3
-   * Referenced by: '<S166>/Constant9'
+   * Referenced by: '<S166>/Constant23'
    */
   3.0,
 
-  /* Expression: 0
-   * Referenced by: '<S166>/Constant8'
-   */
-  0.0,
-
   /* Expression: 4
-   * Referenced by: '<S166>/Constant11'
+   * Referenced by: '<S166>/Constant24'
    */
   4.0,
 
-  /* Expression: 0
-   * Referenced by: '<S166>/Constant10'
+  /* Expression: 100
+   * Referenced by: '<S166>/Constant19'
    */
-  0.0,
+  100.0,
 
   /* Expression: 0
    * Referenced by: '<S166>/Constant'
@@ -232,6 +212,21 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    * Referenced by: '<S166>/Constant2'
    */
   100.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Switch'
+   */
+  0.0,
+
+  /* Expression: 100
+   * Referenced by: '<S166>/Constant3'
+   */
+  100.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant1'
+   */
+  1.0,
 
   /* Computed Parameter: RobotV_Y0
    * Referenced by: '<S1>/Robot [V]'
@@ -248,120 +243,15 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Expression: [0                    0                    0      1737870510.8683;0  0  0  0;0  0  0  0]
+  /* Expression: 0
+   * Referenced by: '<S166>/Constant20'
+   */
+  0.0,
+
+  /* Expression: [0                    0                    0      1738394386.6553;0  0  0  0;0  0  0  0]
    * Referenced by: '<S166>/Object detection matrix'
    */
-  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.7378705108683E+9, 0.0, 0.0 },
-
-  /* Expression: 1
-   * Referenced by: '<S166>/Pulse Generator1'
-   */
-  1.0,
-
-  /* Computed Parameter: PulseGenerator1_Period
-   * Referenced by: '<S166>/Pulse Generator1'
-   */
-  1024.0,
-
-  /* Computed Parameter: PulseGenerator1_Duty
-   * Referenced by: '<S166>/Pulse Generator1'
-   */
-  512.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Pulse Generator1'
-   */
-  0.0,
-
-  /* Expression: 1
-   * Referenced by: '<S166>/Constant13'
-   */
-  1.0,
-
-  /* Expression: 1
-   * Referenced by: '<S166>/Pulse Generator'
-   */
-  1.0,
-
-  /* Computed Parameter: PulseGenerator_Period
-   * Referenced by: '<S166>/Pulse Generator'
-   */
-  1024.0,
-
-  /* Computed Parameter: PulseGenerator_Duty
-   * Referenced by: '<S166>/Pulse Generator'
-   */
-  512.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Pulse Generator'
-   */
-  0.0,
-
-  /* Expression: 1
-   * Referenced by: '<S166>/Constant12'
-   */
-  1.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Switch1'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Switch'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Switch2'
-   */
-  0.0,
-
-  /* Expression: 100
-   * Referenced by: '<S166>/Constant18'
-   */
-  100.0,
-
-  /* Expression: 1
-   * Referenced by: '<S166>/Constant15'
-   */
-  1.0,
-
-  /* Expression: 1
-   * Referenced by: '<S166>/Constant14'
-   */
-  1.0,
-
-  /* Expression: 1
-   * Referenced by: '<S166>/Constant17'
-   */
-  1.0,
-
-  /* Expression: 1
-   * Referenced by: '<S166>/Constant16'
-   */
-  1.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Switch5'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Switch3'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Switch4'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S166>/Switch6'
-   */
-  0.0,
+  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.7383943866553E+9, 0.0, 0.0 },
 
   /* Expression: 1
    * Referenced by: '<S1>/Constant'
@@ -390,6 +280,56 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
 
   /* Expression: .009
    * Referenced by: '<S1>/Gain1'
+   */
+  0.009,
+
+  /* Computed Parameter: TSamp_WtEt_o
+   * Referenced by: '<S10>/TSamp'
+   */
+  2048.0,
+
+  /* Expression: .15
+   * Referenced by: '<S1>/Gain5'
+   */
+  0.15,
+
+  /* Expression: .01
+   * Referenced by: '<S1>/Gain3'
+   */
+  0.01,
+
+  /* Computed Parameter: TSamp_WtEt_na
+   * Referenced by: '<S11>/TSamp'
+   */
+  2048.0,
+
+  /* Expression: .009
+   * Referenced by: '<S1>/Gain4'
+   */
+  0.009,
+
+  /* Computed Parameter: TSamp_WtEt_g
+   * Referenced by: '<S12>/TSamp'
+   */
+  2048.0,
+
+  /* Expression: .1
+   * Referenced by: '<S1>/Gain8'
+   */
+  0.1,
+
+  /* Expression: .01
+   * Referenced by: '<S1>/Gain6'
+   */
+  0.01,
+
+  /* Computed Parameter: TSamp_WtEt_b
+   * Referenced by: '<S13>/TSamp'
+   */
+  2048.0,
+
+  /* Expression: .009
+   * Referenced by: '<S1>/Gain7'
    */
   0.009,
 
@@ -587,6 +527,11 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    * Referenced by: '<S4>/Dctnotch'
    */
   0.001,
+
+  /* Expression: -10
+   * Referenced by: '<S5>/Gain1'
+   */
+  -10.0,
 
   /* Computed Parameter: Dctpd_P1_Size_n
    * Referenced by: '<S6>/Dctpd'
@@ -813,61 +758,6 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.001,
 
-  /* Computed Parameter: TSamp_WtEt_g
-   * Referenced by: '<S12>/TSamp'
-   */
-  2048.0,
-
-  /* Expression: .1
-   * Referenced by: '<S1>/Gain8'
-   */
-  0.1,
-
-  /* Expression: .01
-   * Referenced by: '<S1>/Gain6'
-   */
-  0.01,
-
-  /* Computed Parameter: TSamp_WtEt_b
-   * Referenced by: '<S13>/TSamp'
-   */
-  2048.0,
-
-  /* Expression: .009
-   * Referenced by: '<S1>/Gain7'
-   */
-  0.009,
-
-  /* Computed Parameter: TSamp_WtEt_o
-   * Referenced by: '<S10>/TSamp'
-   */
-  2048.0,
-
-  /* Expression: .15
-   * Referenced by: '<S1>/Gain5'
-   */
-  0.15,
-
-  /* Expression: .01
-   * Referenced by: '<S1>/Gain3'
-   */
-  0.01,
-
-  /* Computed Parameter: TSamp_WtEt_na
-   * Referenced by: '<S11>/TSamp'
-   */
-  2048.0,
-
-  /* Expression: .009
-   * Referenced by: '<S1>/Gain4'
-   */
-  0.009,
-
-  /* Expression: -10
-   * Referenced by: '<S5>/Gain1'
-   */
-  -10.0,
-
   /* Expression: 100
    * Referenced by: '<S1>/Saturation '
    */
@@ -903,10 +793,100 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   1.0,
 
+  /* Expression: 1
+   * Referenced by: '<S166>/Pulse Generator1'
+   */
+  1.0,
+
+  /* Computed Parameter: PulseGenerator1_Period
+   * Referenced by: '<S166>/Pulse Generator1'
+   */
+  1024.0,
+
+  /* Computed Parameter: PulseGenerator1_Duty
+   * Referenced by: '<S166>/Pulse Generator1'
+   */
+  512.0,
+
   /* Expression: 0
-   * Referenced by: '<S15>/Plot'
+   * Referenced by: '<S166>/Pulse Generator1'
    */
   0.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant13'
+   */
+  1.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Switch1'
+   */
+  0.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Pulse Generator'
+   */
+  1.0,
+
+  /* Computed Parameter: PulseGenerator_Period
+   * Referenced by: '<S166>/Pulse Generator'
+   */
+  1024.0,
+
+  /* Computed Parameter: PulseGenerator_Duty
+   * Referenced by: '<S166>/Pulse Generator'
+   */
+  512.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Pulse Generator'
+   */
+  0.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant12'
+   */
+  1.0,
+
+  /* Expression: 0
+   * Referenced by: '<S166>/Switch2'
+   */
+  0.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant14'
+   */
+  1.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant15'
+   */
+  1.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant16'
+   */
+  1.0,
+
+  /* Expression: 1
+   * Referenced by: '<S166>/Constant17'
+   */
+  1.0,
+
+  /* Expression: 100
+   * Referenced by: '<S166>/Constant18'
+   */
+  100.0,
+
+  /* Expression: 2
+   * Referenced by: '<S15>/Object'
+   */
+  2.0,
+
+  /* Expression: 1
+   * Referenced by: '<S15>/Plot'
+   */
+  1.0,
 
   /* Expression: 0
    * Referenced by: '<S15>/Stop'
@@ -957,6 +937,11 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    * Referenced by: '<S187>/Homing Running Switch'
    */
   0.5,
+
+  /* Expression: 0
+   * Referenced by: '<Root>/Data Store Memory'
+   */
+  0.0,
 
   /* Computed Parameter: SFunction_P1_Size
    * Referenced by: '<S181>/S-Function'
@@ -1073,10 +1058,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Expression: 1.2358
+  /* Expression: 1.273
    * Referenced by: '<S177>/set_robot_calibration_r'
    */
-  1.2358,
+  1.273,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainva_a
    * Referenced by: '<S186>/Discrete-Time Integrator'
@@ -1103,10 +1088,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   -0.1,
 
-  /* Expression: 0.6
+  /* Expression: 0.6012
    * Referenced by: '<S177>/set_robot_calibration_x'
    */
-  0.6,
+  0.6012,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainv_ip
    * Referenced by: '<S187>/Discrete-Time Integrator'
@@ -1133,10 +1118,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.1,
 
-  /* Expression: -0.4036
+  /* Expression: -0.3901
    * Referenced by: '<S177>/set_robot_calibration_z'
    */
-  -0.4036,
+  -0.3901,
 
   /* Expression: [1,0,0,0,0,0,0,0]
    * Referenced by: '<S176>/Enable//Ventiel'
@@ -1918,15 +1903,15 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   "",
 
-  /* Computed Parameter: Colorsetwithstringblackorwhite_
-   * Referenced by: '<S15>/Color; set with string; black or white'
-   */
-  "black",
-
   /* Computed Parameter: Colorspecifiedin6hexdigitsrrggb
    * Referenced by: '<S15>/Color; specified in 6 hex digits, rrggbb'
    */
   "8ab1ff",
+
+  /* Computed Parameter: Colorspecifiedin6hexdigitsrrg_n
+   * Referenced by: '<S15>/Color; specified in 6 hex digits, rrggbb1'
+   */
+  "1E90FF",
 
   /* Computed Parameter: StringConstant_String
    * Referenced by: '<S166>/String Constant'
@@ -1973,13 +1958,28 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   "",
 
-  /* Computed Parameter: ManualSwitch_CurrentSetting
-   * Referenced by: '<S4>/Manual Switch'
+  /* Computed Parameter: ManualSwitch1_CurrentSetting
+   * Referenced by: '<S166>/Manual Switch1'
    */
   0U,
 
-  /* Computed Parameter: ManualSwitch_CurrentSetting_d
-   * Referenced by: '<S7>/Manual Switch'
+  /* Computed Parameter: ManualSwitch2_CurrentSetting
+   * Referenced by: '<S166>/Manual Switch2'
+   */
+  0U,
+
+  /* Computed Parameter: ManualSwitch3_CurrentSetting
+   * Referenced by: '<S166>/Manual Switch3'
+   */
+  0U,
+
+  /* Computed Parameter: ManualSwitch4_CurrentSetting
+   * Referenced by: '<S166>/Manual Switch4'
+   */
+  0U,
+
+  /* Computed Parameter: ManualSwitch_CurrentSetting
+   * Referenced by: '<S4>/Manual Switch'
    */
   0U,
 
@@ -1988,10 +1988,20 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0U,
 
-  /* Computed Parameter: ManualSwitch1_CurrentSetting
+  /* Computed Parameter: ManualSwitch_CurrentSetting_d
+   * Referenced by: '<S7>/Manual Switch'
+   */
+  0U,
+
+  /* Computed Parameter: ManualSwitch1_CurrentSetting_b
    * Referenced by: '<S15>/Manual Switch1'
    */
-  1U,
+  0U,
+
+  /* Computed Parameter: ManualSwitch_CurrentSetting_c
+   * Referenced by: '<S166>/Manual Switch'
+   */
+  0U,
 
   /* Computed Parameter: Constant1_Value_b
    * Referenced by: '<S192>/Constant1'
@@ -2065,16 +2075,5 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
      */
     0.0
   }
-  ,
-
   /* End of '<S166>/If Action Subsystem1' */
-
-  /* Start of '<S166>/If Action Subsystem' */
-  {
-    /* Computed Parameter: Out1_Y0
-     * Referenced by: '<S169>/Out1'
-     */
-    0.0
-  }
-  /* End of '<S166>/If Action Subsystem' */
 };

@@ -2,7 +2,7 @@
 ## Makefile generated for component 'robotarm_student_2021a_Ebox'. 
 ## 
 ## Makefile     : robotarm_student_2021a_Ebox.mk
-## Generated on : Thu Mar 27 12:13:23 2025
+## Generated on : Fri Mar 28 12:35:09 2025
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/robotarm_student_2021a_Ebox.elf
 ## Product type : executable
 ## 
@@ -21,7 +21,7 @@ MAKEFILE                  = robotarm_student_2021a_Ebox.mk
 MATLAB_ROOT               = $(MATLAB_WORKSPACE)/C/Program_Files/MATLAB/R2021a
 MATLAB_BIN                = $(MATLAB_WORKSPACE)/C/Program_Files/MATLAB/R2021a/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/camera
+START_DIR                 = $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/camera
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
@@ -174,7 +174,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(MATLAB_ROOT)/rtw/c/src/rt_matrx.c $(MATLAB_ROOT)/rtw/c/src/rt_printf.c $(START_DIR)/robotarm_student_2021a_Ebox_ert_rtw/robotarm_student_2021a_Ebox.c $(START_DIR)/robotarm_student_2021a_Ebox_ert_rtw/robotarm_student_2021a_Ebox_data.c $(START_DIR)/robotarm_student_2021a_Ebox_ert_rtw/rtGetInf.c $(START_DIR)/robotarm_student_2021a_Ebox_ert_rtw/rtGetNaN.c $(START_DIR)/robotarm_student_2021a_Ebox_ert_rtw/rt_nonfinite.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_svr.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/updown.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_work.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/mem_mgr.c $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/rtiostream_utils.c $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dleadlag.c $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dlowpass1.c $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dnotch.c $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dpd.c $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dweakint.c $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/ec_Ebox.c $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/ec_EboxResetEnc.c $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/ec_Supervisor.c $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/Simulink/getSystemClockTimeval_wrapper.c $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/realtime/targets/raspi/src/MW_raspi_init.c $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/realtime/targets/raspi/src/periphs/MW_Pyserver_control.c $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/rtiostream_interface.c $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/rtiostreamtcpip/rtiostream_tcpip.c
+SRCS = $(MATLAB_ROOT)/rtw/c/src/rt_matrx.c $(MATLAB_ROOT)/rtw/c/src/rt_printf.c $(START_DIR)/robotarm_student_2021a_Ebox_ert_rtw/robotarm_student_2021a_Ebox.c $(START_DIR)/robotarm_student_2021a_Ebox_ert_rtw/robotarm_student_2021a_Ebox_data.c $(START_DIR)/robotarm_student_2021a_Ebox_ert_rtw/rtGetInf.c $(START_DIR)/robotarm_student_2021a_Ebox_ert_rtw/rtGetNaN.c $(START_DIR)/robotarm_student_2021a_Ebox_ert_rtw/rt_nonfinite.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_svr.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/updown.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_work.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/mem_mgr.c $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/rtiostream_utils.c $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dleadlag.c $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dlowpass1.c $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dnotch.c $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dpd.c $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dweakint.c $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/ec_Ebox.c $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/ec_EboxResetEnc.c $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/ec_Supervisor.c $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/Simulink/getSystemClockTimeval_wrapper.c $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/realtime/targets/raspi/src/MW_raspi_init.c $(MATLAB_WORKSPACE)/C/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/realtime/targets/raspi/src/periphs/MW_Pyserver_control.c $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/rtiostream_interface.c $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/rtiostreamtcpip/rtiostream_tcpip.c
 
 MAIN_SRC = $(START_DIR)/robotarm_student_2021a_Ebox_ert_rtw/ert_main.c
 
@@ -371,27 +371,27 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.c.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/Simulink/%.c
+%.c.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/Simulink/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-%.s.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/Simulink/%.s
+%.s.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/Simulink/%.s
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.cpp.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/Simulink/%.cpp
+%.cpp.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/Simulink/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.c.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/%.c
+%.c.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-%.s.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/%.s
+%.s.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/%.s
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.cpp.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/%.cpp
+%.cpp.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
@@ -519,39 +519,39 @@ rtiostream_utils.c.o : $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/rtiostr
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-dleadlag.c.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dleadlag.c
+dleadlag.c.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dleadlag.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-dlowpass1.c.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dlowpass1.c
+dlowpass1.c.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dlowpass1.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-dnotch.c.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dnotch.c
+dnotch.c.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dnotch.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-dpd.c.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dpd.c
+dpd.c.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dpd.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-dweakint.c.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dweakint.c
+dweakint.c.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/dweakint.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-ec_Ebox.c.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/ec_Ebox.c
+ec_Ebox.c.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/ec_Ebox.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-ec_EboxResetEnc.c.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/ec_EboxResetEnc.c
+ec_EboxResetEnc.c.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/ec_EboxResetEnc.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-ec_Supervisor.c.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/ec_Supervisor.c
+ec_Supervisor.c.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/SPERTE/SPERTE_installation/Tooling/Simulink_Lib/SPERTE_Blocks/sfunctions/ec_Supervisor.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-getSystemClockTimeval_wrapper.c.o : $(MATLAB_WORKSPACE)/C/Users/20233512/OneDrive_-_TU_Eindhoven/Robotarm/Nieuwe_map/robot-arm/Simulink/getSystemClockTimeval_wrapper.c
+getSystemClockTimeval_wrapper.c.o : $(MATLAB_WORKSPACE)/C/Users/ptrze/OneDrive/Documents/GitHub/robot-arm/Simulink/getSystemClockTimeval_wrapper.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 

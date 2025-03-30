@@ -7,7 +7,7 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   31 \
+    NumChartData   28 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
@@ -32,14 +32,6 @@
       Description  "StateIsActive"\
       SFName       "is_active_c3_robotarm_student_2021a_Ebox"\
       Path         "is_active_c3_robotarm_student_2021a_Ebox"\
-      SrcLocation  ""\
-      IsTestPoint  1\
-    }\
-    ChartData {\
-      Name         "is_active_dataAssign"\
-      Description  "StateIsActive"\
-      SFName       "is_active_dataAssign"\
-      Path         "dataAssign.is_active_dataAssign"\
       SrcLocation  ""\
       IsTestPoint  1\
     }\
@@ -193,20 +185,6 @@
       Description  "ChartLocal"\
       SFName       ""\
       Path         "Buffer_Z"\
-      SrcLocation  ""\
-    }\
-    ChartData {\
-      Name         "label_picker"\
-      Description  "ChartLocal"\
-      SFName       ""\
-      Path         "label_picker"\
-      SrcLocation  ""\
-    }\
-    ChartData {\
-      Name         "item_tracker"\
-      Description  "ChartLocal"\
-      SFName       ""\
-      Path         "item_tracker"\
       SrcLocation  ""\
     }\
     ChartData {\
