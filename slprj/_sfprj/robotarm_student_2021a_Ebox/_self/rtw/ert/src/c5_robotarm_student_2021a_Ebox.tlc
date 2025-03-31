@@ -7,40 +7,24 @@
 %endfunction
 %function ChartDataMap(block, system) void
   %createrecord ChartDataElements {\
-    NumChartData   5 \
+    NumChartData   3 \
     ChartDataDefaults {\
       RecordType   "ChartData"\
       Dimensions   []\
       IsTestPoint  0\
     }\
     ChartData {\
-      Name         "sfEvent"\
-      Description  "ActiveChartEvent"\
+      Name         "is_active_c5_robotarm_student_2021a_Ebox"\
+      Description  "StateIsActive"\
       SFName       ""\
       Path         ""\
       SrcLocation  ""\
     }\
     ChartData {\
-      Name         "is_active_c5_robotarm_student_2021a_Ebox"\
-      Description  "StateIsActive"\
-      SFName       "is_active_c5_robotarm_student_2021a_Ebox"\
-      Path         "is_active_c5_robotarm_student_2021a_Ebox"\
-      SrcLocation  ""\
-      IsTestPoint  1\
-    }\
-    ChartData {\
       Name         "is_c5_robotarm_student_2021a_Ebox"\
       Description  "StateActiveChild"\
-      SFName       "is_c5_robotarm_student_2021a_Ebox"\
-      Path         "is_c5_robotarm_student_2021a_Ebox"\
-      SrcLocation  ""\
-      IsTestPoint  1\
-    }\
-    ChartData {\
-      Name         "currentcarPos"\
-      Description  "ChartLocal"\
       SFName       ""\
-      Path         "currentcarPos"\
+      Path         ""\
       SrcLocation  ""\
     }\
     ChartData {\

@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.124
+ * Model version              : 2.139
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Fri Mar 28 15:37:07 2025
+ * C source code generated on : Mon Mar 31 11:59:15 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -21,12 +21,6 @@
 #ifndef MULTIWORD_TYPES_H
 #define MULTIWORD_TYPES_H
 #include "rtwtypes.h"
-
-/*
- * Definitions supporting external data access
- */
-typedef int64_T chunk_T;
-typedef uint64_T uchunk_T;
 
 /*
  * MultiWord supporting definitions

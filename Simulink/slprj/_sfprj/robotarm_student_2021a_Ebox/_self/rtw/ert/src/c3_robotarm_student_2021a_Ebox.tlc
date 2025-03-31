@@ -68,22 +68,6 @@
       IsTestPoint  1\
     }\
     ChartData {\
-      Name         "is_Belt"\
-      Description  "StateActiveChild"\
-      SFName       "is_Belt"\
-      Path         "Belt.is_Belt"\
-      SrcLocation  ""\
-      IsTestPoint  1\
-    }\
-    ChartData {\
-      Name         "is_active_Belt"\
-      Description  "StateIsActive"\
-      SFName       "is_active_Belt"\
-      Path         "Belt.is_active_Belt"\
-      SrcLocation  ""\
-      IsTestPoint  1\
-    }\
-    ChartData {\
       Name         "is_Object_Detection"\
       Description  "StateActiveChild"\
       SFName       "is_Object_Detection"\
@@ -96,6 +80,22 @@
       Description  "StateIsActive"\
       SFName       "is_active_Object_Detection"\
       Path         "Object_Detection.is_active_Object_Detection"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_Belt"\
+      Description  "StateActiveChild"\
+      SFName       "is_Belt"\
+      Path         "Belt.is_Belt"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_Belt"\
+      Description  "StateIsActive"\
+      SFName       "is_active_Belt"\
+      Path         "Belt.is_active_Belt"\
       SrcLocation  ""\
       IsTestPoint  1\
     }\
@@ -188,10 +188,10 @@
       SrcLocation  ""\
     }\
     ChartData {\
-      Name         "block_delay"\
+      Name         "extra_block_delay"\
       Description  "ChartLocal"\
       SFName       ""\
-      Path         "block_delay"\
+      Path         "extra_block_delay"\
       SrcLocation  ""\
     }\
     ChartData {\

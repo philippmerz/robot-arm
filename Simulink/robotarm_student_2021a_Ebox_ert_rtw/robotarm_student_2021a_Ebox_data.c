@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.117
+ * Model version              : 2.144
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Fri Mar 28 12:22:44 2025
+ * C source code generated on : Mon Mar 31 12:30:36 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -248,15 +248,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Expression: [0                    0                    0      1737781830.9543;0  0  0  0;0  0  0  0]
+  /* Expression: [0                    0                    0      1641448642.7973;0  0  0  0;0  0  0  0]
    * Referenced by: '<S166>/Object detection matrix'
    */
-  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.7377818309543E+9, 0.0, 0.0 },
-
-  /* Expression: 1
-   * Referenced by: '<S1>/Constant'
-   */
-  1.0,
+  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.6414486427973E+9, 0.0, 0.0 },
 
   /* Computed Parameter: TSamp_WtEt
    * Referenced by: '<S9>/TSamp'
@@ -878,10 +873,15 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   100.0,
 
-  /* Expression: 0
+  /* Expression: 2
+   * Referenced by: '<S15>/Object'
+   */
+  2.0,
+
+  /* Expression: 1
    * Referenced by: '<S15>/Plot'
    */
-  0.0,
+  1.0,
 
   /* Expression: 0
    * Referenced by: '<S15>/Stop'
@@ -1053,10 +1053,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Expression: 1.2358
+  /* Expression: 1.2042
    * Referenced by: '<S177>/set_robot_calibration_r'
    */
-  1.2358,
+  1.2042,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainva_a
    * Referenced by: '<S186>/Discrete-Time Integrator'
@@ -1083,10 +1083,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   -0.1,
 
-  /* Expression: 0.6
+  /* Expression: 0.6452
    * Referenced by: '<S177>/set_robot_calibration_x'
    */
-  0.6,
+  0.6452,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainv_ip
    * Referenced by: '<S187>/Discrete-Time Integrator'
@@ -1113,10 +1113,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.1,
 
-  /* Expression: -0.4036
+  /* Expression: -0.365
    * Referenced by: '<S177>/set_robot_calibration_z'
    */
-  -0.4036,
+  -0.365,
 
   /* Expression: [1,0,0,0,0,0,0,0]
    * Referenced by: '<S176>/Enable//Ventiel'
@@ -1906,7 +1906,7 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
   /* Computed Parameter: Colorspecifiedin6hexdigitsrrg_n
    * Referenced by: '<S15>/Color; specified in 6 hex digits, rrggbb1'
    */
-  "0000ff",
+  "1E90FF",
 
   /* Computed Parameter: StringConstant_String
    * Referenced by: '<S166>/String Constant'

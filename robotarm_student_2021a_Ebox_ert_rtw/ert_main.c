@@ -22,7 +22,6 @@ sem_t stopSem;
 sem_t baserateTaskSem;
 pthread_t schedulerThread;
 pthread_t baseRateThread;
-pthread_t backgroundThread;
 void *threadJoinStatus;
 int terminatingmodel = 0;
 void *baseRateTask(void *arg)
@@ -31,29 +30,11 @@ void *baseRateTask(void *arg)
     !rtmGetStopRequested(robotarm_student_2021a_Ebox_M);
   while (runModel) {
     sem_wait(&baserateTaskSem);
-
-    /* External mode */
-    {
-      boolean_T rtmStopReq = false;
-      rtExtModePauseIfNeeded(robotarm_student_2021a_Ebox_M->extModeInfo, 2,
-        &rtmStopReq);
-      if (rtmStopReq) {
-        rtmSetStopRequested(robotarm_student_2021a_Ebox_M, true);
-      }
-
-      if (rtmGetStopRequested(robotarm_student_2021a_Ebox_M) == true) {
-        rtmSetErrorStatus(robotarm_student_2021a_Ebox_M, "Simulation finished");
-        break;
-      }
-    }
-
     robotarm_student_2021a_Ebox_step();
 
     /* Get model outputs here */
-    rtExtModeCheckEndTrigger();
     stopRequested = !((rtmGetErrorStatus(robotarm_student_2021a_Ebox_M) == (NULL))
                       && !rtmGetStopRequested(robotarm_student_2021a_Ebox_M));
-    runModel = !stopRequested;
   }
 
   runModel = 0;
@@ -76,10 +57,6 @@ void *terminateTask(void *arg)
 
   {
     runModel = 0;
-
-    /* Wait for background task to complete */
-    CHECK_STATUS(pthread_join(backgroundThread, &threadJoinStatus), 0,
-                 "pthread_join");
   }
 
   MW_killPyserver();
@@ -89,25 +66,7 @@ void *terminateTask(void *arg)
 
   /* Terminate model */
   robotarm_student_2021a_Ebox_terminate();
-  rtExtModeShutdown(2);
   sem_post(&stopSem);
-  return NULL;
-}
-
-void *backgroundTask(void *arg)
-{
-  while (runModel) {
-    /* External mode */
-    {
-      boolean_T rtmStopReq = false;
-      rtExtModeOneStep(robotarm_student_2021a_Ebox_M->extModeInfo, 2,
-                       &rtmStopReq);
-      if (rtmStopReq) {
-        rtmSetStopRequested(robotarm_student_2021a_Ebox_M, true);
-      }
-    }
-  }
-
   return NULL;
 }
 
@@ -118,25 +77,9 @@ int main(int argc, char **argv)
   mwRaspiInit();
   MW_launchPyserver();
   rtmSetErrorStatus(robotarm_student_2021a_Ebox_M, 0);
-  rtExtModeParseArgs(argc, (const char_T **)argv, NULL);
 
   /* Initialize model */
   robotarm_student_2021a_Ebox_initialize();
-
-  /* External mode */
-  rtSetTFinalForExtMode(&rtmGetTFinal(robotarm_student_2021a_Ebox_M));
-  rtExtModeCheckInit(2);
-
-  {
-    boolean_T rtmStopReq = false;
-    rtExtModeWaitForStartPkt(robotarm_student_2021a_Ebox_M->extModeInfo, 2,
-      &rtmStopReq);
-    if (rtmStopReq) {
-      rtmSetStopRequested(robotarm_student_2021a_Ebox_M, true);
-    }
-  }
-
-  rtERTExtModeStartMsg();
 
   /* Call RTOS Initialization function */
   myRTOSInit(0.00048828125, 0);

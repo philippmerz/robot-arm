@@ -2325,19 +2325,19 @@
 	  section.data(138).logicalSrcIdx = 139;
 	  section.data(138).dtTransOffset = 182;
 	
-	  ;% robotarm_student_2021a_Ebox_B.t
+	  ;% robotarm_student_2021a_Ebox_B.X
 	  section.data(139).logicalSrcIdx = 140;
 	  section.data(139).dtTransOffset = 183;
 	
-	  ;% robotarm_student_2021a_Ebox_B.X
+	  ;% robotarm_student_2021a_Ebox_B.Z
 	  section.data(140).logicalSrcIdx = 141;
 	  section.data(140).dtTransOffset = 184;
 	
-	  ;% robotarm_student_2021a_Ebox_B.Z
+	  ;% robotarm_student_2021a_Ebox_B.R
 	  section.data(141).logicalSrcIdx = 142;
 	  section.data(141).dtTransOffset = 185;
 	
-	  ;% robotarm_student_2021a_Ebox_B.R
+	  ;% robotarm_student_2021a_Ebox_B.move_time
 	  section.data(142).logicalSrcIdx = 143;
 	  section.data(142).dtTransOffset = 186;
 	
@@ -2725,7 +2725,7 @@
 	  section.data(22).logicalSrcIdx = 48;
 	  section.data(22).dtTransOffset = 29;
 	
-	  ;% robotarm_student_2021a_Ebox_DW.block_delay
+	  ;% robotarm_student_2021a_Ebox_DW.extra_block_delay
 	  section.data(23).logicalSrcIdx = 49;
 	  section.data(23).dtTransOffset = 30;
 	
@@ -2911,8 +2911,8 @@
       dworkMap.sections(5) = section;
       clear section
       
-      section.nData     = 10;
-      section.data(10)  = dumData; %prealloc
+      section.nData     = 9;
+      section.data(9)  = dumData; %prealloc
       
 	  ;% robotarm_student_2021a_Ebox_DW.is_c4_robotarm_student_2021a_Eb
 	  section.data(1).logicalSrcIdx = 91;
@@ -2950,36 +2950,36 @@
 	  section.data(9).logicalSrcIdx = 99;
 	  section.data(9).dtTransOffset = 8;
 	
-	  ;% robotarm_student_2021a_Ebox_DW.temporalCounter_i3
-	  section.data(10).logicalSrcIdx = 100;
-	  section.data(10).dtTransOffset = 9;
-	
       nTotData = nTotData + section.nData;
       dworkMap.sections(6) = section;
       clear section
       
-      section.nData     = 5;
-      section.data(5)  = dumData; %prealloc
+      section.nData     = 6;
+      section.data(6)  = dumData; %prealloc
       
 	  ;% robotarm_student_2021a_Ebox_DW.temporalCounter_i1
-	  section.data(1).logicalSrcIdx = 101;
+	  section.data(1).logicalSrcIdx = 100;
 	  section.data(1).dtTransOffset = 0;
 	
 	  ;% robotarm_student_2021a_Ebox_DW.temporalCounter_i1_k
-	  section.data(2).logicalSrcIdx = 102;
+	  section.data(2).logicalSrcIdx = 101;
 	  section.data(2).dtTransOffset = 1;
 	
 	  ;% robotarm_student_2021a_Ebox_DW.temporalCounter_i1_a
-	  section.data(3).logicalSrcIdx = 103;
+	  section.data(3).logicalSrcIdx = 102;
 	  section.data(3).dtTransOffset = 2;
 	
 	  ;% robotarm_student_2021a_Ebox_DW.temporalCounter_i1_p
-	  section.data(4).logicalSrcIdx = 104;
+	  section.data(4).logicalSrcIdx = 103;
 	  section.data(4).dtTransOffset = 3;
 	
 	  ;% robotarm_student_2021a_Ebox_DW.temporalCounter_i1_m
-	  section.data(5).logicalSrcIdx = 105;
+	  section.data(5).logicalSrcIdx = 104;
 	  section.data(5).dtTransOffset = 4;
+	
+	  ;% robotarm_student_2021a_Ebox_DW.temporalCounter_i3
+	  section.data(6).logicalSrcIdx = 105;
+	  section.data(6).dtTransOffset = 5;
 	
       nTotData = nTotData + section.nData;
       dworkMap.sections(7) = section;
@@ -3341,8 +3341,8 @@
   ;%
 
 
-  targMap.checksum0 = 3749590626;
-  targMap.checksum1 = 3810848672;
-  targMap.checksum2 = 3425864566;
-  targMap.checksum3 = 2582926369;
+  targMap.checksum0 = 910116357;
+  targMap.checksum1 = 3701645781;
+  targMap.checksum2 = 3131604939;
+  targMap.checksum3 = 2979452361;
 

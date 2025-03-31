@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.117
+ * Model version              : 2.144
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Fri Mar 28 12:22:44 2025
+ * C source code generated on : Mon Mar 31 12:30:36 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -64,11 +64,11 @@ static const char_T * rtDataTypeNames[] = {
 
 /* data type transitions for block I/O structure */
 static DataTypeTransition rtBTransitions[] = {
-  { (char_T *)(&robotarm_student_2021a_Ebox_B.ec_Ebox_o3_p[0]), 0, 0, 8 },
-
   { (char_T *)(&robotarm_student_2021a_Ebox_B.ManualSwitch1[0]), 15, 0, 256 },
 
-  { (char_T *)(&robotarm_student_2021a_Ebox_B.SFunction), 0, 0, 186 },
+  { (char_T *)(&robotarm_student_2021a_Ebox_B.SFunction), 0, 0, 155 },
+
+  { (char_T *)(&robotarm_student_2021a_Ebox_B.Gain1_g), 0, 0, 39 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_B.RelationalOperator), 8, 0, 16 },
 
@@ -108,9 +108,9 @@ static DataTypeTransition rtBTransitions[] = {
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.sfEvent), 6, 0, 8 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.is_c4_robotarm_student_2021a_Eb),
-    7, 0, 10 },
+    7, 0, 9 },
 
-  { (char_T *)(&robotarm_student_2021a_Ebox_DW.temporalCounter_i1), 5, 0, 5 },
+  { (char_T *)(&robotarm_student_2021a_Ebox_DW.temporalCounter_i1), 5, 0, 6 },
 
   { (char_T *)(&robotarm_student_2021a_Ebox_DW.Subsystem3_SubsysRanBC), 2, 0, 6
   },

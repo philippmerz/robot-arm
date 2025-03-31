@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.124
+ * Model version              : 2.139
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Fri Mar 28 15:37:07 2025
+ * C source code generated on : Mon Mar 31 11:59:15 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -85,8 +85,8 @@ typedef struct tag_QY5kIkagyBWqman9TieI9D codertarget_raspi_internal_SC_T;
 
 #endif                             /* typedef_codertarget_raspi_internal_SC_T */
 
-/* Parameters for system: '<S166>/If Action Subsystem1' */
-typedef struct P_IfActionSubsystem1_robotarm_T_ P_IfActionSubsystem1_robotarm_T;
+/* Parameters for system: '<S166>/If Action Subsystem' */
+typedef struct P_IfActionSubsystem_robotarm__T_ P_IfActionSubsystem_robotarm__T;
 
 /* Parameters (default storage) */
 typedef struct P_robotarm_student_2021a_Ebox_T_ P_robotarm_student_2021a_Ebox_T;
