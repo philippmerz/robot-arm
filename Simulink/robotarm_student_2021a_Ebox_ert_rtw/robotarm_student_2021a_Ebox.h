@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.144
+ * Model version              : 2.147
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Mon Mar 31 12:30:36 2025
+ * C source code generated on : Mon Mar 31 14:33:41 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -691,7 +691,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
                                         * Referenced by: '<S166>/Constant20'
                                         */
   real_T Objectdetectionmatrix_Value[12];
-  /* Expression: [0                    0                    0      1641448642.7973;0  0  0  0;0  0  0  0]
+  /* Expression: [171.86250329672                    0                    0      1737789900.7813;-54.1881            0            0            0;98519      0      0      0]
    * Referenced by: '<S166>/Object detection matrix'
    */
   real_T TSamp_WtEt;                   /* Computed Parameter: TSamp_WtEt
@@ -1181,7 +1181,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T UnitDelay_InitialCondition;   /* Expression: 0
                                         * Referenced by: '<S177>/Unit Delay'
                                         */
-  real_T set_robot_calibration_r_Value;/* Expression: 1.2042
+  real_T set_robot_calibration_r_Value;/* Expression: 1.2358
                                         * Referenced by: '<S177>/set_robot_calibration_r'
                                         */
   real_T DiscreteTimeIntegrator_gainva_a;
@@ -1201,7 +1201,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Constant_Value_n;             /* Expression: -0.1
                                         * Referenced by: '<S186>/Constant'
                                         */
-  real_T set_robot_calibration_x_Value;/* Expression: 0.6452
+  real_T set_robot_calibration_x_Value;/* Expression: 0.6
                                         * Referenced by: '<S177>/set_robot_calibration_x'
                                         */
   real_T DiscreteTimeIntegrator_gainv_ip;
@@ -1221,7 +1221,7 @@ struct P_robotarm_student_2021a_Ebox_T_ {
   real_T Constant_Value_p;             /* Expression: 0.1
                                         * Referenced by: '<S187>/Constant'
                                         */
-  real_T set_robot_calibration_z_Value;/* Expression: -0.365
+  real_T set_robot_calibration_z_Value;/* Expression: -0.4036
                                         * Referenced by: '<S177>/set_robot_calibration_z'
                                         */
   real_T EnableVentiel_Value[8];       /* Expression: [1,0,0,0,0,0,0,0]

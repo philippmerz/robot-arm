@@ -7,9 +7,9 @@
  *
  * Code generation for model "robotarm_student_2021a_Ebox".
  *
- * Model version              : 2.144
+ * Model version              : 2.147
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Mon Mar 31 12:30:36 2025
+ * C source code generated on : Mon Mar 31 14:33:41 2025
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -248,10 +248,11 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Expression: [0                    0                    0      1641448642.7973;0  0  0  0;0  0  0  0]
+  /* Expression: [171.86250329672                    0                    0      1737789900.7813;-54.1881            0            0            0;98519      0      0      0]
    * Referenced by: '<S166>/Object detection matrix'
    */
-  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.6414486427973E+9, 0.0, 0.0 },
+  { 171.86250329672, -54.1881, 98519.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    1.7377899007813E+9, 0.0, 0.0 },
 
   /* Computed Parameter: TSamp_WtEt
    * Referenced by: '<S9>/TSamp'
@@ -1053,10 +1054,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.0,
 
-  /* Expression: 1.2042
+  /* Expression: 1.2358
    * Referenced by: '<S177>/set_robot_calibration_r'
    */
-  1.2042,
+  1.2358,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainva_a
    * Referenced by: '<S186>/Discrete-Time Integrator'
@@ -1083,10 +1084,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   -0.1,
 
-  /* Expression: 0.6452
+  /* Expression: 0.6
    * Referenced by: '<S177>/set_robot_calibration_x'
    */
-  0.6452,
+  0.6,
 
   /* Computed Parameter: DiscreteTimeIntegrator_gainv_ip
    * Referenced by: '<S187>/Discrete-Time Integrator'
@@ -1113,10 +1114,10 @@ P_robotarm_student_2021a_Ebox_T robotarm_student_2021a_Ebox_P = {
    */
   0.1,
 
-  /* Expression: -0.365
+  /* Expression: -0.4036
    * Referenced by: '<S177>/set_robot_calibration_z'
    */
-  -0.365,
+  -0.4036,
 
   /* Expression: [1,0,0,0,0,0,0,0]
    * Referenced by: '<S176>/Enable//Ventiel'
